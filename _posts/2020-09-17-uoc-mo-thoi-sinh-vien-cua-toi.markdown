@@ -1,0 +1,30 @@
+---
+layout: post
+title: Ước mơ thời sinh viên của tôi,
+date: 2020-09-17 00:32:20 +0700
+description: Ước mơ thời sinh viên của tôi # Add post description (optional)
+img: 2020/09/17/uoc_mo.png# Add image post (optional)
+fig-caption: # Add figcaption (optional)
+tags: [LifeZone]
+---
+Hồi sinh viên nhiều ông mong/ước có điểm cao để có bằng đỏ, để đi du học đó đây, có ông mong/ước có bạn gái xinh để quãng đời sv thật đẹp. Còn tôi mụ mị lắm, tôi thì ao ước có 3 thứ thôi. Ba thứ làm mê mẩn cả thời sinh viên của tôi.
+
+![drem]( {{site.url}}/assets/img/2020/09/17/uoc_mo.png){:width="600px"}
+
+Thứ đầu tiên là chiếc laptop thinkpad. Tôi vẫn nhớ năm một tôi ở ktx. Tối cứ ăn xong là tôi sách cặp lên thư viện. Một phần là để ôn thi lại sau khi tạch NV1 một cách cay cú, phần nữa là lên thư viện cũng có vài bạn nữ xinh (Đùa thôi vì mùa thi thư viện mới đông chứ bình thường cũng lẻ tẻ chỉ có vài người lên thôi à. Nhiều thì có 1, 2 bạn xinh thôi chứ lấy đâu ra mà vài). Cũng hay lên thư viện như tôi thằng cu em trắng trẻo khá đẹp trai như mấy oppa kr vậy. Nhưng tôi không để ý nó đâu mà chỉ để ý chiếc laptop của nó thôi. Hồi đó chả biết hãng nào chỉ nhớ cái laptop của nó có chữ Thinkpad. Chiếc laptop đen, cái màu đen xàm xạm nham nhám và khi bật lên bàn phím hắt sáng từ dưới lên làm nổi chữ in trằng trên phím. Chiếc laptop này nhìn vuông đét và rất chắc chăn. Sau này thi đỗ sang trường mới tôi thỉnh thoảng vẫn hay gặp các thầy cô dùng mấy cái tương tự. Lâu lâu sau thì mới biết mấy chiếc máy đó là dòng laptop thinkpad khá nổi tiếng. Không biết tả thế nào chỉ biết là tôi mê mẩn mấy chiếc lap kiểu đó lắm. Hồi đó vẫn nghĩ giá mà có một cái. Ước.
+
+Thứ thứ hai là chiếc balo samsonite. Kể về chiếc balo này tôi lại nhớ anh cùng phòng ktx cũ của tôi. Trùng hợp anh ý cũng có một chiếc thinkpad và rất hay bỏ nó trong chiếc balo samsonite. Không phải có phải vì chiếc thinkpad mà tôi thích cái balo samsonite hay không. Nhưng phải khẳng định rằng 2 cái đó rất hợp. Hợp như sung nếp chấm bột canh hảo mà tôi hay ăn hồi nhỏ vậy. Chiếc balo này nhỏ nhưng dầy dặn. Đen nhánh một màu và phía trên thì cong cong bo tròn lại. Cong theo kiểu đến cái quai sách cũng cong. Hồi đó vẫn nghĩ giá mà có một cái. Ước.
+
+Thứ thứ 3 là chiếc đàn guitar Yamaha C70. Chiếc C70 là chiếc đàn đắt nhất mà tôi được chạm vào hồi sinh viên của thằng cùng ktx. Dù cái đàn đó hồi í đâu đó nó mua có 2,6tr thôi. Nhưng mà sinh viên có số tiền đó mà mua đàn cũng là xịn xò lắm rồi. Chưa thấy thằng nào có cái đàn chục củ đâu. Dù sau này tôi chạm vào mấy cái đàn vài chục củ cũng vài lần rồi. Hồi đó vẫn nghĩ là giá mà có một cái. Ước.
+
+Nói chung đó là 3 thứ mà tôi ước ao có lắm hồi sinh viên. Mong là một ngày nào đó sẽ sở hữu một thứ tương tự. Thời gian trôi cả tỉ thứ thay đổi. Ao ước một thời lâu lâu không nhắc, để thời gian nó lại quên bẵng mất. 
+
+Cuối năm 2 tôi được giới thiệu cho lớp dạy thêm. Lĩnh tháng lương đầu tiên việc đầu tiên nghĩ tới là mua cái balo samsonite kia. Cơ mà lĩnh được có 4 lít mà chiếc balo tận 6 lít. Thế là chị gái phải cho thêm 2 lít để mua. Chiều hôm đấy hao hức lắm, nắng trang trang mà tôi vẫn đạp mấy vòng dọc phạm hùng lên thanh xuân, xuống hà đông rồi lại vòng ngược lên lên ngã tư sở gõ cửa cả chục quán mới mua được một iem balo theo đúng cái mà mình muốn. Ok. Cuối cùng tôi cũng mua được nó. Và đấy chắc là chiếc balo tôi dùng lâu nhất - tới tận khi tôi ra đi làm. Lúc nó rách rồi, mua balo mới mà tôi vẫn còn để lại trên nóc tủ mãi mới vất đi (Chắc vì lưu luyến). Tính tới sau cái balo đó tới giờ tôi mua nhiều balo, cặp kiếc lắm rồi, mỗi năm mua 1,2 cái, cái thì hỏng cái thì bỏ đâu quên không nhớ lại mua cái khác.
+
+Tháng trước nghĩ sao tôi lại muốn mua một chiếc đàn chỉ để trên công ty để chơi lúc happy time (cty tôi 4h chiều là happy time 20 phút, mọi người được s/h tự do làm gì thì làm). Chợt nhớ ra chiếc c70 năm nào ao ước mà vẫn chưa mua. Rồi tôi lọ mọ lên mạng search coi chỗ nào có bán để mua. Rất may c70 là dòng phổ biến chỗ nào cũng có nên chả quá khó để tìm mua nó. Tan giờ làm tôi vs cu em cùng cty phóng đi mua. Tới cửa hàng khá nhiều lựa chọn nhưng tôi vẫn cố chọn chiếc C70 kiểu rất khăng khăng dù khi cầm vào ***cây đàn ngày xưa*** :d so với giờ chất gỗ cũng dở ẹc, còn không bằng cây đàn cũ của tôi chứ chưa cần so với cây đàn hiện tại của tôi ở nhà =)). Vậy là cái thứ 2 tôi ao ước cũng có dù mất kha khá thời gian để nhớ ra. Đúng là "Cây đàn bỏ quên".
+
+Cây đàn Yamaha C70 làm tôi chợt nhớ tới chiếc Thinkpad. À, trước đây tôi cũng có một chiếc thinkpad T430s mua secondhand dùng cũng mượt, nhưng tôi không tính nó là Thinkpad đâu vì secondhand mà, bị thay lung tung rồi - hàng biến chất, Thinkpad mới chắc nó phải khác =)). Sau này rồi nó cũng bị tôi thanh lý để mua một em Macbook để trải nghiệm coi nó ntn mà mọi người thích xài thế. Cá nhân dùng tôi thấy Mac được cái màn hình rentina nét căng và cục pin khá trâu bò còn lại tất cả khá bình thường. Nhưng rồi mấy nay tôi cũng không hiểu tôi nghĩ sao nữa. Tự dưng muốn shopping, tự dưng muốn mua một cái gì đó mơi mới cho mình dù dạo này tôi kẹt tiền lắm. Giữa lựa chọn mua lại một cái Macbook (đời cao hơn) hay một chiếc Thinkpad mới. Tôi lại nghĩ thêm, tự dưng ghét đồ cũ, đồ secondhand thế. Phải rồi từ nay tôi sẽ cố gắng mua mới chứ không dùng secondhand nữa nha ha ha. Thế là tôi lại chốt bán chiếc Macbook cũ trong một buổi chiều (Vừa up fb cái có người gọi tới mua luôn - chắc giá hời :d) để hôm sau đi vác về một em thinkpad mới cong về để phá. 
+
+Thế là cuối cùng 3 thứ tôi muốn có thời sv rồi tôi cũng có. Cái thì rất chủ tính, góp nhặt, cái thì kiểu ngẫu nhiên như cơn gió khi mà "miễn là tôi thích". Nhưng càng về sau thì càng dễ và nhanh chóng vánh. Tôi cứ kêu tôi đen chứ giờ nhìn lại tôi hên phết ý chứ. Cái gì mong rồi cũng có. Vậy nên từ giờ tôi nghĩ tôi phải mong với ước thật nhiều chút rồi sau này kiểu gì chả có :d he. Tính ra chỉ sợ nhất là không biết mình muốn cái gì thôi.
+
+Chuyện dài quá nhưng có thời gian tôi lại kể tiếp. Happy weekend ae nhé.
