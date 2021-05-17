@@ -15,7 +15,7 @@ Vì lỗi này được khai thác ở client site trên nền Javascript nên t
 
 Đầu tiên cần phải hiểu rằng Javascript không phải là Java (Cái này ai cũng biết rồi). Và nó là một  ngôn ngữ thuần hướng đối tượng (Nghĩa là cái gì trong Javascript cũng là đối tượng).
 
-#### Javascript được đặt ở đâu
+#### Javascript được đặt ở đâu trên page
 Thông thường trên page có vài vị trí có thể đặt javascript như sau:
 * Trong thẻ script
 ```javascript
@@ -59,6 +59,6 @@ Vài method hay gặp
 
 ![Method]( {{site.url}}/assets/img/2021/05/17/210517_method.JPG)
 
-* Vài snippet code DOM huyền thoại hay dùng như sau:
+#### Vài snippet code DOM huyền thoại hay dùng như sau:
 
 
