@@ -48,7 +48,6 @@ var x='toan nguyen';
 ```
 Biến ngoài function thì dùng trong phạm vi toàn script. Biến trong function chỉ được dùng trong function
 
-
 #### Cấu trúc điều khiển
 Với if/else
 ```
@@ -107,6 +106,28 @@ function functionName(args) {
 }
 ```
 
+#### Event
+
+Event là "things" cái mà xảy ra đối với các HTML elements (Ví dụ như onload trang, click vào một button, hover chuột qua một element bất kỳ, ....). Javascript có thể được kích hoạt dựa trên các HTML events này.
+
+Ví dụ: Tạo 1 button, khi nhấn vào butto này thì hiển thị ngày hiện tại.
+
+```
+<html>
+   <head>
+   </head>
+   <body>
+       <script>
+         function displayDate() {
+            var d = new Date();
+            window.alert(d.getDate());
+         }
+       </script>
+       <button onclick="displayDate()">Show date</button>
+   </body>
+</html>
+```
+Bắt sự kiện onclick trên button và gọi hàm displayDate() để hiển thị ngày.
 
 #### DOM
 * Document Object Model (DOM) - Mô hình tài liệu đối tượng. Là chuẩn cho phép Javascript tự động truy cập update cấu trúc, nội dung hoặc style của page. 
