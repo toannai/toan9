@@ -50,6 +50,7 @@ Nếu người dùng truy cập URL được cấu trúc bởi người khai th�
 #### Các bước để khai thác Reflected XSS
 
 **Bước 1:** Xác định Input vector
+
 Để xác định input vector. Trên mỗi web page, ta phải xác định được toàn bộ các biến mà user được phép định nghĩa và làm thế nào để truyền giá trị vào nó. Nó có thể là hidden or visible inputs. Có thể là các param, header trong HTTP request, POST data, các field hidden thậm trí là các giá trị định nghĩa trước của radio hoặc selection trong HTML. Mỗi biến là một Input vector. Đương nhiên các input đó ta phải có thể Inject được giá trị vào.
 
 **Bước 2:** Phân tích input vector
@@ -63,6 +64,7 @@ Sau bước 1, ta tiến hành phân tích từng input vector để tìm lỗ h
 Có rất nhiều payload khác có thể tham khảo [ở đây](https://owasp.org/www-community/xss-filter-evasion-cheatsheet)
 
 **Bước 3** Kiểm tra tác động
+
 Với mỗi lần thử test vào từng Input vector ở phase trước, ta sẽ phân tích kết quả để xác định xem điểm ta vừa thử có thực sự chứa lỗ hổng hay không. Việc này được thực hiện bằng việc phân tích response HTML và tìm kiếm test input trong đó. Một khi tìm thấy, người kiểm thử cũng dễ dàng nhận diện các ký tự đặc biệt không được encoded đúng cách, bị thay thế hoặc filter. Tập hợp các ký tự đặc biệt có thể dùng để khai thác không bị filter sẽ phụ thuộc vào ngữ cảnh của section HTML đó.
 
 Các ký tự bị thay thế trong HTML 
