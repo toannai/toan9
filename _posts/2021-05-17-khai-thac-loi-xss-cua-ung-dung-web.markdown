@@ -15,6 +15,27 @@ Vì lỗi này được khai thác ở client site trên nền Javascript nên t
 
 Đầu tiên cần phải hiểu rằng Javascript không phải là Java (Cái này ai cũng biết rồi). Và nó là một  ngôn ngữ thuần hướng đối tượng (Nghĩa là cái gì trong Javascript cũng là đối tượng).
 
+#### Javascript được đặt ở đâu
+Thông thường trên page có vài vị trí có thể đặt javascript như sau:
+* Trong thẻ script
+```javascript
+<script>
+   ....
+</script>
+```
+* Đặt ra file riêng rồi load vào file html
+```javascript
+<script src="/js/myScript.js"></script> 
+```
+* Load vào từ url
+```javascript
+<script src="https://www.w3schools.com/js/myScript.js"></script>
+```
+* Đặt trong function hoặc khi action event
+```javascript
+<button onclick="myFunction()">Click me</button>
+```
+
 #### Khai báo biến và kiểu dữ liệu
 
 #### Cấu trúc điều khiển
