@@ -15,6 +15,8 @@ Vì lỗi này được khai thác ở client site trên nền Javascript nên t
 
 Đầu tiên cần phải hiểu rằng Javascript không phải là Java (Cái này ai cũng biết rồi). Và nó là một  ngôn ngữ thuần hướng đối tượng (Nghĩa là cái gì trong Javascript cũng là đối tượng).
 
+Nội dung bên dưới chỉ điểm qua để nhắc lại. Chi tiết để học tập/tra cứu sẽ sử dụng ở [w3schools.com](https://www.w3schools.com/js/)
+
 #### Javascript được đặt ở đâu trên page
 Thông thường trên page có vài vị trí có thể đặt javascript như sau:
 * Trong thẻ script
@@ -38,12 +40,73 @@ Thông thường trên page có vài vị trí có thể đặt javascript như 
 ```
 
 #### Khai báo biến và kiểu dữ liệu
-
+Trong javascript nên quên khái niệm kiểu dữ liệu đi (Không cần tập trung vào string, integer, ...)
+Khai báo như sau
+```
+var x;
+var x='toan nguyen';
+```
+Biến ngoài function thì dùng trong phạm vi toàn script. Biến trong function chỉ được dùng trong function
 
 
 #### Cấu trúc điều khiển
+Với if/else
+```
+if (condition) {
+  //  block of code to be executed if the condition is true
+} else {
+   // block code else
+}
+```
 
+Cũng có switch
+```
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+```
 #### Cấu trúc lặp
+Với for
+```
+var i;
+for (i = 0; i < cars.length; i++) {
+  text += cars[i] + "<br>";
+}
+```
+For in 
+```
+for (key in object) {
+  // code block to be executed
+}
+```
+For of
+```
+for (variable of iterable) {
+  // code block to be executed
+}
+```
+Vẫn có while
+```
+while (condition) {
+  // code block to be executed
+}
+```
+
+#### Function
+Định nghĩa function trong JS như sau:
+```
+function functionName(args) {
+   // Function main code
+}
+```
+
 
 #### DOM
 * Document Object Model (DOM) - Mô hình tài liệu đối tượng. Là chuẩn cho phép Javascript tự động truy cập update cấu trúc, nội dung hoặc style của page. 
