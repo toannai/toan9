@@ -15,7 +15,7 @@ Theo hầu hết các tài liệu thì lỗi XSS được chia làm 3 loại.
 * Store XSS
 * DOM XSS
 
-Reflected XSS là kịch bản tấn công đơn giản nhất của XSS. Nó phát sinh khi một ứng dụng nhận được dữ liệu trong request HTTP và phản hồi lập tức dữ liệu đó ngay trong respone theo cách không an toàn. Chính lý do này nên nó được gọi là Reflected - Phản chiếu.
+Reflected XSS là kịch bản tấn công đơn giản nhất của XSS. Nó phát sinh khi một ứng dụng nhận được dữ liệu tấn công (payload) trong request HTTP và phản hồi lập tức dữ liệu đó ngay trong respone theo cách không an toàn. Chính lý do này nên nó được gọi là Reflected - Phản chiếu.
 
 Ví dụ: Có một ứng dụng nhận dữ liệu từ biến GET có tên là message và hiện thị cho người dùng.
 Trong app có đoạn code sau:
