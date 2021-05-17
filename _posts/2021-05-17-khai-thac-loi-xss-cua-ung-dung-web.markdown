@@ -127,7 +127,7 @@ Ví dụ: Tạo 1 button, khi nhấn vào butto này thì hiển thị ngày hi�
    </body>
 </html>
 ```
-Bắt sự kiện onclick trên button và gọi hàm displayDate() để hiển thị ngày.
+Đoạn code trên bắt sự kiện onclick trên button và gọi hàm displayDate() để hiển thị ngày.
 
 #### DOM
 * Document Object Model (DOM) - Mô hình tài liệu đối tượng. Là chuẩn cho phép Javascript tự động truy cập update cấu trúc, nội dung hoặc style của page. 
