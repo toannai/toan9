@@ -43,6 +43,6 @@ Trình duyệt không nhận ra được đây là malicious script, kết quả
 ```
 <p>Status: <script>/* Bad stuff here... */</script></p>
 ```
-Nếu người dùng truy cập URL được cấu trúc bởi người khai thác như bên trên, thì mailcious script sẽ được thực thi ngay trên chính browser của người dùng, trong phạm vi (context) của session người dùng ứng dụng. Chính bởi điểm này mà script có thể thực hiện mọi action duyệt, thu thập mọi ngoại dữ liệu dưới quyền của người dùng. 
+Nếu người dùng truy cập URL được cấu trúc bởi người khai thác như bên trên, thì mailcious script sẽ được thực thi ngay trên chính browser của người dùng, trong phạm vi (context) của session người dùng ứng dụng. Chính bởi điểm này mà script có thể thực hiện mọi action duyệt, thu thập mọi ngoại dữ liệu dưới quyền của người dùng với sự trợ giúp đắc lực của DOM.
 
 ## Vấn đề offucate
