@@ -148,4 +148,35 @@ Vài method hay gặp
 
 #### Vài snippet code DOM huyền thoại hay dùng như sau:
 
+Hiện alert popup
+```
+windows.alert("Popup")
+```
+Redirect
+```
+window.location.href = 'newPage.html'
+```
+Lấy cookies
+```
+document.cookie
+```
+Change action form
+```
+form.action = [URL]
+```
+Submit form
+```
+form.submit()
+```
+Tham chiếu tới element bất kỳ theo id
+```
+document.getElementById("demo");
+```
+Tham chiếu tới element by class (Trả lại một array)
+```
+var x = document.getElementsByClassName("example");
+```
+
+... Anw còn rất nhiều các method khác. Các bạn có thể tham khảo chi tiết ở w3schools.
+
 
