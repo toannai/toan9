@@ -45,4 +45,11 @@ Trình duyệt không nhận ra được đây là malicious script, kết quả
 ```
 Nếu người dùng truy cập URL được cấu trúc bởi người khai thác như bên trên, thì mailcious script sẽ được thực thi ngay trên chính browser của người dùng, trong phạm vi (context) của session người dùng ứng dụng. Chính bởi điểm này mà script có thể thực hiện mọi action duyệt, thu thập mọi ngoại dữ liệu dưới quyền của người dùng với sự trợ giúp đắc lực của DOM.
 
-## Vấn đề offucate
+## Vấn đề obfuscate payload
+
+
+***Tham khảo***
+
+[1] https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/07-Input_Validation_Testing/01-Testing_for_Reflected_Cross_Site_Scripting.html
+
+[2] https://portswigger.net/web-security/cross-site-scripting
