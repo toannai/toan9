@@ -219,7 +219,7 @@ Giả sử ta có đoạn code sau:
 ```
 http://site1.local/tut4/index.php?name=toan
 ```
-Kế quả sẽ trả lại là 
+Kết quả sẽ trả lại là 
 
 ![URL get]( {{site.url}}/assets/img/2021/05/17/210517_url_get.JPG){:width="500px"}
 
