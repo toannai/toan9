@@ -20,7 +20,7 @@ social-email: # add your Email address
 discus-identifier: toan9-com # add your discus identifier
 
 # Tracker
-analytics: G-J6FK5MTLVK
+analytics: UA-197145153-1
 
 # Build Settings
 markdown: kramdown
