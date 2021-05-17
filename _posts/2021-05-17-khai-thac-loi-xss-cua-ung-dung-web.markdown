@@ -18,21 +18,21 @@ Vì lỗi này được khai thác ở client site trên nền Javascript nên t
 #### Javascript được đặt ở đâu trên page
 Thông thường trên page có vài vị trí có thể đặt javascript như sau:
 * Trong thẻ script
-```javascript
+```
 <script>
    ....
 </script>
 ```
 * Đặt ra file riêng rồi load vào file html
-```javascript
+```
 <script src="/js/myScript.js"></script> 
 ```
 * Load vào từ url
-```javascript
+```
 <script src="https://www.w3schools.com/js/myScript.js"></script>
 ```
 * Đặt trong function hoặc khi action event
-```javascript
+```
 <button onclick="myFunction()">Click me</button>
 ```
 
