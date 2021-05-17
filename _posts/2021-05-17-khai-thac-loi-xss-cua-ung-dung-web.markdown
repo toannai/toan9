@@ -134,7 +134,7 @@ Ví dụ: Tạo 1 button, khi nhấn vào butto này thì hiển thị ngày hi�
 
 Theo DOM cấu trúc của tài liệu (Document) được tổ chức dạng cây như sau:
 
-![DOM]( {{site.url}}/assets/img/2021/05/17/210517_dom.png)
+![DOM]( {{site.url}}/assets/img/2021/05/17/210517_dom.png){:width="500px"}
 
 Dễ thấy Document được coi như một cây. HTML tag là root. Root có 2 con là HEAD và BODY. Mỗi Item là một child.
 
@@ -152,9 +152,9 @@ myForm.action = "/custome.php";
 myForm.submit();
 ```
 
-* Vài method hay gặp
+* Method DOM hay dùng
 
-![Method]( {{site.url}}/assets/img/2021/05/17/210517_method.JPG)
+![Method]( {{site.url}}/assets/img/2021/05/17/210517_method.JPG){:width="500px"}
 
 #### Vài snippet code DOM huyền thoại hay dùng như sau:
 
@@ -187,6 +187,7 @@ Tham chiếu tới element by class (Trả lại một array)
 var x = document.getElementsByClassName("example");
 ```
 
-... Anw còn rất nhiều các method khác. Các bạn có thể tham khảo chi tiết ở w3schools. Phần 
+Hãy bỏ một buổi sáng ra lên w3schools làm theo các hướng dẫn là tôi nghĩ bạn đã khá thành thục javascript rồi.
 
+## Cross Site Scripting (XSS) là gì?
 
