@@ -142,7 +142,17 @@ Dễ thấy Document được coi như một cây. HTML tag là root. Root có 2
 
 Ví dụ: đối tượng document có thuộc tính referrer tham chiếu bằng document.referrer. Có method là alert() khi gọi sẽ là document.alert("Demo alert").
 
-Vài method hay gặp
+* Với DOM ta có thể truy cập, thao tác với bất cứ đối tượng nào trong tài liệu thông qua Javascript một cách dễ dàng.
+
+Ví dụ: Tôi muốn thay đổi action của form rồi sau đó submit form, đối với form ID là 'loginForm' bằng js tôi có thể làm như sau:
+
+```
+myForm = document.getElementById("loginForm");
+myForm.action = "/custome.php";
+myForm.submit();
+```
+
+* Vài method hay gặp
 
 ![Method]( {{site.url}}/assets/img/2021/05/17/210517_method.JPG)
 
@@ -177,6 +187,6 @@ Tham chiếu tới element by class (Trả lại một array)
 var x = document.getElementsByClassName("example");
 ```
 
-... Anw còn rất nhiều các method khác. Các bạn có thể tham khảo chi tiết ở w3schools.
+... Anw còn rất nhiều các method khác. Các bạn có thể tham khảo chi tiết ở w3schools. Phần 
 
 
