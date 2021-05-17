@@ -242,4 +242,6 @@ Nhưng khi soi log access của trang attacker.local (URL mà ta truyền vào p
 
 Bằng việc khai thác xss đã lấy được toàn bộ dữ liệu cookie của trang web. 
 
+Trên đây là một ví dụ nhỏ demo về cách khai thác và sự nguy hiểm của lỗi XSS. 
+
 
