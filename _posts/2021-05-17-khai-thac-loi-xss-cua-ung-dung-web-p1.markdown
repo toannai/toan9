@@ -251,9 +251,10 @@ Nhưng khi soi log access của trang attacker.local (URL mà ta truyền vào p
 Bằng việc khai thác xss đã lấy được toàn bộ dữ liệu cookie của trang web. 
 
 Qua ví dụ ta có thể thấy rằng việc tấn công XSS gồm 2 pha.
-Pha 1: Để chạy malicious Javascript code trên trình duyệt nạn nhân thì attacker phải tìm được một cách để inject maliciouse code (payload) vào trang web nạn nhân truy cập.
 
-Pha 2: Sau đó nạn nhân phải try cập trang web chứa malicious coe. Nếu attack trực tiếp vào một nạn nhân nhất định, attacker phải sử dụng các kỹ thuật như social engineering hoặc/và phishing để gửi malicious URL tới nạn nhân.
+**Pha 1:** Để chạy malicious Javascript code trên trình duyệt nạn nhân thì attacker phải tìm được một cách để inject maliciouse code (payload) vào trang web nạn nhân truy cập.
+
+**Pha 2:** Sau đó nạn nhân phải try cập trang web chứa malicious coe. Nếu attack trực tiếp vào một nạn nhân nhất định, attacker phải sử dụng các kỹ thuật như social engineering hoặc/và phishing để gửi malicious URL tới nạn nhân.
 
 Nhìn chung thì mức độ ảnh hưởng của XSS thường nhỏ hơn SQL Injection. Tuy nhiên cũng như SQL Injection trong suốt nhiều năm liền XSS vẫn nằm trong top 10 OSWAP. Đó là lý do tại sao mà tôi lại đi sâu vào phân tích lỗi này. 
 
