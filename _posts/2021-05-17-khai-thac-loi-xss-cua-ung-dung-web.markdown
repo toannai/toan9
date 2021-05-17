@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cross Site Scripting (XSS) [Part P1] - Giới thiệu về lỗi XSS,
+title: Cross Site Scripting (XSS) [Part 1] - Giới thiệu về lỗi XSS,
 date: 2021-05-17 00:32:20 +0700
 description: Tìm hiểu về lỗi Cross Site Scripting trên ứng dụng web - P1,
 img: 2021/05/17/210517_intro_xss.png
@@ -34,9 +34,12 @@ Thông thường trên page có vài vị trí có thể đặt javascript như 
 * Đặt trong function hoặc khi action event
 ```
 <button onclick="myFunction()">Click me</button>
+<img id="id1" src="$imageUrl" onload="javascript:showImage();">
 ```
 
 #### Khai báo biến và kiểu dữ liệu
+
+
 
 #### Cấu trúc điều khiển
 
