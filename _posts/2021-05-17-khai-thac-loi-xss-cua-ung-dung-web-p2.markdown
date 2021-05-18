@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cross Site Scripting (XSS) [Part 2] - Phân loại lỗi XSS, Phân tích sâu lỗi Reflected XSS,
+title: Cross Site Scripting (XSS) [Part 2] - Phân loại lỗi XSS, Mổ xẻ về lỗi Reflected XSS,
 date: 2021-05-17 00:32:20 +0700
 description: Tìm hiểu về lỗi Cross Site Scripting trên ứng dụng web - P2,
 img: 2021/05/17/210517_intro_xss.png
