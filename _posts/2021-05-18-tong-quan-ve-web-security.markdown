@@ -11,7 +11,7 @@ tags: [Security, WebSecurity]
 ### Websecurity content
 
 - [ ] ...
-- [ ] SQL Injection
-- [ ] XSS
+- [x] SQL Injection
+- [x] Cross Site Scripting(XSS)
 - [ ] CSRF
 - [ ] ...
