@@ -113,6 +113,11 @@ Có thể sử dụng payload sau:
 ```
 <scr<script>ipt>alert(document.cookie)</script>
 ```
+Ví dụ 4: Thay thẻ script bằng thẻ image
+
+```
+<img src='#' onerror=javascript:alert(&quot;test&quot;) />
+```
 Còn rất nhiều các payload thú vị khác có thể tham khảo ở tài liệu [1]
 
 ***Tham khảo***
