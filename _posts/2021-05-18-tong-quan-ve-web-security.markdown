@@ -13,5 +13,5 @@ tags: [Security, WebSecurity]
 - [ ] ...
 - [ ] SQL Injection
 - [ ] XSS
-- [ ] XSRF
+- [ ] CSRF
 - [ ] ...
