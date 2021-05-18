@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cross Site Scripting (XSS) [Part 2] - Phân tích chi tiết lỗi XSS và các vấn đề liên quan,
+title: Cross Site Scripting (XSS) [Part 2] - Phân loại lỗi XSS, Phân tích lỗi Reflected XSS,
 date: 2021-05-17 00:32:20 +0700
 description: Tìm hiểu về lỗi Cross Site Scripting trên ứng dụng web - P2,
 img: 2021/05/17/210517_intro_xss.png
@@ -91,6 +91,7 @@ Các ký tự bị thay thế trong html action hoặc javascript code
 Các cách bypass XSS phụ thuộc vào khả năng làm sạch input của ứng dụng web. Có một vài cơ chế của việc này như:
 * Trả lại lỗi, loại bỏ, encode, hoặc thay thế các input không hợp lệ. 
 * Một số có thể dùng blacklist hoặc whitelist các ký tự thường gặp trong payload để ngăn chặn XSS.
+
 Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau.
 
 Một vài ví dụ thú vị của việc bypass:
