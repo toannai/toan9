@@ -91,6 +91,7 @@ Các ký tự bị thay thế trong html action hoặc javascript code
 Các cách bypass XSS phụ thuộc vào khả năng làm sạch input của ứng dụng web. Có một vài cơ chế của việc này như:
 * Trả lại lỗi, loại bỏ, encode, hoặc thay thế các input không hợp lệ. 
 * Một số có thể dùng blacklist hoặc whitelist các ký tự thường gặp trong payload để ngăn chặn XSS.
+Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau.
 
 Một vài ví dụ thú vị của việc bypass:
 
