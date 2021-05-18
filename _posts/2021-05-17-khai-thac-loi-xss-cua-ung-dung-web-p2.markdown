@@ -113,7 +113,7 @@ Có thể sử dụng payload sau:
 ```
 <scr<script>ipt>alert(document.cookie)</script>
 ```
-
+Còn rất nhiều các payload thú vị khác có thể tham khảo ở tài liệu [1]
 
 ***Tham khảo***
 
