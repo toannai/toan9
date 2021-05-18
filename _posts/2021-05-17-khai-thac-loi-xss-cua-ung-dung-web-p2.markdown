@@ -118,10 +118,12 @@ Ví dụ 4: Thay thẻ script bằng thẻ image
 ```
 <img src='#' onerror=javascript:alert(&quot;test&quot;) />
 ```
-Còn rất nhiều các payload thú vị khác có thể tham khảo ở tài liệu [1]
+Còn rất nhiều các payload thú vị khác có thể tham khảo ở tài liệu [1], [3]
 
 ***Tham khảo***
 
 [1] https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/07-Input_Validation_Testing/01-Testing_for_Reflected_Cross_Site_Scripting.html
 
 [2] https://portswigger.net/web-security/cross-site-scripting
+
+[3] https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting
