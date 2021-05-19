@@ -48,7 +48,7 @@ Lúc này toàn bộ người dùng khi ghé thăm blog post trình duyệt sẽ
 <p><script>/* Bad stuff here... */</script></p>
 
 ```
-Lúc này stuff có thể là đoạn mã lấy cookie gửi thông tin này lên server hoặc thực hiện các hành động ngoài mong muốn của người dùng.
+Bad stuff có thể là đoạn mã lấy cookie gửi thông tin này lên server hoặc thực hiện các hành động ngoài mong muốn của người dùng.
 
 ## Vài điểm phân biệt giữa Reflected XSS và Store XSS
 
