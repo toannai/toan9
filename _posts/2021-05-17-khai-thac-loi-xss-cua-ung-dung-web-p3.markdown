@@ -50,7 +50,9 @@ Lúc này toàn bộ người dùng khi ghé thăm blog post trình duyệt sẽ
 ```
 Lúc này stuff có thể là đoạn mã lấy cookie gửi thông tin này lên server hoặc thực hiện các hành động ngoài mong muốn của người dùng.
 
-### Vài điểm phân biệt giữa Reflected XSS và Store XSS
+## Vài điểm phân biệt giữa Reflected XSS và Store XSS
+
+Qua ví dụ trên ta nhận thấy vài điểm khác biệt cơ bản của Reflected XSS và Store XSS như sau:
 
 | Reflected XSS                                                        | Store XSS                      |
 | ---------------------------------------------------------------------| ------------------------------ |
