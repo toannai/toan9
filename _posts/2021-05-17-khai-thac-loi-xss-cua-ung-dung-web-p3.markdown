@@ -27,9 +27,9 @@ postId=3&comment=This+post+was+extremely+helpful.&name=Carlos+Montoya&email=carl
 
 Ngay sau khi comment được subbmit tất cả người dùng ghé thăm blog post sẽ nhận được đoạn text sau trong response của ứng dụng.
 
-``
+```
 <p>This post was extremely helpful.</p>
-``
+```
 
 Thuy nhiên do ứng dụng không thực hiện xử lý giữ liệu, người khai thác có thể subbmit một macilious cooment như sau:
 
