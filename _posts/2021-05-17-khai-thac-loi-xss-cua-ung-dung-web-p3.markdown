@@ -59,4 +59,8 @@ Lúc này stuff có thể là đoạn mã lấy cookie gửi thông tin này lê
 | Yêu cầu người dùng click vào link (tạo request)                 | Không cần người dùng click vào link |
 | Tác động của việc tấn công chỉ ảnh hưởng tới một cá nhân đơn lẻ  | Ảnh hưởng tới số lượng lớn người dùng |
 
+## Phương pháp tìm kiếm và kiểm tra lỗi store XSS
+
+
+
 
