@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cross Site Scripting (XSS) [Part 3] - Mổ sẻ lỗi store XSS (aka persistent XSS),
+title: Cross Site Scripting (XSS) [Part 3] - Mổ xẻ lỗi store XSS (aka persistent XSS),
 date: 2021-05-18 00:32:20 +0700
 description: Tìm hiểu về lỗi Cross Site Scripting trên ứng dụng web - P3,
 img: 2021/05/18/210517_intro_xss.png
