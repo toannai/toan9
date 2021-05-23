@@ -35,7 +35,6 @@ Thuy nhiên do ứng dụng không thực hiện xử lý giữ liệu, người
 
 ```
 <script>/* Bad stuff here... */</script>
-
 ```
 Trong request comment được encode URL như sau:
 
@@ -46,7 +45,6 @@ Lúc này toàn bộ người dùng khi ghé thăm blog post trình duyệt sẽ
 
 ```
 <p><script>/* Bad stuff here... */</script></p>
-
 ```
 Bad stuff có thể là đoạn mã lấy cookie gửi thông tin này lên server hoặc thực hiện các hành động ngoài mong muốn của người dùng.
 
@@ -61,8 +59,24 @@ Qua ví dụ trên ta nhận thấy vài điểm khác biệt cơ bản của Re
 | Yêu cầu người dùng click vào link (tạo request)                 | Không cần người dùng click vào link |
 | Tác động của việc tấn công chỉ ảnh hưởng tới một cá nhân đơn lẻ  | Ảnh hưởng tới số lượng lớn người dùng |
 
-## Phương pháp tìm kiếm và kiểm tra lỗi store XSS
+## Phương pháp tìm kiếm và khai thác lỗi store XSS
 
+### Vài điểm lưu ý:
 
+Để tìm kiếm/khai thác hổng store XSS bạn cần phải xác định entry point (Điểm có thể inject mailicous code) và exit point (Điểm maliciou code) xuất hiện ở response của ứng dụng.
 
+Entry point có thể bao gồm ở các vị trí sau:
+* Parameters hoặc other data trong URL query string hoặc message body (visible or invisible value).
+* The URL file path.
+* HTTP request headers.
+* Mọi điểm mà website nhận dữ liệu, ...
 
+Exit point thì có thể là mọi vị trí trong website, phần được render cho người dùng cuối sử dụng.
+
+### Khai thác
+
+Cần chú ý rằng điểm không khai thác dược reflexed XSS thì cũng có thể bị store XSS và ngược lại - 2 loại lỗi này nhìn chung không có sự liên hệ với nhau nhiều.
+
+Việc tìm kiếm store XSS nhìn chung khá là "Thách thức" vì với mỗi entry point ta sẽ phải tìm exit point ở toàn bộ các phần render ra cho người dùng. Ví dụ: Giả sử entry point ở form submit nhưng exit point có thể không ở ngay chỗ post/page entry point mà ở một post/page tại vị trí khác trên webstite.
+
+Cách làm thông thường dễ hiểu là sẽ submit payload vào entrypoint rồi duyệt qua toàn bộ trang web tìm exit point.
