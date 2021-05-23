@@ -7,7 +7,7 @@ img: 2021/05/18/210517_intro_xss.png
 fig-caption: # Add figcaption (optional)
 tags: [Security, WebSecurity]
 ---
-Buổi hôm nay chungs ta sẽ đi sâu vào phân tích lỗi store XSS, mô tả những tác động của kiểu tấn công store XSS vào ứng dụng web, và quan trọng hơn là tìm hiểu làm thế nào để tìm kiếm và khai thác lỗi store XSS.
+Buổi hôm nay chúng ta sẽ đi sâu vào phân tích lỗi store XSS, mô tả những tác động của kiểu tấn công store XSS vào ứng dụng web, và quan trọng hơn là tìm hiểu làm thế nào để tìm kiếm và khai thác lỗi store XSS.
 
 ## Store XSS là gì?
 
