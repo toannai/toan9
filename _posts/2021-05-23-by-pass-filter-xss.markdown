@@ -3,7 +3,7 @@ layout: post
 title: Cross Site Scripting (XSS) [Part 4] - Các phương pháp filter XSS,
 date: 2021-05-23 00:32:20 +0700
 description: Tìm hiểu về lỗi Cross Site Scripting trên ứng dụng web - P4,
-img: 2021/05/18/210517_intro_xss.png
+img: 2021/05/23/210523_xss_filter.jpg
 fig-caption: # Add figcaption (optional)
 tags: [Security, WebSecurity]
 ---
