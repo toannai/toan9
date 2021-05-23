@@ -15,7 +15,6 @@ Trong quá trình pentest ứng dụng có thể gặp nhiều trường hợp c
 * Trả lại lỗi, loại bỏ, encode, hoặc thay thế các input không hợp lệ. 
 * Một số có thể dùng blacklist hoặc whitelist các ký tự thường gặp trong payload để ngăn chặn XSS.
 
-Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau, phần nhiều là dựa vào sự khôn khéo của người áp dụng.
-
+Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu ví quá trình filter như người bảo vệ ứng dụng web thì quá trình bypass là quá trình luồn lách để qua mặt những người bảo vệ này. Khó thể nói có công thức nào tuyệt đối mà là sự tùy cơ ứng biến cho phù hợp từng hoàn cảnh. Hãy nhớ điều này.
 
 
