@@ -11,3 +11,11 @@ Trong quá trình pentest ứng dụng có thể gặp nhiều trường hợp c
 
 >PS: Chủ đề này tôi cũng không định ngồi viết một lèo là xong, sẽ viết dần dần theo năm tháng dựa trên những kinh nghiệm của mình tích lỹ được. Do vậy lâu lâu các bạn vào ngó nha có thể có nội dung mới nha. Ok, bắt đầu thôi.
 
+**Nhắc lại:** Các cách bypass XSS phụ thuộc vào khả năng làm sạch input (thực hiện bởi WAF hoặc Ứng dụng). Có một vài cơ chế của việc này như:
+* Trả lại lỗi, loại bỏ, encode, hoặc thay thế các input không hợp lệ. 
+* Một số có thể dùng blacklist hoặc whitelist các ký tự thường gặp trong payload để ngăn chặn XSS.
+
+Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau, phần nhiều là dựa vào sự khôn khéo của người áp dụng.
+
+
+
