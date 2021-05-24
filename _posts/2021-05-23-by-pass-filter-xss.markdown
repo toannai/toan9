@@ -31,6 +31,7 @@ Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu v
 ## Các payload sử dụng mask
 ### Case sensitive
 ```<SCRIPT>alert(1);</SCRIPT>```
+
 ```<ScRipT>alert(1);</sCriPt>```
 ### Lọc thẻ script
 * Insert thêm ký tự trình duyệt hay bỏ qua (Tab, escape)
