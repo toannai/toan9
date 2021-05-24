@@ -33,7 +33,7 @@ Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu v
 ```<SCRIPT>alert(1);</SCRIPT>```
 ```<ScRipT>alert(1);</sCriPt>```
 ### Lọc thẻ script
-* Insert thêm ký tự trình duyệt hay bỏ qua (x09->Tab, x10->Escape)
+* Insert thêm ký tự trình duyệt hay bỏ qua (Tab, escape)
 
 ```<script  >alert(1);</script   >```
 
