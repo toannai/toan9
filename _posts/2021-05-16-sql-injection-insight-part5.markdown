@@ -94,7 +94,7 @@ All queries combined using a UNION, INTERSECT or EXCEPT operator must have an eq
 
 Lý do để thực hiện một cuộc tấn công SQL injection UNION là lợi dụng **Original query** để có thể truy xuất kết quả **Inject query**. Nói chung, dữ liệu mà ta muốn truy xuất thông thường ở dạng chuỗi (string/char), vì vậy ta cần tìm một hoặc nhiều cột trong kết quả truy vấn ban đầu có kiểu dữ liệu hoặc tương thích với dữ liệu chuỗi.
 
-Sau khi đã xác định số lượng cột cần thiết, ta có thể thăm dò từng cột để kiểm tra xem nó có thể chứa dữ liệu chuỗi hay không bằng cách gửi một loạt các payload UNION SELECT lần lượt đặt một giá trị chuỗi vào mỗi cột. Ví dụ: nếu truy vấn trả về bốn cột, bạn sẽ gửi:
+Cách làm là sau khi đã xác định số lượng cột cần thiết, ta có thể thăm dò từng cột để kiểm tra xem nó có thể chứa dữ liệu chuỗi hay không bằng cách gửi một loạt các payload UNION SELECT lần lượt đặt một giá trị chuỗi vào mỗi cột. Ví dụ: nếu truy vấn trả về bốn cột, bạn sẽ gửi:
 ```
 ' UNION SELECT 'a',NULL,NULL,NULL--
 ' UNION SELECT NULL,'a',NULL,NULL--
