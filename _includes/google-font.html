@@ -1,0 +1,8 @@
+<!-- tao them file nay trong thu muc _includes -->
+
+{% if site.google_font %}
+   {% for link in site.google_font %}
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href='{{ link.url }}' rel='stylesheet' type='text/css'>
+   {% endfor %}
+{% endif %}
