@@ -42,6 +42,7 @@ SELECT product_name, product_type from products WHERE product_id=1 UNION SELECT 
 ```
 
 Lúc này kết quả trả lại sẽ gồm 2 cột
+
 | Orange   | fruit     |
 |----------|-----------|
 | admin    | 123qwea@  |
@@ -106,6 +107,10 @@ Nếu kiểu dữ liệu của một cột không tương thích với dữ li�
 Conversion failed when converting the varchar value 'a' to data type int.
 ```
 Nếu lỗi không xảy ra và phản hồi của ứng dụng chứa một số nội dung bổ sung bao gồm giá trị chuỗi được chèn vào, thì cột có liên quan sẽ phù hợp để truy xuất dữ liệu chuỗi.
+
+## 5. Một số vấn đề đau đầu khác
+Quên những gì liên quan tới UNION đi. Vẫn cần một thứ nữa mà ta cần phải tập trung đó là xác định truy vấn phía sau UINON ngoài số cột và kiểu dữ liệu. Đặc biệt là tên cột và tên bảng cho query này? Đây là một câu hỏi đau đầu cần thực hiện. 
+
 
 
 **Tham khảo**
