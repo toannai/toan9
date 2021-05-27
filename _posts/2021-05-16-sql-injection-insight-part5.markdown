@@ -53,13 +53,13 @@ Tạm gọi phần trước UNION là **Original Query** và phần sau là **In
 
 Kết hợp phần điều kiện thực hiện lệnh UNION ở **mục 1** ta dễ dàng thấy để có thể thực hiện Injection UNION attack ta cần làm rõ các nội dung sau:
 
-* Có bao nhiêu cột đang được trả về từ **original query**?
-* Những cột được trả về từ **original query** thuộc loại dữ liệu nào và thích hợp để giữ những giá trị nào từ kết quả từ truy vấn ta thực hiện inject vào (**Inject query**)?
+* Có bao nhiêu cột đang được trả về từ Original query?
+* Những cột được trả về từ Original query thuộc loại dữ liệu nào và thích hợp để giữ những giá trị nào từ kết quả từ truy vấn ta thực hiện inject vào (Inject query)?
 
 Phần sau sẽ cùng nhau làm rõ các chiến lược thực hiện từng yêu cầu này.
 
 ## 3. Xác định số cột yêu cầu trong SQL Injection UNION attack
-Khi thực hiện một cuộc tấn công SQL injection UNION, có hai phương pháp hiệu quả để xác định có bao nhiêu cột đang được trả về từ truy **Original query**.
+Khi thực hiện một cuộc tấn công SQL injection UNION, có hai phương pháp hiệu quả để xác định có bao nhiêu cột đang được trả về từ truy Original query.
 
 * Phương pháp đầu tiên liên quan đến việc đưa vào một loạt các mệnh đề ORDER BY và tăng chỉ số cột được chỉ định cho đến khi xảy ra lỗi. Ví dụ: giả sử điểm chèn là một chuỗi được trích dẫn trong mệnh đề WHERE của truy vấn ban đầu, bạn sẽ gửi:
 
