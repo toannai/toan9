@@ -7,4 +7,4 @@ img: 2021/05/28/20210528_ssh_intro.jpg
 fig-caption: # Add figcaption (optional)
 tags: [Linux]
 ---
-Tôi sẽ không nói nhiều về SSH nữa vì nó là giao thức quá quen thuộc với mọi người (Dù là sysadmin/dev thậm trí là tester). Dùng nhiều nên thỉnh thoảng cũng có vài câu hỏi liên quan tới SSH. 
+Tôi sẽ không nói nhiều về SSH nữa vì nó là giao thức quá quen thuộc với mọi người (Dù là sysadmin/dev thậm trí là tester). Dùng nhiều nên thỉnh thoảng cũng có vấn đề (problems) liên quan tới SSH. 
