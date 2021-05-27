@@ -30,7 +30,7 @@ plugins:
   - jemoji
 
 google_font:
-  - url: https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100&display=swap
+  - url: https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Questrial&family=Roboto:wght@100&display=swap
 
 paginate: 8
 paginate_path: "/page/:num"
