@@ -90,5 +90,6 @@ Khi ta đã xác định được các liên kết giữa các entry point và e
 Về phương pháp kiểm tra nhìn chung cũng giống như phương pháp tìm kiếm các lỗ hổng XSS được phản ánh ở phần trước.
 
 **Tham khảo**
+
 [1] https://portswigger.net/web-security/cross-site-scripting/stored
 
