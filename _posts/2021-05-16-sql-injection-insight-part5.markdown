@@ -109,7 +109,7 @@ Conversion failed when converting the varchar value 'a' to data type int.
 Nếu lỗi không xảy ra và phản hồi của ứng dụng chứa một số nội dung bổ sung bao gồm giá trị chuỗi được chèn vào, thì cột có liên quan sẽ phù hợp để truy xuất dữ liệu chuỗi.
 
 ## 5. Một số vấn đề đau đầu khác
-Quên những gì liên quan tới UNION đi. Vẫn cần một thứ nữa mà ta cần phải tập trung đó là xác định truy vấn phía sau UINON ngoài số cột và kiểu dữ liệu. Đặc biệt là tên cột và tên bảng cho query này? Đây là một câu hỏi đau đầu cần thực hiện. 
+Quên những gì liên quan tới UNION đi. Vẫn cần một thứ nữa mà ta cần phải tập trung đó là xác định truy vấn phía sau UINON ngoài số cột và kiểu dữ liệu, đó chính cần biết tên cột và tên bảng cho query này? Đây là một câu hỏi đau đầu cần thực hiện. Để giải quyết câu hỏi này tôi cũng chia sẻ một số kinh nghiệm như sau.
 
 
 
