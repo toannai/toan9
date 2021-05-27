@@ -51,7 +51,7 @@ Trong đó raw đầu là kết quả truy vấn của mệnh đề trước UNI
 
 Tạm gọi phần trước UNION là **Original Query** và phần sau là **Inject query** (Vì phần trước là phần ứng dụng có sẵn, phần sau ta cố tình chèn vào).
 
-Kết hợp phần điều kiện thực hiện lệnh UNION ở mục *1* ta dễ dàng thấy để có thể thực hiện Injection UNION attack ta cần làm rõ các nội dung sau:
+Kết hợp phần điều kiện thực hiện lệnh UNION ở **mục 1** ta dễ dàng thấy để có thể thực hiện Injection UNION attack ta cần làm rõ các nội dung sau:
 
 * Có bao nhiêu cột đang được trả về từ **original query**?
 * Những cột được trả về từ **original query** thuộc loại dữ liệu nào và thích hợp để giữ những giá trị nào từ kết quả từ truy vấn ta thực hiện inject vào (**Inject query**)?
