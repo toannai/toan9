@@ -173,6 +173,8 @@ Ok vậy là bước đầu ta đã thành công với việc đăng nhập ssh 
 
 ### Bước 3': Ký public key của Client với Principals 
 
+Mai viết tiếp he ..
+
 
 ** Tham khảo **
 
