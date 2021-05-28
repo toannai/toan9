@@ -101,11 +101,8 @@ Giải thích qua một chút các args của lệnh trên
 
 ```
 -I mfdutra: Đặt ID của Certificate là mfdutra. (ID này dùng để phân biệt các phiên ssh là của ai)
-
 -n root: Nhận dạng principals (user hoặc host names) trong Certificate. Có thể là một hoặc một vài giá trị cách nhau bằng dấu phẩy. Trường này sẽ gặp lại ở phần sau.
-
 -V +1w: Thiết lập thời gian hợp lệ sử dụng của Certificate là +1w - 1 tuần
-
 -z 1: Xác định serial number được nhúng vào certificate để phân biệt certificate này với các certificate khác được sinh ra từ cùng một CA. Nếu là một số dương (+)a mỗi lần sinh certificate sẽ tăng thêm a. Giá trị mặc định là 0.
 ```
 
@@ -139,7 +136,7 @@ id_ecdsa-cert.pub:
       permit-agent-forwarding
       permit-port-forwarding
       permit-pty
-      permit-user-rc                                                                                                                                
+      permit-user-rc     
 ```
 
 ### Bước 4: Sử dụng file vừa ký ở bước 3 để ssh từ Client lên 
