@@ -57,6 +57,7 @@ drwx------ 13 root root 4096 May 28 11:50 ..
 # chmod 0644 /etc/ssh/ca.pub
 ```
 Thêm vào file ``/etc/ssh/sshd_config`` đoạn cấu hình sau
+
 ```
 TrustedUserCAKeys /etc/ssh/ca.pub
 ```
@@ -147,6 +148,7 @@ total 16
 ```
 
 Sau đó ta thực hiện ssh như bình thường. Kết quả đương nhiên là thành công rồi.
+
 ```
 $ ssh root@192.168.183.138
 The authenticity of host '192.168.183.138 (192.168.183.138)' can't be established.
