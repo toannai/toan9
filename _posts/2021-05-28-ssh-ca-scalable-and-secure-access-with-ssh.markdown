@@ -34,6 +34,7 @@ Các máy PC/Laptop của user rất khó để kiểm soát do vậy để trá
 Phần này tôi sẽ mô tả chi tiết cách làm ở mức đơn giản nhất. Mô hình thực tế có thể phức tạp hơn ở phần Sign Server.
 
 ### Bước 1: Tạo CA Server và cấu hình public key của CA lên SERER đích
+
 * Sau khi SSH vào Sign Server việc đầu tiên cần thực hiện là tạo một CA. Việc này đơn giản chỉ là sinh ra một cặp private - public key trên Sign Server. 
 
 ```
@@ -41,6 +42,7 @@ Phần này tôi sẽ mô tả chi tiết cách làm ở mức đơn giản nh�
 # cd /root/ca
 # ssh-keygen -C CA -f ca
 ```
+
 Lệnh cuối sử dụng để sinh cặp private - public key sẽ hỏi passpharse để bảo vệ keys, bạn có thể đặt hoặc để rỗng. Tôi thì thích nói không nên để rỗng. Kết quả ta sẽ sinh ra hai cặp keys như sau:
 
 ```
@@ -51,11 +53,13 @@ drwx------ 13 root root 4096 May 28 11:50 ..
 -rw-------  1 root root 2590 May 28 11:44 ca
 -rw-------  1 root root  556 May 28 11:44 ca.pub
 ```
+
 * SSH vào SERVER đích (Đoạn sau của bước 1 này thực hiện trên SERVER đích), ta tạo file ``/etc/ssh/ca.pub`` với nội dung copy từ nội dung của file ca.pub trên Sign Server. Sau đó change lại mode cho file này thành 0644
 
 ```
 # chmod 0644 /etc/ssh/ca.pub
 ```
+
 Thêm vào file ``/etc/ssh/sshd_config`` đoạn cấu hình sau
 
 ```
@@ -63,6 +67,7 @@ TrustedUserCAKeys /etc/ssh/ca.pub
 ```
 
 Không quên restart lại ssh-server service để apply cấu hình mới
+
 ```
 # systemctl restart ssh
 ```
@@ -75,6 +80,7 @@ Khi đã SSH vào server client, không quá khó để tạo cho mình một c�
 ```
 $ ssh-keygen -t ecdsa
 ```
+
 Tương tự tôi lại để pass pharse là rỗng để khỏi bị hỏi nhiều gõ mỏi tay, còn bạn để là gì tùy bạn tôi cũng không quan tâm lắm. Kết quả vẫn sinh ra 2 file private - public trong thư mục ``~/.ssh``
 
 ```
@@ -90,6 +96,7 @@ Copy public key id_ecdsa.pub của client vừa sinh ở bước 3 vào thư m�
 ```
 ssh-keygen -s ca -I mfdutra -n root -V +1w -z 1 id_ecdsa.pub
 ``` 
+
 Giải thích qua một chút các args của lệnh trên
 
 ```
@@ -176,9 +183,9 @@ Ok vậy là bước đầu ta đã thành công với việc đăng nhập ssh 
 
 ### Bước 3': Ký public key của Client với Principals 
 
-Mai viết tiếp he ..
+Mai viết tiếp he,
 
 
 **Tham khảo**
 
-[1] [engineering.fb.com](https://engineering.fb.com/2016/09/12/security/scalable-and-secure-access-with-ssh/)
+[engineering.fb.com](https://engineering.fb.com/2016/09/12/security/scalable-and-secure-access-with-ssh/)
