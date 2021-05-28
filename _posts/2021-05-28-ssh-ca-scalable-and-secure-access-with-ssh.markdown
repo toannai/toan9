@@ -37,11 +37,7 @@ Phần này tôi sẽ mô tả chi tiết cách làm ở mức đơn giản nh�
 
 * Sau khi SSH vào Sign Server việc đầu tiên cần thực hiện là tạo một CA. Việc này đơn giản chỉ là sinh ra một cặp private - public key trên Sign Server. 
 
-```
-# mkdir /root/ca
-# cd /root/ca
-# ssh-keygen -C CA -f ca
-```
+![gen ca dir]( {{site.url}}/assets/img/2021/05/28/20210528_gen_ca.JPG){:width="700px"}
 
 Lệnh cuối sử dụng để sinh cặp private - public key sẽ hỏi passpharse để bảo vệ keys, bạn có thể đặt hoặc để rỗng. Tôi thì thích nói không nên để rỗng. Kết quả ta sẽ sinh ra hai cặp keys như sau:
 
@@ -49,21 +45,15 @@ Lệnh cuối sử dụng để sinh cặp private - public key sẽ hỏi passp
 
 * SSH vào SERVER đích (Đoạn sau của bước 1 này thực hiện trên SERVER đích), ta tạo file ``/etc/ssh/ca.pub`` với nội dung copy từ nội dung của file ca.pub trên Sign Server. Sau đó change lại mode cho file này thành 0644
 
-```
-# chmod 0644 /etc/ssh/ca.pub
-```
+![chmod ca dir]( {{site.url}}/assets/img/2021/05/28/20210528_chmod_ca.JPG){:width="700px"}
 
 Thêm vào file ```/etc/ssh/sshd_config``` đoạn cấu hình sau
 
-```
-TrustedUserCAKeys /etc/ssh/ca.pub
-```
+![ssh config]( {{site.url}}/assets/img/2021/05/28/20210528_sshd_config.JPG){:width="700px"}
 
 Không quên restart lại ssh-server service để apply cấu hình mới
 
-```
-# systemctl restart ssh
-```
+![restart ssh]( {{site.url}}/assets/img/2021/05/28/20210528_sshd_restart.JPG){:width="700px"}
 
 Thế là hoàn thành bước 1.
 
