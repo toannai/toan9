@@ -92,6 +92,8 @@ ssh-keygen -s ca -I mfdutra -n root -V +1w -z 1 id_ecdsa.pub
 ``` 
 Giải thích qua một chút các args của lệnh trên
 
+```
+
 -I mfdutra: Đặt ID của Certificate là mfdutra. (ID này dùng để phân biệt các phiên ssh là của ai)
 
 -n root: Nhận dạng principals (user hoặc host names) trong Certificate. Có thể là một hoặc một vài giá trị cách nhau bằng dấu phẩy. Trường này sẽ gặp lại ở phần sau.
@@ -99,6 +101,7 @@ Giải thích qua một chút các args của lệnh trên
 -V +1w: Thiết lập thời gian hợp lệ sử dụng của Certificate là +1w - 1 tuần
 
 -z 1: Xác định serial number được nhúng vào certificate để phân biệt certificate này với các certificate khác được sinh ra từ cùng một CA. Nếu là một số dương (+)a mỗi lần sinh certificate sẽ tăng thêm a. Giá trị mặc định là 0.
+```
 
 Kết thúc bước này thư mục /root/ca sẽ có thêm file id_ecdsa-cert.pub 
 
