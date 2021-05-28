@@ -167,6 +167,9 @@ May 28 17:07:24 svr systemd-logind[992]: New session 11 of user root.
 ```
 Hãy chú ý đoạn **ID mfdutra (serial 1) CA**. Rõ ràng là ta đã đăng nhập thành công với ID mfduatra vừa tạo ở trên. Thực tế ta có thể sử dụng ID này để phân biệt việc đăng nhập với các certificate khác nhau.
 
+Ok vậy là bước đầu ta đã thành công với việc đăng nhập ssh sử dụng certificate (SSH-CA).
+
+### Bước 3': Ký public key của Client với Principals 
 
 
 
