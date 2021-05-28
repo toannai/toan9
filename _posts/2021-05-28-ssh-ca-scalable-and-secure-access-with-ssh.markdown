@@ -45,14 +45,7 @@ Phần này tôi sẽ mô tả chi tiết cách làm ở mức đơn giản nh�
 
 Lệnh cuối sử dụng để sinh cặp private - public key sẽ hỏi passpharse để bảo vệ keys, bạn có thể đặt hoặc để rỗng. Tôi thì thích nói không nên để rỗng. Kết quả ta sẽ sinh ra hai cặp keys như sau:
 
-```
-# ls -l
-total 24
-drwx------  2 root root 4096 May 28 11:52 .
-drwx------ 13 root root 4096 May 28 11:50 ..
--rw-------  1 root root 2590 May 28 11:44 ca
--rw-------  1 root root  556 May 28 11:44 ca.pub
-```
+![ca dir]( {{site.url}}/assets/img/2021/05/28/20210528_ca.JPG){:width="700px"}
 
 * SSH vào SERVER đích (Đoạn sau của bước 1 này thực hiện trên SERVER đích), ta tạo file ``/etc/ssh/ca.pub`` với nội dung copy từ nội dung của file ca.pub trên Sign Server. Sau đó change lại mode cho file này thành 0644
 
@@ -83,12 +76,7 @@ $ ssh-keygen -t ecdsa
 
 Tương tự tôi lại để pass pharse là rỗng để khỏi bị hỏi nhiều gõ mỏi tay, còn bạn để là gì tùy bạn tôi cũng không quan tâm lắm. Kết quả vẫn sinh ra 2 file private - public trong thư mục ```~/.ssh```
 
-```
-$ ls -l ~/.ssh 
-total 8
--rw------- 1 toannn toannn 505 May 28 12:23 id_ecdsa
--rw-r--r-- 1 toannn toannn 173 May 28 12:23 id_ecdsa.pub
-```
+![client dir]( {{site.url}}/assets/img/2021/05/28/20210528_client.JPG){:width="700px"}
 
 ### Bước 3: Ký public key của Client 
 Copy public key id_ecdsa.pub của client vừa sinh ở bước 3 vào thư mục ```/root/ca```. Chạy lệnh sau để thực hiện ký public key
