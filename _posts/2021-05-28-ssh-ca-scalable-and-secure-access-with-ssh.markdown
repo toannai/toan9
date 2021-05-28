@@ -141,7 +141,7 @@ Sau đó ta thực hiện ssh như bình thường. Kết quả đương nhiên 
 
 Kiểm tra log đăng nhập trên server ở file /var/log/auth.log (Tùy distro mà vị trí file có thể khác) ta thấy nội dung như sau:
 
-![log info]( {{site.url}}/assets/img/2021/05/28/20210528_log.JPG)
+![log info]( {{site.url}}/assets/img/2021/05/28/20210528_log.JPG){:width="700px"}
 
 Hãy chú ý đoạn **ID mfdutra (serial 1) CA**. Rõ ràng là ta đã đăng nhập thành công với ID mfduatra vừa tạo ở trên. Thực tế ta có thể sử dụng ID này để phân biệt việc đăng nhập với các certificate khác nhau.
 
