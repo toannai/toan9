@@ -172,4 +172,6 @@ Ok vậy là bước đầu ta đã thành công với việc đăng nhập ssh 
 ### Bước 3': Ký public key của Client với Principals 
 
 
+** Tham khảo **
 
+[1] [engineering.fb.com](https://engineering.fb.com/2016/09/12/security/scalable-and-secure-access-with-ssh/)
