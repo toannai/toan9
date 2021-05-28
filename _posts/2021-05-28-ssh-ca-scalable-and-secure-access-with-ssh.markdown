@@ -51,7 +51,7 @@ drwx------ 13 root root 4096 May 28 11:50 ..
 -rw-------  1 root root 2590 May 28 11:44 ca
 -rw-------  1 root root  556 May 28 11:44 ca.pub
 ```
-* SSH vào SERVER đích (Đoạn sau của bước 1 này thực hiện trên SERVER đích) rồi tạo file ``/etc/ssh/ca.pub`` với nội dung copy từ nội dung của file ca.pub trên Sign Server. Sau đó change lại mode cho file này thành 0644
+* SSH vào SERVER đích (Đoạn sau của bước 1 này thực hiện trên SERVER đích), ta tạo file ``/etc/ssh/ca.pub`` với nội dung copy từ nội dung của file ca.pub trên Sign Server. Sau đó change lại mode cho file này thành 0644
 
 ```
 # chmod 0644 /etc/ssh/ca.pub
@@ -90,5 +90,4 @@ Chạy lệnh sau để thực hiện ký public key
 ```
 ssh-keygen -s ca -I mfdutra -n root -V +1w -z 1 id_ecdsa.pub
 ``` 
-
 
