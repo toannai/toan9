@@ -93,7 +93,6 @@ ssh-keygen -s ca -I mfdutra -n root -V +1w -z 1 id_ecdsa.pub
 Giải thích qua một chút các args của lệnh trên
 
 ```
-
 -I mfdutra: Đặt ID của Certificate là mfdutra. (ID này dùng để phân biệt các phiên ssh là của ai)
 
 -n root: Nhận dạng principals (user hoặc host names) trong Certificate. Có thể là một hoặc một vài giá trị cách nhau bằng dấu phẩy. Trường này sẽ gặp lại ở phần sau.
