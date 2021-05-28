@@ -22,7 +22,7 @@ Từ phiên bản 5.4 (released 2010-03-08) OpenSSH đã hỗ trợ OpenSSH Cert
 
 ![ssh cert flows]( {{site.url}}/assets/img/2021/05/28/20210528_ssh_cert_flow.jpg){:width="700px"}
 
-Xét về 3 khía cạnh AAA (mô tả phía trên) phương thức đăng nhập này thể hiện bằng các nội dung: Authentication - Chỉ user được sign public với có thể đăng nhập vào Server đích. Authorization - User chỉ được phép ssh vào nhóm các servers cho phép trong certificate. Auditing - Mỗi user đăng nhập với 1 cerificate nhất định OpenSSH server sẽ log lại với một id khác nhau giúp ta phân biệt giữa các user, các log này được chúng tôi đẩy lên hệ thống log tập trung (Hệ thống SIEM của chúng tôi). 
+Xét về 3 khía cạnh AAA (mô tả phía trên) lựa chọn phương án đăng nhập này thể hiện bằng các nội dung: Authentication - Chỉ user được sign public với có thể đăng nhập vào Server đích. Authorization - User chỉ được phép ssh vào nhóm các servers cho phép trong certificate. Auditing - Mỗi user đăng nhập với 1 cerificate nhất định OpenSSH server sẽ log lại với một id khác nhau giúp ta phân biệt giữa các user, các log này được chúng tôi đẩy lên hệ thống log tập trung (Hệ thống SIEM của chúng tôi). 
 
 Các máy PC/Laptop rất khó để kiểm soát do vậy để tránh việc mất private và certificate chúng tôi cũng triển khai các server JUMP trung gian. User sẽ không thể ssh trực tiếp từ máy cá nhân của mình mà sẽ ssh vào JUMP server. Mỗi user sẽ được cấp một user riêng trên server này. Đảm bảo có 2 Factor Authen và cũng bổ sung việc logging bổ sung các hành vi đăng nhập. 
 
