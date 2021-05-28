@@ -119,25 +119,7 @@ total 16
 
 Dùng tool ssh-keygen để đọc file id_ecdsa-cert.pub ta sẽ gặp lại các options sử dụng khi sign file id_ecdsa.pub
 
-```
-# ssh-keygen -Lf id_ecdsa-cert.pub 
-id_ecdsa-cert.pub:
-   Type: ecdsa-sha2-nistp256-cert-v01@openssh.com user certificate
-   Public key: ECDSA-CERT SHA256:hHjkj4NCc9mE23dP/Y3bP/EXCTezNFjj+DXzvLNOR/8
-   Signing CA: RSA SHA256:nmRh52BP64InNKRSgEkrpTLV9jJAHmTjblhwPR+hIBc (using rsa-sha2-512)
-   Key ID: "mfdutra"
-   Serial: 1
-   Valid: from 2021-05-28T11:51:00 to 2021-06-04T11:52:27
-   Principals: 
-          root
-   Critical Options: (none)
-   Extensions: 
-      permit-X11-forwarding
-      permit-agent-forwarding
-      permit-port-forwarding
-      permit-pty
-      permit-user-rc     
-```
+![show info]( {{site.url}}/assets/img/2021/05/28/20210528_info.JPG){:width="700px"}
 
 ### Bước 4: Sử dụng file vừa ký ở bước 3 để ssh từ Client lên 
 
@@ -155,24 +137,11 @@ total 16
 
 Sau đó ta thực hiện ssh như bình thường. Kết quả đương nhiên là thành công rồi.
 
-```
-$ ssh root@192.168.183.138
-The authenticity of host '192.168.183.138 (192.168.183.138)' can't be established.
-ECDSA key fingerprint is SHA256:6RE8bsdI/geR0sfVV1AcNvvdhiTf49hMSlAEqjpHK6I.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added '192.168.183.138' (ECDSA) to the list of known hosts.
-Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-143-generic x86_64)
-Last login: Fri May 28 15:55:47 2021 from 192.168.183.136
-```
+![success info]( {{site.url}}/assets/img/2021/05/28/20210528_sucess.JPG){:width="700px"}
 
 Kiểm tra log đăng nhập trên server ở file /var/log/auth.log (Tùy distro mà vị trí file có thể khác) ta thấy nội dung như sau:
 
-```
-May 28 17:07:23 svr sshd[28040]: Accepted publickey for root from 192.168.183.136 port 57560 ssh2: ECDSA-CERT ID mfdutra (serial 1) CA RSA SHA256:nmRh52BP64InNKRSgEkrpTLV9jJAHmTjblhwPR+hIBc
-May 28 17:07:23 svr sshd[28040]: pam_unix(sshd:session): session opened for user root by (uid=0)
-May 28 17:07:23 svr systemd: pam_unix(systemd-user:session): session opened for user root by (uid=0)
-May 28 17:07:24 svr systemd-logind[992]: New session 11 of user root.
-```
+![log info]( {{site.url}}/assets/img/2021/05/28/20210528_log.JPG)
 
 Hãy chú ý đoạn **ID mfdutra (serial 1) CA**. Rõ ràng là ta đã đăng nhập thành công với ID mfduatra vừa tạo ở trên. Thực tế ta có thể sử dụng ID này để phân biệt việc đăng nhập với các certificate khác nhau.
 
