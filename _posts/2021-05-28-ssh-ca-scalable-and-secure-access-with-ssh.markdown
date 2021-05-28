@@ -60,7 +60,7 @@ drwx------ 13 root root 4096 May 28 11:50 ..
 # chmod 0644 /etc/ssh/ca.pub
 ```
 
-Thêm vào file ``/etc/ssh/sshd_config`` đoạn cấu hình sau
+Thêm vào file ```/etc/ssh/sshd_config``` đoạn cấu hình sau
 
 ```
 TrustedUserCAKeys /etc/ssh/ca.pub
@@ -81,7 +81,7 @@ Khi đã SSH vào server client, không quá khó để tạo cho mình một c�
 $ ssh-keygen -t ecdsa
 ```
 
-Tương tự tôi lại để pass pharse là rỗng để khỏi bị hỏi nhiều gõ mỏi tay, còn bạn để là gì tùy bạn tôi cũng không quan tâm lắm. Kết quả vẫn sinh ra 2 file private - public trong thư mục ``~/.ssh``
+Tương tự tôi lại để pass pharse là rỗng để khỏi bị hỏi nhiều gõ mỏi tay, còn bạn để là gì tùy bạn tôi cũng không quan tâm lắm. Kết quả vẫn sinh ra 2 file private - public trong thư mục ```~/.ssh```
 
 ```
 $ ls -l ~/.ssh 
@@ -91,7 +91,7 @@ total 8
 ```
 
 ### Bước 3: Ký public key của Client 
-Copy public key id_ecdsa.pub của client vừa sinh ở bước 3 vào thư mục /root/ca. Chạy lệnh sau để thực hiện ký public key
+Copy public key id_ecdsa.pub của client vừa sinh ở bước 3 vào thư mục ```/root/ca```. Chạy lệnh sau để thực hiện ký public key
 
 ```
 ssh-keygen -s ca -I mfdutra -n root -V +1w -z 1 id_ecdsa.pub
@@ -109,7 +109,7 @@ Giải thích qua một chút các args của lệnh trên
 -z 1: Xác định serial number được nhúng vào certificate để phân biệt certificate này với các certificate khác được sinh ra từ cùng một CA. Nếu là một số dương (+)a mỗi lần sinh certificate sẽ tăng thêm a. Giá trị mặc định là 0.
 ```
 
-Kết thúc bước này thư mục /root/ca sẽ có thêm file id_ecdsa-cert.pub 
+Kết thúc bước này thư mục ```/root/ca sẽ``` có thêm file id_ecdsa-cert.pub 
 
 ```
 # ls -l 
@@ -125,21 +125,21 @@ Dùng tool ssh-keygen để đọc file id_ecdsa-cert.pub ta sẽ gặp lại c�
 ```
 # ssh-keygen -Lf id_ecdsa-cert.pub 
 id_ecdsa-cert.pub:
-        Type: ecdsa-sha2-nistp256-cert-v01@openssh.com user certificate
-        Public key: ECDSA-CERT SHA256:hHjkj4NCc9mE23dP/Y3bP/EXCTezNFjj+DXzvLNOR/8
-        Signing CA: RSA SHA256:nmRh52BP64InNKRSgEkrpTLV9jJAHmTjblhwPR+hIBc (using rsa-sha2-512)
-        Key ID: "mfdutra"
-        Serial: 1
-        Valid: from 2021-05-28T11:51:00 to 2021-06-04T11:52:27
-        Principals: 
-                root
-        Critical Options: (none)
-        Extensions: 
-                permit-X11-forwarding
-                permit-agent-forwarding
-                permit-port-forwarding
-                permit-pty
-                permit-user-rc                                                                                                                                
+   Type: ecdsa-sha2-nistp256-cert-v01@openssh.com user certificate
+   Public key: ECDSA-CERT SHA256:hHjkj4NCc9mE23dP/Y3bP/EXCTezNFjj+DXzvLNOR/8
+   Signing CA: RSA SHA256:nmRh52BP64InNKRSgEkrpTLV9jJAHmTjblhwPR+hIBc (using rsa-sha2-512)
+   Key ID: "mfdutra"
+   Serial: 1
+   Valid: from 2021-05-28T11:51:00 to 2021-06-04T11:52:27
+   Principals: 
+          root
+   Critical Options: (none)
+   Extensions: 
+      permit-X11-forwarding
+      permit-agent-forwarding
+      permit-port-forwarding
+      permit-pty
+      permit-user-rc                                                                                                                                
 ```
 
 ### Bước 4: Sử dụng file vừa ký ở bước 3 để ssh từ Client lên 
