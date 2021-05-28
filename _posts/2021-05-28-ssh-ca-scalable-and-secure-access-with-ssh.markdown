@@ -16,6 +16,5 @@ Khi lựa chọn một phương án để giải quyết bài toán của mình,
 
 Từ phiên bản 5.4 (released 2010-03-08) OpenSSH đã hỗ trợ OpenSSH Certificates (SSH-CA). Cơ chế của SSH-CA là dựa trên nền tảng chữ ký số. Trong mô hình này ta sẽ có một Sign server tập trung. Người dùng (user) sinh ra cặp public-private key của mình. Mỗi lần cần đăng nhập server, user sẽ gửi public key lên Sign Server này để ký (Sign server ký bằng private key của mình). Ký xong, Sign server sẽ trả lại cho user một Certificate (Chứng chỉ). Trong chứng chỉ cũng chứa các thông tin thời gian hợp lệ sử dụng Certificate, danh sách tên hệ thống được vào - Các thông tin này sẽ quyết định việc user sẽ được phép ssh vào những server nào và trong khoảng thời gian nào. Đến đây khi người dùng ssh lên Server đích sẽ cung cấp private key của  mình và Ceritificate của mình đã được ký. Server đích do có CA.pub (public key) của Sign Server được cài từ trước sẽ verify tính hợp của Ceritificate, bao gồm cả kiểm tra thời gian được phép login hệ thống cũng như tên hệ thống được phép đăng nhập (tên hệ thống sẽ được cấu hình trong server). Nếu toàn bộ thông tin thỏa mãn đang nhập thành công, trái lại đăng nhâp thất bại. Quá trình này mô tả bằng hình vẽ dưới.
 
-![ssh cert flows]( {{site.url}}/assets/img/2021/05/28/20210528_ssh_cert_flow.jpg){:width="600px"}
-
+![ssh cert flows]( {{site.url}}/assets/img/2021/05/28/20210528_ssh_cert_flow.jpg)
  
