@@ -83,11 +83,90 @@ total 8
 -rw-r--r-- 1 toannn toannn 173 May 28 12:23 id_ecdsa.pub
 ```
 
-### Bước 3: Ký public key của client 
-Copy public key id_ecdsa.pub của client vừa sinh ở bước 3 vào thư mục /root/ca 
-Chạy lệnh sau để thực hiện ký public key
+### Bước 3: Ký public key của Client 
+Copy public key id_ecdsa.pub của client vừa sinh ở bước 3 vào thư mục /root/ca. Chạy lệnh sau để thực hiện ký public key
 
 ```
 ssh-keygen -s ca -I mfdutra -n root -V +1w -z 1 id_ecdsa.pub
 ``` 
+Giải thích qua một chút các args của lệnh trên
+
+-I mfdutra: Đặt ID của Certificate là mfdutra. (ID này dùng để phân biệt các phiên ssh là của ai)
+
+-n root: Nhận dạng principals (user hoặc host names) trong Certificate. Có thể là một hoặc một vài giá trị cách nhau bằng dấu phẩy. Trường này sẽ gặp lại ở phần sau.
+
+-V +1w: Thiết lập thời gian hợp lệ sử dụng của Certificate là +1w - 1 tuần
+
+-z 1: Xác định serial number được nhúng vào certificate để phân biệt certificate này với các certificate khác được sinh ra từ cùng một CA. Nếu là một số dương (+)a mỗi lần sinh certificate sẽ tăng thêm a. Giá trị mặc định là 0.
+
+Kết thúc bước này thư mục /root/ca sẽ có thêm file id_ecdsa-cert.pub 
+
+```
+# ls -l 
+total 16
+-rw------- 1 root root 2590 May 28 11:44 ca
+-rw------- 1 root root  556 May 28 11:44 ca.pub
+-rw------- 1 root root 1616 May 28 11:52 id_ecdsa-cert.pub
+-rw------- 1 root root  171 May 28 11:52 id_ecdsa.pub
+```
+
+Dùng tool ssh-keygen để đọc file id_ecdsa-cert.pub ta sẽ gặp lại các options sử dụng khi sign file id_ecdsa.pub
+
+```
+# ssh-keygen -Lf id_ecdsa-cert.pub 
+id_ecdsa-cert.pub:
+        Type: ecdsa-sha2-nistp256-cert-v01@openssh.com user certificate
+        Public key: ECDSA-CERT SHA256:hHjkj4NCc9mE23dP/Y3bP/EXCTezNFjj+DXzvLNOR/8
+        Signing CA: RSA SHA256:nmRh52BP64InNKRSgEkrpTLV9jJAHmTjblhwPR+hIBc (using rsa-sha2-512)
+        Key ID: "mfdutra"
+        Serial: 1
+        Valid: from 2021-05-28T11:51:00 to 2021-06-04T11:52:27
+        Principals: 
+                root
+        Critical Options: (none)
+        Extensions: 
+                permit-X11-forwarding
+                permit-agent-forwarding
+                permit-port-forwarding
+                permit-pty
+                permit-user-rc                                                                                                                                
+```
+
+### Bước 4: Sử dụng file vừa ký ở bước 3 để ssh từ Client lên 
+
+Copy file id_ecdsa-cert.pub vừa ký ở bước 3 vào thư mục ``~/.ssh`` trở lại máy client. Chú ý đúng user đã sinh cặp private - public key bước 2.
+
+```
+# cd ~/.ssh                                                                                                                                                       
+# ls -l 
+total 16
+-rw------- 1 root root  505 May 28 11:50 id_ecdsa
+-rw------- 1 root root 1616 May 28 11:55 id_ecdsa-cert.pub
+-rw------- 1 root root  171 May 28 11:50 id_ecdsa.pub
+-rw-r--r-- 1 root root  222 May 28 11:55 known_hosts
+```
+
+Sau đó ta thực hiện ssh như bình thường. Kết quả đương nhiên là thành công rồi.
+```
+$ ssh root@192.168.183.138
+The authenticity of host '192.168.183.138 (192.168.183.138)' can't be established.
+ECDSA key fingerprint is SHA256:6RE8bsdI/geR0sfVV1AcNvvdhiTf49hMSlAEqjpHK6I.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.183.138' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-143-generic x86_64)
+Last login: Fri May 28 15:55:47 2021 from 192.168.183.136
+```
+
+Kiểm tra log đăng nhập trên server ở file /var/log/auth.log (Tùy distro mà vị trí file có thể khác) ta thấy nội dung như sau:
+
+```
+May 28 17:07:23 svr sshd[28040]: Accepted publickey for root from 192.168.183.136 port 57560 ssh2: ECDSA-CERT ID mfdutra (serial 1) CA RSA SHA256:nmRh52BP64InNKRSgEkrpTLV9jJAHmTjblhwPR+hIBc
+May 28 17:07:23 svr sshd[28040]: pam_unix(sshd:session): session opened for user root by (uid=0)
+May 28 17:07:23 svr systemd: pam_unix(systemd-user:session): session opened for user root by (uid=0)
+May 28 17:07:24 svr systemd-logind[992]: New session 11 of user root.
+```
+Hãy chú ý đoạn **ID mfdutra (serial 1) CA**. Rõ ràng là ta đã đăng nhập thành công với ID mfduatra vừa tạo ở trên. Thực tế ta có thể sử dụng ID này để phân biệt việc đăng nhập với các certificate khác nhau.
+
+
+
 
