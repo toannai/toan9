@@ -37,43 +37,39 @@ Phần này tôi sẽ mô tả chi tiết cách làm ở mức đơn giản nh�
 
 * Sau khi SSH vào Sign Server việc đầu tiên cần thực hiện là tạo một CA. Việc này đơn giản chỉ là sinh ra một cặp private - public key trên Sign Server. 
 
-![gen ca dir]( {{site.url}}/assets/img/2021/05/28/20210528_gen_ca.JPG){:width="700px"}
+![gen ca dir]({{site.url}}/assets/img/2021/05/28/20210528_gen_ca.JPG){:width="700px"}
 
 Lệnh cuối sử dụng để sinh cặp private - public key sẽ hỏi passpharse để bảo vệ keys, bạn có thể đặt hoặc để rỗng. Tôi thì thích nói không nên để rỗng. Kết quả ta sẽ sinh ra hai cặp keys như sau:
 
-![ca dir]( {{site.url}}/assets/img/2021/05/28/20210528_ca.JPG){:width="700px"}
+![ca dir]({{site.url}}/assets/img/2021/05/28/20210528_ca.JPG){:width="700px"}
 
 * SSH vào SERVER đích (Đoạn sau của bước 1 này thực hiện trên SERVER đích), ta tạo file ``/etc/ssh/ca.pub`` với nội dung copy từ nội dung của file ca.pub trên Sign Server. Sau đó change lại mode cho file này thành 0644
 
-![chmod ca dir]( {{site.url}}/assets/img/2021/05/28/20210528_chmod_ca.JPG){:width="700px"}
+![chmod ca dir]({{site.url}}/assets/img/2021/05/28/20210528_chmod_ca.JPG){:width="700px"}
 
 Thêm vào file ```/etc/ssh/sshd_config``` đoạn cấu hình sau
 
-![ssh config]( {{site.url}}/assets/img/2021/05/28/20210528_sshd_config.JPG){:width="700px"}
+![ssh config]({{site.url}}/assets/img/2021/05/28/20210528_sshd_config.JPG){:width="700px"}
 
 Không quên restart lại ssh-server service để apply cấu hình mới
 
-![restart ssh]( {{site.url}}/assets/img/2021/05/28/20210528_sshd_restart.JPG){:width="700px"}
+![restart ssh]({{site.url}}/assets/img/2021/05/28/20210528_sshd_restart.JPG){:width="700px"}
 
 Thế là hoàn thành bước 1.
 
 ### Bước 2: Tạo private - public key trên Client
 Khi đã SSH vào server client, không quá khó để tạo cho mình một cặp public - private key bằng công cụ ssh-keygen.
 
-```
-$ ssh-keygen -t ecdsa
-```
+![gen ssh key]({{site.url}}/assets/img/2021/05/28/20210528_client_key.JPG){:width="700px"}
 
 Tương tự tôi lại để pass pharse là rỗng để khỏi bị hỏi nhiều gõ mỏi tay, còn bạn để là gì tùy bạn tôi cũng không quan tâm lắm. Kết quả vẫn sinh ra 2 file private - public trong thư mục ```~/.ssh```
 
-![client dir]( {{site.url}}/assets/img/2021/05/28/20210528_client.JPG){:width="700px"}
+![client dir]({{site.url}}/assets/img/2021/05/28/20210528_client.JPG){:width="700px"}
 
 ### Bước 3: Ký public key của Client 
 Copy public key id_ecdsa.pub của client vừa sinh ở bước 3 vào thư mục ```/root/ca```. Chạy lệnh sau để thực hiện ký public key
 
-```
-ssh-keygen -s ca -I mfdutra -n root -V +1w -z 1 id_ecdsa.pub
-``` 
+![sign]({{site.url}}/assets/img/2021/05/28/20210528_sign.JPG){:width="700px"}
 
 Giải thích qua một chút các args của lệnh trên
 
@@ -86,14 +82,7 @@ Giải thích qua một chút các args của lệnh trên
 
 Kết thúc bước này thư mục ```/root/ca sẽ``` có thêm file id_ecdsa-cert.pub 
 
-```
-# ls -l 
-total 16
--rw------- 1 root root 2590 May 28 11:44 ca
--rw------- 1 root root  556 May 28 11:44 ca.pub
--rw------- 1 root root 1616 May 28 11:52 id_ecdsa-cert.pub
--rw------- 1 root root  171 May 28 11:52 id_ecdsa.pub
-```
+![root ca]({{site.url}}/assets/img/2021/05/28/20210528_list_ca.JPG){:width="700px"}
 
 Dùng tool ssh-keygen để đọc file id_ecdsa-cert.pub ta sẽ gặp lại các options sử dụng khi sign file id_ecdsa.pub
 
@@ -103,23 +92,15 @@ Dùng tool ssh-keygen để đọc file id_ecdsa-cert.pub ta sẽ gặp lại c�
 
 Copy file id_ecdsa-cert.pub vừa ký ở bước 3 vào thư mục ``~/.ssh`` trở lại máy client. Chú ý đúng user đã sinh cặp private - public key bước 2.
 
-```
-# cd ~/.ssh                                                                                                                                                       
-# ls -l 
-total 16
--rw------- 1 root root  505 May 28 11:50 id_ecdsa
--rw------- 1 root root 1616 May 28 11:55 id_ecdsa-cert.pub
--rw------- 1 root root  171 May 28 11:50 id_ecdsa.pub
--rw-r--r-- 1 root root  222 May 28 11:55 known_hosts
-```
+![home sh ca]({{site.url}}/assets/img/2021/05/28/20210528_list_home_sh.JPG){:width="700px"}
 
 Sau đó ta thực hiện ssh như bình thường. Kết quả đương nhiên là thành công rồi.
 
-![success info]( {{site.url}}/assets/img/2021/05/28/20210528_sucess.JPG){:width="700px"}
+![success info]({{site.url}}/assets/img/2021/05/28/20210528_sucess.JPG){:width="700px"}
 
 Kiểm tra log đăng nhập trên server ở file /var/log/auth.log (Tùy distro mà vị trí file có thể khác) ta thấy nội dung như sau:
 
-![log info]( {{site.url}}/assets/img/2021/05/28/20210528_log.JPG){:width="700px"}
+![log info]({{site.url}}/assets/img/2021/05/28/20210528_log.JPG){:width="700px"}
 
 Hãy chú ý đoạn **ID mfdutra (serial 1) CA**. Rõ ràng là ta đã đăng nhập thành công với ID mfduatra vừa tạo ở trên. Thực tế ta có thể sử dụng ID này để phân biệt việc đăng nhập với các certificate khác nhau.
 
