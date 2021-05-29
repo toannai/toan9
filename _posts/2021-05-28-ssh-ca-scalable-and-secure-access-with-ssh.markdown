@@ -118,7 +118,7 @@ Quay trở lại vấn đề, cụm server của tôi được chia thành rất
 
 Ở Bước 1 phần **Add CA public key vào SERVER đích** ta đổi lại một chút như sau:
 
-Thay bằng việc chỉ cấu hình thêm thêm mỗi public key của CA vào file /etc/ssh/sshd_config tôi sẽ bổ sung thêm dòng sau vào file này ```AuthorizedPrincipalsFile /etc/ssh/auth_principals/%u```
+Thay bằng việc chỉ cấu hình thêm thêm mỗi public key của CA vào file /etc/ssh/sshd_config tôi sẽ bổ sung thêm đoạn cấu hình ```AuthorizedPrincipalsFile /etc/ssh/auth_principals/%u``` vào file này.
 
 ![sshd 2]({{site.url}}/assets/img/2021/05/28/20210528_sshd2.JPG){:width="700px"}
 
