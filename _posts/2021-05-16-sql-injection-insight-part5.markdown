@@ -32,12 +32,16 @@ Bạn hãy nhớ lấy điều này, ta sẽ dùng tới nó ở phần sau.
 
 Khi một ứng dụng có lỗ hổng SQL injection kết quả của query có thể được trả lại bên trong response của ứng dụng, bằng việc lợi dụng từ khóa UNION có thể giúp ta lấy được dữ liệu từ các bảng khác trong database. Đây là kết quả của SQL Injection UNION attack.
 
-Ví dụ:
+Okie, thử lấy một ví dụ nhỏ:
+
 Giả sử truy vấn nguyên bản ban đầu như thế này (với product_id là được truyền vào từ người dùng)
+
 ```
 SELECT product_name, product_type from products WHERE product_id=1
 ```
+
 Bằng cách nào đó ta có thể inject vào được truy vấn này thành
+
 ```
 SELECT product_name, product_type from products WHERE product_id=1 UNION SELECT username, password FROM users WHERE username='admin'
 ```
