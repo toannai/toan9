@@ -132,6 +132,32 @@ Không quên restart lại ssh service
 
 ![restart ssh]({{site.url}}/assets/img/2021/05/28/20210528_restartsshd.JPG){:width="700px"}
 
+Quay trở lại Bước 4. Nếu vẫn dùng bộ private key và Certificate cũ để ssh lên SERVER thì thấy không thể đăng nhập như ban đầu được nữa.
+
+![cant ssh]({{site.url}}/assets/img/2021/05/28/20210528_cantssh.JPG){:width="700px"}
+
+Kiểm tra log ở đầu SERVER thì thấy lỗi sau:
+
+![ssh error]({{site.url}}/assets/img/2021/05/28/20210528_ssherror.JPG){:width="700px"}
+
+Điều chỉnh lại Bước 3 - Bước ký public key của Client để add thêm principal là ```zone-edr``` 
+
+![Principle]({{site.url}}/assets/img/2021/05/28/20210528_add_princ.JPG){:width="700px"}
+
+Sau đó thay thế file Certificate vừa ký này cho file Certificate cũ ở Client (file id_ecdsa-cert.pub) thử ssh thì thấy thành công
+
+![Ssh Principle suc]({{site.url}}/assets/img/2021/05/28/20210528_ssh_princ_sucess.JPG){:width="700px"}
+
+Kiểm tra log trên server ta thấy đã đăng nhập thành công.
+
+![Ssh Principle suc log]({{site.url}}/assets/img/2021/05/28/20210528_ssh_princ_sucess_log.JPG){:width="700px"}
+
+
+Re-check lại. Ta lại quay lại bước 3, thay bằng sign principal là ```zone-edr``` thử bằng ```zone-siem``` sau đó dùng Certificate này SSH lại thì thấy lại không login được. Lý giải cho việc này là vì đầu server ta đang để nội dung file ```/etc/ssh/auth_principals/root``` không có chứa zone-siem trong đó. Nên lỗi là điều dễ hiểu.
+
+![Ssh Principle suc log]({{site.url}}/assets/img/2021/05/28/20210528_svr_princ.JPG){:width="700px"}
+
+Bài viết cũng khá dài nên tôi xin dừng tại đây. Các nội dung tôi mô tả chỉ là những nội dung cơ bản mang tính nguyên lý. Bạn hoàn toàn có thể custome cho phù hợp với môi trường sử dụng thực tế của mình. SSH còn khá nhiều các tính năng thú vị nữa mà bạn có thể khám phá. Tôi không kể nữa đâu, bạn nên bắt tay vào làm để cho thêm phần ly kỳ. Chắc là bạn sẽ thích nó thôi. Let's try.
 
 **Tham khảo**
 
