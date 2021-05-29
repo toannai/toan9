@@ -128,6 +128,9 @@ Việc tiếp theo là tạo ra principals file. Nội dung file này sẽ chỉ
 
 Chú ý phần bôi đỏ. Do tôi đang ssh bằng root nên file này là root. Trường hợp ssh bằng user khác ta tạo các file có tên là username tương ứng. 
 
+Không quên restart lại ssh service
+
+![restart ssh]({{site.url}}/assets/img/2021/05/28/20210528_restartsshd.JPG){:width="700px"}
 
 
 **Tham khảo**
