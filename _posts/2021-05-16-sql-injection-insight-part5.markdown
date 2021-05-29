@@ -30,7 +30,7 @@ Bạn hãy nhớ lấy điều này, ta sẽ dùng tới nó ở phần sau.
 
 ## 2. UNION base SQL Injection
 
-Khi một ứng dụng có lỗ hổng SQL injection kết quả của query có thể được trả lại bên trong response của ứng dụng, từ khóa UNION có thể được sử dụng để giúp ta lấy được dữ liệu từ các bảng khác trong database. Đây là kết quả của SQL Injection UNION attack.
+Khi một ứng dụng có lỗ hổng SQL injection kết quả của query có thể được trả lại bên trong response của ứng dụng, bằng việc lợi dụng từ khóa UNION có thể giúp ta lấy được dữ liệu từ các bảng khác trong database. Đây là kết quả của SQL Injection UNION attack.
 
 Ví dụ:
 Giả sử truy vấn nguyên bản ban đầu như thế này (với product_id là được truyền vào từ người dùng)
