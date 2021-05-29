@@ -122,7 +122,7 @@ Thay bằng việc chỉ cấu hình thêm thêm mỗi public key của CA vào 
 
 ![sshd 2]({{site.url}}/assets/img/2021/05/28/20210528_sshd2.JPG){:width="700px"}
 
-Việc tiếp theo là tạo ra principals file
+Việc tiếp theo là tạo ra principals file. Nội dung file này sẽ chỉ định principal cho phép người dùng ssh. 
 
 ![principals 2]({{site.url}}/assets/img/2021/05/28/20210528_principals.JPG){:width="700px"}
 
