@@ -7,7 +7,7 @@ img: 2021/05/16/210516_sql_injections.png
 fig-caption: # Add figcaption (optional)
 tags: [Security, WebSecurity]
 ---
-Buổi hôm nay tối sẽ đi sâu vào SQL Injection UNION base. Theo tôi đây không hẳn là một loại SQL Injection mà thực sự nó là một kỹ thuật trong khai thác SQL Injection thì hợp lý hơn. Nhưng hãy quên cái đó đi, không quan trọng cho lắm. Chúng ta bắt đầu nào.
+Buổi hôm nay tối sẽ đi sâu vào phân tích SQL Injection UNION base. Theo tôi đây không hẳn là một loại SQL Injection mà thực sự nó là một kỹ thuật trong khai thác SQL Injection thì hợp lý hơn. Nhưng hãy quên cái đó đi, không quan trọng cho lắm. Chúng ta bắt đầu nào.
 
 
 ## 1. Nhắc lại về cú pháp lệnh UINION trong SQL Query
@@ -26,6 +26,7 @@ Kết quả của câu lệnh sẽ là một tập kết quả với 2 cột bao
 Điều kiện để câu lệnh UNION có thể thực hiện được là:
 * Câu lệnh query trước và sau UNION phải trả lại cùng số cột. Theo ví dụ trên cả 2 query đều trả lại 2 cột.
 * Data types mỗi cột trả lại phải tưởng thích (cùng hoặc có thể convert lẫn nhau) giữa các queries. Theo ví dụ trên a với c, b với d phải tương thích nhau.
+Bạn hãy nhớ lấy điều này, ta sẽ dùng tới nó ở phần sau.
 
 ## 2. UNION base SQL Injection
 
