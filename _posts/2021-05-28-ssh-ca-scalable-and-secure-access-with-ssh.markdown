@@ -35,7 +35,9 @@ Phần này tôi sẽ mô tả chi tiết cách làm ở mức đơn giản nh�
 
 ### Bước 1: Tạo CA Server và cấu hình public key của CA lên SERER đích
 
-* Sau khi SSH vào Sign Server việc đầu tiên cần thực hiện là tạo một CA. Việc này đơn giản chỉ là sinh ra một cặp private - public key trên Sign Server. 
+* Tạo CA
+
+Sau khi SSH vào Sign Server việc đầu tiên cần thực hiện là tạo một CA. Việc này đơn giản chỉ là sinh ra một cặp private - public key trên Sign Server. 
 
 ![gen ca dir]({{site.url}}/assets/img/2021/05/28/20210528_gen_ca.JPG){:width="700px"}
 
@@ -43,7 +45,9 @@ Lệnh cuối sử dụng để sinh cặp private - public key sẽ hỏi passp
 
 ![ca dir]({{site.url}}/assets/img/2021/05/28/20210528_ca.JPG){:width="700px"}
 
-* SSH vào SERVER đích (Đoạn sau của bước 1 này thực hiện trên SERVER đích), ta tạo file ``/etc/ssh/ca.pub`` với nội dung copy từ nội dung của file ca.pub trên Sign Server. Sau đó change lại mode cho file này thành 0644
+* Add CA public key vào SERVER đích
+
+SSH vào SERVER đích (Đoạn sau của bước 1 này thực hiện trên SERVER đích), ta tạo file ``/etc/ssh/ca.pub`` với nội dung copy từ nội dung của file ca.pub trên Sign Server. Sau đó change lại mode cho file này thành 0644
 
 ![chmod ca dir]({{site.url}}/assets/img/2021/05/28/20210528_chmod_ca.JPG){:width="700px"}
 
@@ -106,9 +110,24 @@ Hãy chú ý đoạn **ID mfdutra (serial 1) CA**. Rõ ràng là ta đã đăng 
 
 Ok vậy là bước đầu ta đã thành công với việc đăng nhập ssh sử dụng certificate (SSH-CA).
 
-### Bước 3': Ký public key của Client với Principals 
+### Ký public key của Client với Principals 
 
-Mai viết tiếp he,
+Quay trở lại vấn đề, cụm server của tôi được chia thành rất nhiều project khác nhau. Thỉnh thoảng tôi cần cấp cho thành viên truy cập vào server của project mình tham gia sử dụng trong một khoảng thời gian nhất định. Giờ ta sẽ thực hiện việc này với SSH-CA.
+
+Để lấy ví dụ tôi tạo 3 zones: zone-edr, zone-siem and root-everywhere. Trong đó zone-edr sẽ gồm các server của dự án edr, zone-siem gồm các server dự án siem còn root-everywhere dùng trong trường hợp muốn cấp quyền vào toàn bộ server. Với SSH-CA gọi khái niệm này là các **principals**
+
+Ở Bước 1 phần **Add CA public key vào SERVER đích** ta đổi lại một chút như sau:
+
+Thay bằng việc chỉ cấu hình thêm thêm mỗi public key của CA vào file /etc/ssh/sshd_config tôi sẽ bổ sung thêm dòng sau vào file này ```AuthorizedPrincipalsFile /etc/ssh/auth_principals/%u```
+
+![sshd 2]({{site.url}}/assets/img/2021/05/28/20210528_sshd2.JPG){:width="700px"}
+
+Việc tiếp theo là tạo ra principals file
+
+![principals 2]({{site.url}}/assets/img/2021/05/28/20210528_principals.JPG){:width="700px"}
+
+Chú ý phần bôi đỏ. Do tôi đang ssh bằng root nên file này là root. Trường hợp ssh bằng user khác ta tạo các file có tên là username tương ứng. 
+
 
 
 **Tham khảo**
