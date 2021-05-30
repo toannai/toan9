@@ -13,31 +13,31 @@ Tôi hay có thói quen khi cài server thì dùng automation tool (saltstack/an
 ###  Hiểu các thông tin hiển thị của top,
 
 Đầu tiên cùng nhau ngó qua xem top cung cấp cho ae những thông tin gì nào?
-![top ]( {{site.url}}/assets/img/2019/05/25/top-1.png)
+![top ]( {{site.url}}/assets/img/2019/05/25/top-1.png){:width="600px"}
 
 * Bắt đầu từ dòng 1, từ trái -> phải ta sẽ thấy current system time – uptime – user logon system – load average.
 
-![top - info 1]( {{site.url}}/assets/img/2019/05/25/1.png)
+![top - info 1]( {{site.url}}/assets/img/2019/05/25/1.png){:width="600px"}
 
 * Dòng 2 liệt kê số lượng các task. Nói chung khá quen đọc cái hiểu liền, chỉ có khái niệm zombie là hơi mới 🙂 Zomebie process là process mà đã kết thúc (exit) nhưng entry vẫn chiếm trong bảng process table vì tiến trình cha sinh ra nó vẫn còn sống. Lý giải tại sao không “được” giải phóng mà vẫn phải giữ lại ae có thể đọc tại đây https://www.howtogeek.com/119815/htg-explains-what-is-a-zombie-process-on-linux/
 
-![top - info 2]( {{site.url}}/assets/img/2019/05/25/2.png)
+![top - info 2]( {{site.url}}/assets/img/2019/05/25/2.png){:width="600px"}
 
 * Dòng 3 hiển thị tỉ lệ sử dụng cpu time. us – user space, sys – system space, ni – waste cpu for nice/renice.
 
-![top - info 3]( {{site.url}}/assets/img/2019/05/25/3-1.png)
+![top - info 3]( {{site.url}}/assets/img/2019/05/25/3-1.png){:width="600px"}
 
 * Dòng 4 hiển thị tỉ lệ sử dụng bộ nhớ. Ae có thể tham khảo bài viết này của tôi [Nội dung người lớn - Click để hiển thị](https://toannn.com/notes/xac-dinh-luong-ram-free-tren-linux.html)
 
-![top - info 4]( {{site.url}}/assets/img/2019/05/25/4-1.png)
+![top - info 4]( {{site.url}}/assets/img/2019/05/25/4-1.png){:width="600px"}
 
 * Dòng 5: Thông tin về tỉ lệ swap sử dụng.
 
-![top - info 5]( {{site.url}}/assets/img/2019/05/25/4-2.png)
+![top - info 5]( {{site.url}}/assets/img/2019/05/25/4-2.png){:width="600px"}
 
 * Dòng 6: Thông tin chi tiết về tỉ lệ sử dụng tài nguyên của từng process. Ở đây có 1 số cột la lạ, còn lại khá clear rồi, dĩ nhiên tôi chỉ điểm qua 1 số cột là lạ thôi.
 
-![top - info 6]( {{site.url}}/assets/img/2019/05/25/5.png)
+![top - info 6]( {{site.url}}/assets/img/2019/05/25/5.png){:width="600px"}
 
 PR và NI: NI – nice là độ ưu tiên của process. Nghe đâu giá trị này từ -20 tới 19. Càng thấp ưu tiên càng cao. Độ ưu tiên này được xài đến khi thiếu/hết MEM các process có độ ưu tiên thấp (nice lớn) sẽ bị queue xử lý sau (nếu chưa chạy) hoặc kill đi (nếu đang chạy mà MEM hết). Tương tự PR là scheduling priority là độ ưu tiên xử lý của cpu. Khi cpu hết các process có độ ưu tiên thấp sẽ bị queue xử lý sau process có độ ưu tiên cao.
 

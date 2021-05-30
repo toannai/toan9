@@ -10,7 +10,7 @@ tags: [Linux]
 
 Đi làm tính ra 4, 5 năm rồi. Làm chỗ nào cũng có xài linux (Dĩ nhiên mức độ ít - nhiều khác nhau). Đã build kha khá, đủ loại phần mềm opensource rồi nhưng chưa bao giờ build kernel cả. Mà build làm éo gì nếu nhu cầu chưa thực sự cần =)). Nhớ hồi xin thực tập có ông pv hỏi mình đã build kernel linux bao giờ chưa =)) mọe hồi đó óe máo. Câu hỏi làm thắng bé vừa sợ vừa ngưỡng mộ vl, nhưng sv biết cái éo gì nên chắc chắn trả lời là "Chưa rồi" - Thật ra tới giờ vẫn chưa mà. OK không sao hôm nay build thử xem?
 
-![Kernel buid1]( {{site.url}}/assets/img/2019/06/02/kernel1.png)
+![Kernel buid1]( {{site.url}}/assets/img/2019/06/02/kernel1.png){:width="600px"}
 
 >Trước khi đọc bài này tôi nghĩ ae nên đọc bài linux boot process trước để có kiến thức linux nó load nhân ntn để còn biết cách cài nhân sau build xong. [Nội dung người lớn - Click để hiển thị ...](https://toannn.com/job/2019/05/31/Linux-boot-process.html)
 
@@ -53,7 +53,7 @@ Vì file tải về được nến nên đương nhiên phải giải nén/un-co
 ```
 
 >Ghê thẹc, source code gì mà hơn 900MB
-![Kernel buid1]( {{site.url}}/assets/img/2019/06/02/source.PNG)
+![Kernel buid1]( {{site.url}}/assets/img/2019/06/02/source.PNG){:width="600px"}
 
 
 ### 2. Cấu hình thông số/thuộc tính cho kernel 
@@ -75,7 +75,7 @@ Và copy file có sẵn trên hệ thống đang chạy vào
 
 Lựa chọn  khác: ^^ Còn nếu ae vẫn thích thì bên linux nó cũng cung cấp cho ae công cụ để ae tự xử. Ae thử dùng cái menu config này nha. Gõ ```make menuconfig```. Bản chất là nó là công cụ để edit cái file .config để ta đỡ nhầm thôi. 
 
-![Menu module]( {{site.url}}/assets/img/2019/06/02/module_menu.PNG)
+![Menu module]( {{site.url}}/assets/img/2019/06/02/module_menu.PNG){:width="600px"}
 
 
 ### 3. Tiến hành compile
@@ -94,7 +94,7 @@ make -j $(nproc) #proc là số thread sử dụng. Máy tôi có 4 core nên t�
 
 Và quá trình build bắt đầu. Nhìn ghê vê lù.
 
-![Build]( {{site.url}}/assets/img/2019/06/02/build.PNG)
+![Build]( {{site.url}}/assets/img/2019/06/02/build.PNG){:width="600px"}
 
 >Detected: Đoạn build này lâu vc ý ae ạ. Tôi đợi mất cả 1 buổi chiều để build kernel với 1 máy ảo 4G RAM, 2x2CPU. Đâu đó mất 3h liền, càng đợi hun hút. Lời khuyên cho các ae muốn thử là phải chạy ở cái máy khủng khủng một tí.
 
@@ -110,7 +110,7 @@ Lệnh này đơn giản làm công việc copy modules trong thư mục tương
 
 Không tin ae ls ra coi xem
 
-![Module lib]( {{site.url}}/assets/img/2019/06/02/modules_lib.png)
+![Module lib]( {{site.url}}/assets/img/2019/06/02/modules_lib.png){:width="600px"}
 
 > Từ hình ae thấy là nó link ra thư mục build lúc đầu nên lần sau ae build thì chú ý là nên copy code vào vào ```/usr/src``` rồi build. Tuyệt đối không được xóa thư mục build kể cả khi đã xong vì nó có link vào đây. 
 
@@ -121,11 +121,11 @@ Okey, đương nhiên cài xong thì ae phải thử cài xong xem nó có chạ
 
 Ở bài [Linux boot process](https://toannn.com/job/2019/05/31/Linux-boot-process.html) tôi có nói là nhân được đặt trong thư mục /boot/ dưới dạng một file nén. Như vậy theo phỏng đoán khả năng là nhân mới build chắc cũng phải được copy vào đây. Và thông tin nhân mới cũng phải được cập nhật trong boot loader - Grub2 để khi boot máy còn biết mà load nhân mới vào. Vậy để kiểm chứng tôi sẽ kiểm tra thư mục /boot trước khi cài nhân mới.
 
-![/boot]( {{site.url}}/assets/img/2019/06/02/kernel.PNG)
+![/boot]( {{site.url}}/assets/img/2019/06/02/kernel.PNG){:width="600px"}
 
 Kiểm tra cả file cấu hình của grub2 là ```/boot/grub2/grub.cfg```
 
-![grub before]( {{site.url}}/assets/img/2019/06/02/grubmenu2.PNG)
+![grub before]( {{site.url}}/assets/img/2019/06/02/grubmenu2.PNG){:width="600px"}
 
 #### Xong xuôi giờ tôi bắt đầu cài nhân mới nha 
 
@@ -137,13 +137,13 @@ make install
 
 Verify lại nhận định ban đầu xem sau khi cài nhân mới có thay đổi gì. Đầu tiên tôi kiểm tra thư mục ``/boot/``
 
-![/boot]( {{site.url}}/assets/img/2019/06/02/before.PNG)
+![/boot]( {{site.url}}/assets/img/2019/06/02/before.PNG){:width="600px"}
 
 Đúng như dự đoán ban đầu, so sánh với hình vừa chụp lại trên nhân mới được copy vào /boot, thêm các file ```/boot/vmlinuz-5.1.6``` ngoài ra có thêm ```/boot/initramfs-5.1.6.img```, ```/boot/System.map-5.1.6```
 
 Kiểm tra lại file cầu hình của grub là ```/boot/grub2/grub.cfg``` thì tôi cũng thấy file này thay đổi, cụ thể có thêm đoạn cấu hình grub cho nhân mớis.
 
-![/boot]( {{site.url}}/assets/img/2019/06/02/config.PNG)
+![/boot]( {{site.url}}/assets/img/2019/06/02/config.PNG){:width="600px"}
 
 * ***Cập nhật lại grub:***
 
@@ -166,17 +166,17 @@ grubby --default-kernel   #Kiểm tra lại tên của default kernel.
 
 Trước khi reboot lại tôi kiểm tra lại kernel hiện đang dùng là gì
 
-![uname 1]( {{site.url}}/assets/img/2019/06/02/unamebefore.PNG)
+![uname 1]( {{site.url}}/assets/img/2019/06/02/unamebefore.PNG){:width="600px"}
 
 Reboot lại máy ```reboot```
 
 Lúc boot lên màn hình mới thấy có nhân mới rồi ae, haha,
 
-![uname 1]( {{site.url}}/assets/img/2019/06/02/console.PNG)
+![uname 1]( {{site.url}}/assets/img/2019/06/02/console.PNG){:width="600px"}
 
 Vào kiểm tra thì thấy nhân mới được load rồi, ngon quá ae.
 
-![uname 1]( {{site.url}}/assets/img/2019/06/02/uname_after.PNG)
+![uname 1]( {{site.url}}/assets/img/2019/06/02/uname_after.PNG){:width="600px"}
 
 
 Vậy là kết thúc việc build lại nhân, nói chung không khó lắm chỉ là mất thời gian thui. Thế mà mấy ông pv ngày xưa làm mình đau tim vãi lúa.
@@ -185,7 +185,7 @@ Vậy là kết thúc việc build lại nhân, nói chung không khó lắm ch�
 
 ### X.PS: Tổng hợp ngắn các bước để build một package opensource sử dụng công cụ cmake
 
-![FBi]( {{site.url}}/assets/img/2019/06/02/fbi.jpg)
+![FBi]( {{site.url}}/assets/img/2019/06/02/fbi.jpg){:width="600px"}
 
 Bài khá dài, chắc ae nào đọc tới đây cũng choáng váng cmnr. Thật ra cả bài này tôi chỉ muốn ae nhớ đoạn này thôi: **Để buile một opensource (Áp dụng cho toàn bộ các opensource sử dụng cmake nha)** ta làm các bước sau:
 
@@ -199,6 +199,6 @@ Bài khá dài, chắc ae nào đọc tới đây cũng choáng váng cmnr. Th�
 
 Have a good night ae,
 
-***Tham khảo***
+**Tham khảo**
 
 [https://www.cyberciti.biz](https://www.cyberciti.biz/tips/compiling-linux-kernel-26.html)
