@@ -9,3 +9,6 @@ tags: [Security, WebSecurity]
 ---
 Sau mấy ngày chuyển chủ đề cho đỡ chán. Buổi nay tôi lại tiếp tục bài viết tiếp theo trong Series SQL Injection insight. Nói chung sẽ cố gắng viết theo kiểu cuốn gói viết tới đâu xong tới đó tránh để bị **mốc** vì lười. Nội dung hôm nay sẽ về Blind SQL Injection.
 
+## Blind SQL Injection là gì
+Blind SQL injection xuất hiện khi một ứng dụng chứa lỗ hổng SQL Injection nhưng khi khai thác các HTTP responses không chứa kết quả của truy vấn SQL hoặc bất kỳ lỗi nào cơ sở dữ liệu liên quan. Blind - Tiếng việt nghĩa là **mù**, đúng nghĩa không nhìn thấy bất cứ biểu hiện gì ở phía ứng dụng khi cõ lỗi bị khai thác.
+
