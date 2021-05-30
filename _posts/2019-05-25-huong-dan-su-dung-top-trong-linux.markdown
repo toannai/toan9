@@ -49,25 +49,25 @@ VIR, RES, SHR, %MEM: Các trường này mô tả tỉ lệ sử dụng MEM củ
 
 *  Đầu tiên bật top lên. Nhấn h để xem các help của top.
 
-![top - h]( {{site.url}}/assets/img/2019/05/25/top_h.png)
+![top - h]( {{site.url}}/assets/img/2019/05/25/top_h.png){:width="600px"}
 
 Xem nào cũng kha khá tùy chọn đó chứ. Nhưng thôi, chắc tôi sẽ chỉ tập trung vào 1 số tùy chọn chính hay dùng thôi ae ạ. 
 
 * Sau khi thoát ra khỏi help bằng q. Thử nhấn f dùng mũi tên lên/xuống để di chuyển, nhấn tab để chọn thêm/bớt trường hiển thị. Ví dụ chọn thêm trường swap. Di chuyển xống swap và nhấn tab.
 
-![top - swap]( {{site.url}}/assets/img/2019/05/25/sw.png)
+![top - swap]( {{site.url}}/assets/img/2019/05/25/sw.png){:width="600px"}
 
 Cũng trong cửa số đó nếu con trỏ màu trắng đang ở trường đó ae có thể nhấn s để sort theo trường.
 
-![top - s]( {{site.url}}/assets/img/2019/05/25/soft_base.png)
+![top - s]( {{site.url}}/assets/img/2019/05/25/soft_base.png){:width="600px"}
 
 Lúc này kq xuất hiện thêm trường swap và được sort rất tử tế.
 
-![top - sort]( {{site.url}}/assets/img/2019/05/25/topsort.png)
+![top - sort]( {{site.url}}/assets/img/2019/05/25/topsort.png){:width="600px"}
 
 *  Trong lệnh top nhấn c để show ra command của từng process
 
-![top - sort]( {{site.url}}/assets/img/2019/05/25/command.png)
+![top - sort]( {{site.url}}/assets/img/2019/05/25/command.png){:width="600px"}
 
 Lặp lại nhấn c sẽ ẩn command 😉
 
