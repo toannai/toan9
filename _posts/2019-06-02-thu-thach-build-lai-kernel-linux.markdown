@@ -1,7 +1,6 @@
-
 ---
 layout: post
-title: Thử thách build lại kernel linux,,
+title: Thử thách build lại kernel linux,
 date: 2019-06-02 00:32:20 +0700
 description: # Add post description (optional)
 img: # Add image post (optional)

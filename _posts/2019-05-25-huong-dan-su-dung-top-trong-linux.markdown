@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linux OS đã làm những việc gì trong quá trình boot?,
+title: Hướng dẫn sử dụng lệnh top trong linux,
 date: 2019-05-25 00:32:20 +0700
 description: # Add post description (optional)
 img: # Add image post (optional)
