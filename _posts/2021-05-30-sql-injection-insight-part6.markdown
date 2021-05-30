@@ -22,7 +22,7 @@ Phân tích về trường hợp này ta sẽ lấy ví dụ về một ứng d�
 ```
 Cookie: TrackingId=u5YD3PapBcR4lN3e7Tj4
 ```
-Khi request lên đến server TrackingId ứng dụng sẽ sinh ra câu truy vấn SQL như sau:
+Khi request gửi TrackingId đến server, phía ứng dụng sẽ sinh ra câu truy vấn SQL như sau:
 
 ```
 SELECT TrackingId FROM TrackedUsers WHERE TrackingId = 'u5YD3PapBcR4lN3e7Tj4'
