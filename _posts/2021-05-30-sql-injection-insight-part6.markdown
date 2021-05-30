@@ -113,6 +113,6 @@ Tương tự như các trường hợp mô tả trên ta lại có thể kiểm 
 ## Khai thác bind SQL Injection sử dụng kỹ thuật out-of-band (OAST) 
 
 
-** Tham khảo**
+**Tham khảo**
 
 [1] [portswigger.net](https://portswigger.net/web-security/sql-injection/blind)
