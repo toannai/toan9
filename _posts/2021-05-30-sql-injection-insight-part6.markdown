@@ -68,6 +68,18 @@ Cứ thế ta lần lượt xác định các ký tự tiếp theo trong passwor
 ## Khai thác blind SQL Injection bằng việc trigger SQL error (lỗi SQL)
 
 
+Ở ví dụ trước mặc dù kết quả trả lại của truy vấn không hiển thị với người dùng tuy nhiên phía ứng dụng lại phản hồi trở lại cho ta những dấu hiệu tương ứng để giúp ta nhận biết kết quả của truy vấn là TRUE hay FALSE. Tuy nhiên trong một số tình huống kỹ thuật này cũng không thể thực hiện được do phía ứng dụng không thể hiện sự khác biệt nào. 
+
+Trong tình huống này chúng ta có thể thử phương án quan sát phản hồi của ứng dụng trả lại dựa trên điều kiện trigger SQL error phụ thuộc vào điều kiện Injection. Việc này có thể được thực hiện dựa trên việc sửa đổi câu query làm cho nó gây ra database eror nếu điều kiện inject là TRUE và không gây ra database error nếu điều kiện injection là FALSE.
+
+Để mô tả ý tưởng này giả sử ta gửi 2 request bao gồm TrackingId như sau:
+
+```
+xyz' AND (SELECT CASE WHEN (1=2) THEN 1/0 ELSE 'a' END)='a
+xyz' AND (SELECT CASE WHEN (1=1) THEN 1/0 ELSE 'a' END)='a
+```
+
+
 ## Khai thác blind SQL Injection bằng việc trigger time dealays
 
 
