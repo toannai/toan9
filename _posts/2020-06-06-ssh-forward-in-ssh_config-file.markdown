@@ -69,7 +69,7 @@ Host sftpserver
 Như vậy là khi ta ssh vào sftpserver thì ssh-client sẽ tự động forward kết nối của chúng ta qua SOCK proxy server tại 127.0.0.1:5555.
 
 
-#### ....
+#### Góc linh hoạt,
 
 Ta cũng có thể sử dụng kết hợp các cách thức trên một cách linh hoạt theo ý đồ của chúng ta. He, rõ ràng là open-ssh có thể giúp chúng ta làm cơ số các việc hay ho các bạn nhỉ.
 
