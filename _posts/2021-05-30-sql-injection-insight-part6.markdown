@@ -29,6 +29,30 @@ SELECT TrackingId FROM TrackedUsers WHERE TrackingId = 'u5YD3PapBcR4lN3e7Tj4'
 ```
 Query này chứa lỗi SQL Injection nhưng kết quả của nó sẽ không được trả lại phía user. Tuy nhiên ứng dụng sẽ có những biểu hiện khác nhau phụ thuộc vào kết quả trả lại của lệnh truy vấn trên. Nếu trả lại data (Ghi nhận TrackingId) thì ứng dụng sẽ trả lại message "Welcome back" bên trong page.
 
+Hành vi này là đủ để có thể khai thác blind SQL Injection và thu thập thông tin bằng việc trigger các điều kiện khác nhau của response tương ứng điều kiện Inject vào ứng dụng. Ví dụ giả sử ta gửi các request bao gồm các giá trị TrackingId như sau:
+
+```
+…xyz' AND '1'='1
+…xyz' AND '1'='2
+```
+Giá trị đầu tiên sẽ trả lại kết quả bởi vì AND '1'='1 có giá trị là TRUE và message "Welcome back" sẽ được hiển thị. Trong khi đó giá trị thứ 2 ứng dụng sẽ không hiển thị gì vì điều kiện Inject có giá trị là FALSE. Với mỗi lần Inject đơn lẻ ta có thể xác định được câu trả lời tương ứng (True hoặc False) nên việc khai thác nhìn chung mất thời gian một chút.
+
+Lấy ví dụ chúng ta muốn lấy password của user Administrator trong bảng Users có cột cột Username và Password. Ta có thể thực việc này bằng việc gửi một tá các inputs để test nhầm thu thập từng ký tự của Password. Để làm việc này chúng ta bắt đầu với Input như sau:
+
+```
+xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm
+```
+
+Nếu message "Welcome back " được trả lại thì chứng tỏ điều kiện Inject có giá trị là true bởi vậy ký tự đầu tiên của Password sẽ lớn hơn m.
+
+Tiếp tục ta sẽ gửi input dưới đây:
+
+```
+xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 't
+```
+
+
+
 ## Khai thác blind SQL Injection bằng việc trigger SQL error (lỗi SQL)
 
 
