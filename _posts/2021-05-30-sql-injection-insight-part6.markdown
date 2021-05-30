@@ -90,9 +90,9 @@ xyz' AND (SELECT CASE WHEN (Username = 'Administrator' AND SUBSTRING(Password, 1
 
 Trong nhiều trường hợp không thể sử dụng cả 2 kỹ thuật trên vì không có sự khác biệt giữa phản hồi của ứng dụng khi câu lệnh SQL có kết quả True/False, hoặc Database error có hay không. Trong những trường hợp này ta có thể thử một phương pháp khác gọi là TIME DELAYS.
 
-Các câu query SQL thường xử lý một cách bất động bộ bởi ứng dụng, bởi vậy delay việc thi hành các câu lệnh SQL sẽ gây ra delay HTTP response. Điều này cho phép chúng ta suy ra điều kiện đưa vào dựa trên thời gian thực hiện trước khi nhận được HTTP response.
+Các câu query SQL thường xử lý một cách bất động bộ bởi ứng dụng, bởi vậy delay việc thi hành các câu lệnh truy vấn SQL sẽ gây ra delay HTTP response. Điều này cho phép chúng ta suy ra tính đứng đắn của điều kiện truyền vào dựa trên thời gian thực thi của ứng dụng (từ khi truyển pay load vào đến khi nhận được HTTP response).
 
-Kỹ thuật trigger TIME DELAY phụ thuộc rất nhiều vào kiểu database được sử dụng. Trên MS SQL Server ta có thể kiểm tra và kích hoạt TIME DELAY dựa trên cách diễn đạt là TRUE hay không.
+Kỹ thuật trigger TIME DELAY phụ thuộc rất nhiều vào kiểu database được sử dụng ([List payload ham khảo](https://portswigger.net/web-security/sql-injection/cheat-sheet)). Trên MS SQL Server ta có thể kiểm tra và kích hoạt TIME DELAY dựa trên cách diễn đạt là TRUE hay không.
 
 ```
 '; IF (1=2) WAITFOR DELAY '0:0:10'--
