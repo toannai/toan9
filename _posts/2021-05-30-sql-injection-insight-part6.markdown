@@ -78,9 +78,36 @@ Trong tình huống này chúng ta có thể thử phương án quan sát phản
 xyz' AND (SELECT CASE WHEN (1=2) THEN 1/0 ELSE 'a' END)='a
 xyz' AND (SELECT CASE WHEN (1=1) THEN 1/0 ELSE 'a' END)='a
 ```
+Các inputs này có sử dụng từ khóa CASE để kiểm tra điều kiện và trả lại trả lại một biểu thức tùy thuộc vào điều kiện TRUE hoặc FALSE. Với input thứ nhất biểu thức CASE có kết quả là 'a'. Điều này làm cho kết quả của lệnh SQL ban đầu cũng không có lỗi. Với input thứ 2, phép tính 1/0 sẽ lỗi chi cho 0, lỗi này rất có thể sẽ làm thay đổi HTTP response của ứng dụng và chúng ta có thể sử dụng chúng để phân biệt với trường hợp trả lại điều kiện là TRUE.
 
+Sử dụng kỹ thuật này linh hoạt áp dụng theo cách đã mô tả ở ví dụ phần trên (Sử dụng binary search) ta lại có thể kiểm tra từng ký tự sau mỗi lần thử.
+
+```
+xyz' AND (SELECT CASE WHEN (Username = 'Administrator' AND SUBSTRING(Password, 1, 1) > 'm') THEN 1/0 ELSE 'a' END FROM Users)='a
+```
 
 ## Khai thác blind SQL Injection bằng việc trigger time dealays
+
+Trong nhiều trường hợp không thể sử dụng cả 2 kỹ thuật trên vì không có sự khác biệt giữa phản hồi của ứng dụng khi câu lệnh SQL có kết quả True/False, hoặc Database error có hay không. Trong những trường hợp này ta có thể thử một phương pháp khác gọi là TIME DELAYS.
+
+Các câu query SQL thường xử lý một cách bất động bộ bởi ứng dụng, bởi vậy delay việc thi hành các câu lệnh SQL sẽ gây ra delay HTTP response. Điều này cho phép chúng ta suy ra điều kiện đưa vào dựa trên thời gian thực hiện trước khi nhận được HTTP response.
+
+Kỹ thuật trigger TIME DELAY phụ thuộc rất nhiều vào kiểu database được sử dụng. Trên MS SQL Server ta có thể kiểm tra và kích hoạt TIME DELAY dựa trên cách diễn đạt là TRUE hay không.
+
+```
+'; IF (1=2) WAITFOR DELAY '0:0:10'--
+'; IF (1=1) WAITFOR DELAY '0:0:10'--
+```
+
+Câu lệnh đầu tiên sẽ không trigger TIME DELAY bởi 1=2 có kết quả là flase. Câu lệnh thứ 2 sẽ delay 10s bởi điều kiện 1=1 có kết quả là True.
+
+Tương tự như các trường hợp mô tả trên ta lại có thể kiểm tra từng ký tự tại mỗi lần test bằng câu lệnh sau.
+
+```
+'; IF (SELECT COUNT(Username) FROM Users WHERE Username = 'Administrator' AND SUBSTRING(Password, 1, 1) > 'm') = 1 WAITFOR DELAY '0:0:{delay}'--
+```
+
+
 
 
 ## Khai thác bind SQL Injection sử dụng kỹ thuật out-of-band (OAST) 
