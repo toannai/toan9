@@ -43,7 +43,7 @@ Lấy ví dụ chúng ta muốn lấy password của user Administrator trong b�
 xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm
 ```
 
-Nếu message "Welcome back " được trả lại thì chứng tỏ điều kiện Inject có giá trị là true bởi vậy ký tự đầu tiên của Password sẽ lớn hơn m.
+Nếu message "Welcome back" được trả lại thì chứng tỏ điều kiện Inject có giá trị là true bởi vậy ký tự đầu tiên của Password sẽ lớn hơn m.
 
 Tiếp tục ta sẽ gửi input dưới đây:
 
