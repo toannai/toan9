@@ -65,7 +65,7 @@ xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator')
 
 Cứ thế ta lần lượt xác định các ký tự tiếp theo trong password của user Administrator cho tới ký tự cuối cùng.
 
-## Khai thác blind SQL Injection bằng việc trigger SQL error (lỗi SQL)
+## Khai thác blind SQL Injection bằng việc trigger SQL error
 
 
 Ở ví dụ trước mặc dù kết quả trả lại của truy vấn không hiển thị với người dùng tuy nhiên phía ứng dụng lại phản hồi trở lại cho ta những dấu hiệu tương ứng để giúp ta nhận biết kết quả của truy vấn là TRUE hay FALSE. Tuy nhiên trong một số tình huống kỹ thuật này cũng không thể thực hiện được do phía ứng dụng không thể hiện sự khác biệt nào. 
