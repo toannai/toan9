@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SQL Injection insight [Part 5] - Blind SQL Injection,
+title: SQL Injection insight [Part 6] - Blind SQL Injection,
 date: 2021-05-30 00:32:20 +0700
 description: Phân loại SQL Injection và kinh nghiệm xử lý từng loại,
 img: 2021/05/30/210530_sql_injections.png
