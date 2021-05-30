@@ -7,6 +7,7 @@ img: # Add image post (optional)
 fig-caption: # Add figcaption (optional)
 tags: [Linux]
 ---
+
 Tôi hay có thói quen khi cài server thì dùng automation tool (saltstack/ansible) hardening một số cấu hình trên server (set password requirement, ssh key, disable ssh root, limit ip ssh, siết iptables) + cài luôn tmux, htop, systats luôn anh em ạ. Do có sẵn nên khi kiểm tra stats svr tôi hay dùng htop màu mè, trực quan, tiện lợi- Lâu dần thành quen cmnl. Sướng rồi khổ không chịu được nên là vào svr nào mà không có htop phải dùng top bực bội vô cùng – nhìn vào như mớ bòng bon :'( nhưng đời như c, ghét của nào trời trao của ấy, dạo này chuyển cty mới rất nhiều svr thường chỉ có sẵn top, và đặc biệt ko có internet nên cài htop lại phải tunnel các kiểu mệt vl, thế là thôi hôm nay rảnh rang tôi đọc man top và note lại đây vài ý vậy.
 
 ###  Hiểu các thông tin hiển thị của top,
