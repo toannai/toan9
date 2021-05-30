@@ -17,7 +17,7 @@ Việc phát hiện và khai thác blind SQL Injection về cơ bản là sẽ k
 
 ## Khai thác blind SQL Injection bằng việc trigger (kích hoạt) điều kiện các responses
 
-Để demo phần này sẽ lấy ví dụ về một ứng dụng tracking cookies để tổng hợp phân tích về việc sử dụng website. Một request ứng dụng khi gửi liên server sẽ gửi kèm một Cookie header như sau:
+Phân tích về trường hợp này ta sẽ lấy ví dụ về một ứng dụng tracking cookies để tổng hợp phân tích về việc sử dụng website. Một request ứng dụng khi gửi liên server sẽ gửi kèm một Cookie header như sau:
 
 ```
 Cookie: TrackingId=u5YD3PapBcR4lN3e7Tj4
