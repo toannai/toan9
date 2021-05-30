@@ -37,7 +37,9 @@ Hành vi này là đủ để có thể khai thác blind SQL Injection và thu t
 ```
 Giá trị đầu tiên sẽ trả lại kết quả bởi vì AND '1'='1 có giá trị là TRUE và message "Welcome back" sẽ được hiển thị. Trong khi đó giá trị thứ 2 ứng dụng sẽ không hiển thị gì vì điều kiện Inject có giá trị là FALSE. Với mỗi lần Inject đơn lẻ ta có thể xác định được câu trả lời tương ứng (True hoặc False) nên việc khai thác nhìn chung mất thời gian một chút.
 
-Lấy ví dụ chúng ta muốn lấy password của user Administrator trong bảng Users có cột cột Username và Password. Ta có thể thực việc này bằng việc gửi một tá các inputs để test nhầm thu thập từng ký tự của Password. Để làm việc này chúng ta bắt đầu với Input như sau:
+Lấy ví dụ chúng ta muốn lấy password của user Administrator trong bảng Users có cột cột Username và Password. Ta có thể thực việc này bằng việc gửi một tá các inputs để test nhầm thu thập từng ký tự của Password bằng thuật toán Binary Search nổi tiếng - Khoanh vùng dần dần để xác định từng ký tự (Các bạn có thể google đọc thêm về phương pháp này). 
+
+Để làm việc này chúng ta bắt đầu với Input như sau:
 
 ```
 xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 'm
@@ -51,7 +53,17 @@ Tiếp tục ta sẽ gửi input dưới đây:
 xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) > 't
 ```
 
+Nếu ứng dụng không trả lại message "Welcome back" điều đó chỉ ra rằng điều kiện Injection là FALSE bởi vậy ký tự đầu tiên của Password nó sẽ không lớn hơn t.
 
+....
+
+Cho đến cuối cùng khi đã xác định được ký tự đầu tiên của password ta sẽ verified lại bằng payload sau và quan sát message trả lại.
+
+```
+xyz' AND SUBSTRING((SELECT Password FROM Users WHERE Username = 'Administrator'), 1, 1) = 's
+```
+
+Cứ thế ta lần lượt xác định các ký tự tiếp theo trong password của user Administrator cho tới ký tự cuối cùng.
 
 ## Khai thác blind SQL Injection bằng việc trigger SQL error (lỗi SQL)
 
