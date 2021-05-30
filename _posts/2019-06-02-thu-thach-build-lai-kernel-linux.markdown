@@ -135,7 +135,7 @@ Kiểm tra cả file cấu hình của grub2 là ```/boot/grub2/grub.cfg```
 make install
 ```
 
-Veryfy lại nhận định ban đầu xem sau khi cài nhân mới có thay đổi gì. Đầu tiên tôi kiểm tra thư mục ``/boot/``
+Verify lại nhận định ban đầu xem sau khi cài nhân mới có thay đổi gì. Đầu tiên tôi kiểm tra thư mục ``/boot/``
 
 ![/boot]( {{site.url}}/assets/img/2019/06/02/before.PNG)
 
