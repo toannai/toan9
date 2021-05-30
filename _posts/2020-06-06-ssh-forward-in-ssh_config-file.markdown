@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tất tần tật về SSH tunneling trong linux,
-date: 2019-06-02 00:32:20 +0700
+date: 2020-06-06 00:32:20 +0700
 description: # Add post description (optional)
 img: # Add image post (optional)
 fig-caption: # Add figcaption (optional)
