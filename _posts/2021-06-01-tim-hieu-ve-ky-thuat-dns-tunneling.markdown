@@ -25,7 +25,24 @@ Như cái tên của nó, DNS Tunneling là kỹ thuật nhồi dữ liệu (th�
 
 ## Demo DNS Tunneling,
 
+Chuẩn bị:
+1. Server có IP public
+2. Một domain mà bản có thể control các bản ghi
 
+### Bước 1: Tạo một name server để quản lý các bản ghi DNS cho domain của bạn
+
+Bình thường khi mua domain nhà cung cấp hay free luôn ta luôn cái dịch vụ quản lý DNS - bản chất là cho phép ta tạo các bản ghi cho domain của ta trên DNS server của họ. 
+
+Như vậy khi user hỏi (query) một bản ghi DNS bất kỳ nào đó liên quan đến domain của ta (Có thể cần qua một chuỗi hỏi đáp với các server DNS trung gian) thì thằng cuối cùng trả lời bạn sẽ là DNS server của nhà cung cấp domain theo thông tin ta cấu hình trên WEB. 
+
+Tuy nhiên các nhà cung cấp domain cũng cho phép ta custome một chút. Lúc này thay bằng việc DNS của nhà cung cấp trả lại thông tin họ sẽ cho phép ta forward việc trả lại này tới server DNS của ta. Việc này dễ dàng thực hiện bằng việc cấu hình custome Name Server. 
+
+Tôi hay mua domain ở namesilo thì thực hiện như sau:
+
+
+
+
+ 
 
 
 **Tham khảo**
