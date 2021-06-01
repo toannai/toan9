@@ -39,7 +39,19 @@ Tuy nhiên các nhà cung cấp domain cũng cho phép ta custome một chút. L
 
 Tôi hay mua domain ở namesilo thì thực hiện như sau:
 
+* Đầu tiên tạo 2 bản ghi nameserver cho domain trỏ vào ip public của vps làm dns server
 
+![record 1]( {{site.url}}/assets/img/2021/06/01/210601_record1.png)
+
+* Sau đó add 2 bản ghi nameserver vừa tạo vào domain của ta
+
+![record 2]( {{site.url}}/assets/img/2021/06/01/210601_record2.png)
+
+* Test lại bằng cách từ máy bất kỳ (có internet) nslookup domain của ta, cùng lúc tcpdump port 53 trên vps làm dns server mà thấy dns request ta thực hiện là thành công.
+
+![record 2]( {{site.url}}/assets/img/2021/06/01/200601_result.png)
+
+>Chú ý mở port 53 tcp&udp của vps nha. Vì dịch vụ DNS dùng 2 port này.
 
 
  
