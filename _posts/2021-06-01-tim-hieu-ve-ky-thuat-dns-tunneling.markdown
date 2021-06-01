@@ -9,19 +9,19 @@ tags: [Linux]
 ---
 Trước đây hồi làm ở v có đợt hóng thấy redteam có sử dụng DNS Tunneling để bypass firewall. Mấy lần định test mà quanh đi quẩn lại quên, nay nhân dịp có làm một task liên quan nên đọc và viết bài này luôn. 
 
-## Tunneling - khái niệm quá quen thuộc,
+## Từ Tunneling quá quen thuộc đến DNS Tunneling,
 
 Tunneling là một kỹ thuật không mới. Khi nghe về nó ta dễ dàng hình dung tới mô hình nhồi một protocol trong một protocol khác để tạo một kênh kết nối giữa hai điểm.
 
 ![tunnel]( {{site.url}}/assets/img/2021/06/01/210601_tunnel_ssh.png){:width="500px"}
 
-
-
 Mục đích của tunneling có thể là để tạo ra VPN, GRE tunnel, ... tuy nhiên đôi khi nó còn bị lợi dụng để qua mặt (bypass) các Firewall vì trong rất nhiều tình huống hệ thống gần như không có bất kì liên lạc nào với internet ngoại trừ một số protocol nhất định, muốn trao đổi thông tin với internet qua các protocol khác đành phải đi qua con đường lách luật là nhồi nó vào các protocol được cho phép. Thế giới thì đa dạng Tunneling từ SSH, ICMP, HTTP, ... đủ cả.
 
-Như cái tên của nó, DNS Tunneling là kỹ thuật nhồi dữ liệu (thường thấy là TCP/UDP) trong các bản tin DNS.  
+Như cái tên của nó, DNS Tunneling là kỹ thuật nhồi dữ liệu (thường thấy là TCP/UDP) trong các bản tin DNS. 
 
-Để phân tích về kỹ thuật này tôi sẽ đi ngược một chút là demo trước rồi phân tích sau cho nó ngược với bình thường.
+Kỹ thuật này mô tả sơ qua như sau: Dữ liệu gửi từ client sẽ được mã hóa rồi chuyển đổi thành text và được cắt thành từng đoạn text nhỏ (<255). Các đoạn text nhỏ này được dùng làm subdomain cho domain gốc gửi lên dns server dưới dạng DNS query bản ghi txt. Khi lên đến dns server các bản tin query này sẽ được lưu lại đến một số lượng nhất định, đủ sẽ ráp chúng lại thành một khối. Đồng thời mỗi lần nhận được query từ các sub domain này dns server sẽ gửi lại phản hồi cũng là từng mảnh dữ liệu đã được chuyển đổi thành text và cắt nhỏ qua nội dung record txt lại cho client. Client tương tự cũng lưu lại từng bản tin riêng lẻ khi đủ sẽ ráp lại thành một bản tin đầy đủ. OKey như vậy là quá trình truyền tin giữa client và server đã được thực hiện (có thể truyền và nhận dữ liệu).
+
+Để không nói xuông, tôi sẽ đi ngược một chút là demo trước rồi phân tích/kiểm chứng chi tiết sau cho nó ngược với bình thường một chút.
 
 ## Demo DNS Tunneling,
 
