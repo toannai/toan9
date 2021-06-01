@@ -25,7 +25,7 @@ Như cái tên của nó, DNS Tunneling là kỹ thuật nhồi dữ liệu (th�
 
 ## Demo DNS Tunneling,
 
-Chuẩn bị:
+### Chuẩn bị:
 1. Server có IP public
 2. Một domain mà bản có thể control các bản ghi
 
