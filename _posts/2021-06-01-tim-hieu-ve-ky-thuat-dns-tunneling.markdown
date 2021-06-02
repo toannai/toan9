@@ -19,9 +19,8 @@ Mục đích của tunneling có thể là để tạo ra VPN, GRE tunnel, ... t
 
 Như cái tên của nó, DNS Tunneling là kỹ thuật nhồi dữ liệu (thường thấy là TCP/UDP) trong các bản tin DNS. 
 
-Kỹ thuật này mô tả sơ qua như sau: Dữ liệu gửi từ client sẽ được mã hóa rồi chuyển đổi thành text và được cắt thành từng đoạn text nhỏ (<255). Các đoạn text nhỏ này được dùng làm subdomain cho domain gốc gửi lên dns server dưới dạng DNS query bản ghi txt. Khi lên đến dns server các bản tin query này sẽ được lưu lại đến một số lượng nhất định, đủ sẽ ráp chúng lại thành một khối. Đồng thời mỗi lần nhận được query từ các sub domain này dns server sẽ gửi lại phản hồi cũng là từng mảnh dữ liệu đã được chuyển đổi thành text và cắt nhỏ qua nội dung record txt lại cho client. Client tương tự cũng lưu lại từng bản tin riêng lẻ khi đủ sẽ ráp lại thành một bản tin đầy đủ. OKey như vậy là quá trình truyền tin giữa client và server đã được thực hiện (có thể truyền và nhận dữ liệu).
+Kỹ thuật này mô tả sơ qua như sau: Dữ liệu gửi từ client sẽ được mã hóa rồi chuyển đổi thành text và được cắt thành từng đoạn text nhỏ (<255). Các đoạn text nhỏ này được dùng làm subdomain cho domain gốc gửi lên dns server dưới dạng các DNS query bản ghi txt. Khi lên đến dns server các bản tin query này sẽ được lưu lại đến một số lượng nhất định, khi đủ sẽ được ráp lại với nhau thành một khối. Đồng thời mỗi lần nhận được query từ các sub domain này dns server sẽ gửi lại phản hồi cũng là từng mảnh dữ liệu đã được chuyển đổi thành text và cắt nhỏ qua nội dung record txt lại cho client. Client tương tự cũng lưu lại từng bản tin riêng lẻ khi đủ sẽ ráp lại thành một bản tin đầy đủ. OKey như vậy là quá trình truyền tin giữa client và server đã được thực hiện (có thể truyền và nhận dữ liệu).
 
-Để không nói xuông, tôi sẽ đi ngược một chút là demo trước rồi phân tích/kiểm chứng chi tiết sau cho nó ngược với bình thường một chút.
 
 ## Demo DNS Tunneling,
 
@@ -29,7 +28,7 @@ Kỹ thuật này mô tả sơ qua như sau: Dữ liệu gửi từ client sẽ 
 1. Server có IP public
 2. Một domain mà bản có thể control các bản ghi
 
-### Bước 1: Tạo một name server để quản lý các bản ghi DNS cho domain của bạn
+### Bước 1: Tạo một DNS server để quản lý các bản ghi DNS cho domain của bạn
 
 Bình thường khi mua domain nhà cung cấp hay free luôn ta luôn cái dịch vụ quản lý DNS - bản chất là cho phép ta tạo các bản ghi cho domain của ta trên DNS server của họ. 
 
@@ -53,9 +52,101 @@ Tôi hay mua domain ở namesilo thì thực hiện như sau:
 
 >Chú ý mở port 53 tcp&udp của vps nha. Vì dịch vụ DNS dùng 2 port này.
 
+### Bước 2: Cài đặt DNS tunnel Server và DNS tunnel Client
 
- 
+Có nhiều project hỗ trợ tunnel, sử dụng đại 1 cái là [iodine](https://github.com/yarrick/iodine). Với Iodine sẽ cung cấp sẵn 2 tool Server và Client - đương nhiên rồi. Project này sẽ cung cấp cho ta phương tiện tạo kênh kết nối thông qua DNS Tunneling trong suốt giữa Client và Server. Dữ liệu truyền cũng được mã hóa luôn, chả khác gì VPN. 
 
+Tải project về Server và không quá khó để build ra binary
+
+```
+# apt-get install build-essential -y
+# apt-get install libz-dev -y
+# apt-get install -y pkg-config -y
+
+# git clone https://github.com/yarrick/iodine.git
+# cd iodine
+# make
+# cd bin
+# ls -l 
+total 328
+-rwxr-xr-x 1 root root 158424 Jun  1 05:15 iodine
+-rwxr-xr-x 1 root root 172664 Jun  1 05:15 iodined
+```
+OKie ta đã có binary rồi, iodined - server và iodine - client.
+
+#### Chạy DNS tunneling server trên DNS server bằng lệnh sau:
+
+```
+./iodined -c -f 10.0.0.1 toan9.com
+```
+
+Không quên mật khẩu để mã hóa dữ liệu tunneling.
+
+![Run server]( {{site.url}}/assets/img/2021/06/01/210601_run_server.JPG){:width="700px"}
+
+Lúc này:
+* 10.0.0.1: Là ip tun interface của DNS tunneling server. Chọn 1 ip bất kỳ tốt nhất là khác dải mạng với toàn bộ các interface trên máy chủ.
+* toan9.com: Domain của ta mà dns server quản lý
+* -c: để disable check client IP/port on trên mỗi request
+* -f: Để server chạy ở foreground
+* Các option khác tham khảo ở https://github.com/yarrick/iodine/blob/master/src/iodined.c
+
+Kết quả của việc này là DNS server sẽ có 1 tun interface
+
+![ip config]( {{site.url}}/assets/img/2021/06/01/210601_ip_server.JPG){:width="700px"}
+
+#### Trên client chạy lệnh để tạo DNS tunneling bằng lệnh sau:
+
+Ta copy file iodine về client và chạy lệnh sau để run client
+
+```
+./iodine -f toan9.com
+```
+Trong đó:
+* -f: Chạy client ở foreground
+* toan9.com: Domain ta quản lý bằng DNS server
+
+Không quyên nhập mật khẩu trùng mật khẩu lúc ta nhập trên server
+
+![client pass]( {{site.url}}/assets/img/2021/06/01/210601_client_pass.JPG){:width="600px"}
+
+Lúc này trên client cũng xuất hiện một tun ip (giống như VPN vậy đó)
+
+![client ip]( {{site.url}}/assets/img/2021/06/01/210601_client_ip.JPG){:width="600px"}
+
+OKie xong hết rồi lúc này ta dễ dàng giao tiếp với server qua kênh tunnel mã hóa hẳn hoi chả khác gì VPN thông qua DNS Tunneling.
+
+![client ping]( {{site.url}}/assets/img/2021/06/01/210601_client_test_ping.JPG){:width="600px"}
+
+Tới đây rồi ta có thể làm nhiều trò: SSH, SOCK proxy, .... Nhưng mà cái kênh kết nối nay truyền dữ liệu hơi chậm, chậm như những năm 80 vậy nên chỉ dành cho những ai rất kiên nhẫn mà thôi.
+
+## Mổ xẻ một chút,
+
+Dùng Wireshark capture lại các gói tin trên interface máy client ta sẽ chỉ toàn thấy gói tin của bản tin DNS (Đương nhiên rồi).
+
+![client wrk]( {{site.url}}/assets/img/2021/06/01/210601_wireshark_overview.JPG){:width="600px"}
+
+Chọn đại một cặp query - response ta sẽ thấy như sau
+
+![client query]( {{site.url}}/assets/img/2021/06/01/210601_wireshark_txt_query.JPG){:width="600px"}
+
+![resq query]( {{site.url}}/assets/img/2021/06/01/210601_wireshark_txt_response.JPG){:width="600px"}
+
+Kết quả chứng tỏ về cơ bản như ta đã mô tả ở trên.
+
+### Phát hiện thế nào
+
+Bằng tay: Captrue gói tin và đọc bằng wireshark ta dễ dàng nhận thấy vài điểm sau:
+
+* Số lượng gói tin DNS đột biến tăng cao, các request chủ yếu là request TXT record
+* Rất nhiều subdomain dị được query bản ghi TXT. Kết quả trả về trong nội dung bản ghi TXT cũng dị không kém (Thông thường bản ghi TXT ở dạng text khá trong sáng chứ không dị thế này)
+
+Bằng máy:
+
+* Firewall layer 4: Chịu!
+* Nhiều loại NextGen FW (Ví dụ Paloalto) cũng hỗ trợ việc detect DNS tunneling rồi. Việc không phát hiện chỉ là xem lại bạn đã cấu hình đúng và đủ tính năng hay chưa thôi.
+
+>PS: Cảm ơn a #langtubongdem đã pre hỗ trợ cho bài viết,
 
 **Tham khảo**
 
