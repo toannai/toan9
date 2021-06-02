@@ -25,6 +25,7 @@ Kỹ thuật này mô tả sơ qua như sau: Dữ liệu gửi từ client sẽ 
 ## Demo DNS Tunneling,
 
 ### Chuẩn bị:
+
 1. Server có IP public
 2. Một domain mà bản có thể control các bản ghi
 
@@ -59,20 +60,15 @@ Có nhiều project hỗ trợ tunnel, sử dụng đại 1 cái là [iodine](ht
 Tải project về Server và không quá khó để build ra binary
 
 ```
-# apt-get install build-essential -y
-# apt-get install libz-dev -y
-# apt-get install -y pkg-config -y
+apt-get install build-essential -y
+apt-get install libz-dev -y
+apt-get install -y pkg-config -y
 
-# git clone https://github.com/yarrick/iodine.git
-# cd iodine
-# make
-# cd bin
-# ls -l 
-total 328
--rwxr-xr-x 1 root root 158424 Jun  1 05:15 iodine
--rwxr-xr-x 1 root root 172664 Jun  1 05:15 iodined
+git clone https://github.com/yarrick/iodine.git
+cd iodine
+make
 ```
-OKie ta đã có binary rồi, iodined - server và iodine - client.
+OKie lúc này trong thư mục ```./bin``` ta đã có binary rồi, iodined - server và iodine - client.
 
 #### Chạy DNS tunneling server trên DNS server bằng lệnh sau:
 
