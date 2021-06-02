@@ -68,9 +68,12 @@ git clone https://github.com/yarrick/iodine.git
 cd iodine
 make
 ```
+
 OKie lúc này trong thư mục ```./bin``` ta đã có binary rồi, iodined - server và iodine - client.
 
-#### Chạy DNS tunneling server trên DNS server bằng lệnh sau (Bằng quyền root nhé vì port 53 muốn binding cần quyền root):
+#### Chạy DNS tunneling server trên DNS server bằng lệnh sau:
+
+P/S: Chạy bằng quyền root nhé vì port 53 muốn binding cần quyền root.
 
 ```
 ./iodined -c -f 10.0.0.1 toan9.com
