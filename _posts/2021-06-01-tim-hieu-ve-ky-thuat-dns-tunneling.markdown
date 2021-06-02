@@ -7,6 +7,7 @@ img: 2021/06/01/210601_intro_dns_tunneling.png
 fig-caption: # Add figcaption (optional)
 tags: [Linux]
 ---
+
 Trước đây hồi làm ở v có đợt hóng thấy redteam có sử dụng DNS Tunneling để bypass firewall. Mấy lần định test mà quanh đi quẩn lại quên, nay nhân dịp có làm một task liên quan nên đọc và viết bài này luôn. 
 
 ## Từ Tunneling quá quen thuộc đến DNS Tunneling,
@@ -88,7 +89,7 @@ Lúc này:
 * toan9.com: Domain của ta mà dns server quản lý
 * -c: để disable check client IP/port on trên mỗi request
 * -f: Để server chạy ở foreground
-* Các option khác tham khảo ở https://github.com/yarrick/iodine/blob/master/src/iodined.c
+* Các option khác tham khảo ở [github.com](https://github.com/yarrick/iodine/blob/master/src/iodined.c)
 
 Kết quả của việc này là DNS server sẽ có 1 tun interface
 
@@ -150,4 +151,4 @@ Bằng máy:
 
 **Tham khảo**
 
-https://medium.com/@galolbardes/learn-how-easy-is-to-bypass-firewalls-using-dns-tunneling-and-also-how-to-block-it-3ed652f4a000
+[medium.com](https://medium.com/@galolbardes/learn-how-easy-is-to-bypass-firewalls-using-dns-tunneling-and-also-how-to-block-it-3ed652f4a000)
