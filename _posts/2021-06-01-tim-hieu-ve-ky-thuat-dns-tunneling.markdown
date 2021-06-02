@@ -101,6 +101,7 @@ Ta copy file iodine về client và chạy lệnh sau để run client
 ```
 ./iodine -f toan9.com
 ```
+
 Trong đó:
 * -f: Chạy client ở foreground
 * toan9.com: Domain ta quản lý bằng DNS server
