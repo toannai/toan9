@@ -10,7 +10,16 @@ tags: [Security]
 
 Gần đây công ty tôi nhận được một số thông tin khách hàng phản hồi rằng họ nhận được các email mạo danh công ty (email spoofing) gửi vào hòm mail của họ. Vấn đề này không mới, cty/tổ chức nào cũng có thể gặp. Cú cái nhiều cái biết rõ mà không thể làm gì (vì sao tôi nói sau).
 
-Mục đích của email spoofing cũng không gì là lạ lẫm (Đặc biệt với ae system đã làm mail kiều gì cũng gặp), có thể là spam quảng cáo, lừa đảo hoặc giải mã độc. Một người dùng thông thường khi nhận được mail từ một địa chỉ email **họ nghĩ là** tin cậy không lý gì họ không mở, không click, không làm theo. Và chỉ sơ ý thôi là cũng có thành nạn nhân của ý đồ xấu kia rồi. 
+Mục đích của email spoofing cũng không gì là lạ lẫm (Đặc biệt với ae system đã làm mail kiều gì cũng gặp). Có thể là spam quảng cáo, lừa đảo hoặc dải mã độc, ransomware. Một người dùng thông thường khi nhận được mail từ một địa chỉ email **họ nghĩ là** tin cậy không lý gì họ không mở, không click, không làm theo. Và chỉ sơ ý thôi là cũng có thành nạn nhân rồi. Hậu quả để lại nhiều khi không chỉ ảnh hưởng tới cá nhân nạn nhân mà đôi khi ảnh hưởng cả tổ chức (VD: Tình huống bị ransomware).
 
-Vấn đề này trước đây khi audit email tôi cũng gặp nhiều, bữa nay tôi thực sự muốn chia sẻ với mọi người đặc biệt là các a/e làm system. Hy vọng đọc xong bài này ae sẽ coi lại hệ thống của mình sẽ có action cụ thể. Mỗi người góp tay một chút sẽ làm thế giới tốt đẹp hơn một tí (to tát không)  ( ͡° ͜ʖ ͡°)
+Trước đây khi audit email của gov/com tôi rất hay gặp vấn đề này, bữa nay tôi muốn chia sẻ một số kinh nghiệm của tôi với các a/e system. Hy vọng đọc xong bài này ae sẽ bớt chút thời gian coi lại hệ thống của mình, sẽ có những action cụ thể. Mỗi người góp tay một chút sẽ làm thế giới tốt đẹp hơn một tí (nghe to tát không)  ( ͡° ͜ʖ ͡°)
 
+### Những điều cần biết trước khi bắt đầu,
+
+Ở đây có cả những ae đã biết rồi và những ae mới. Cũng có thể ae biết rồi mà chưa biết gọi tên nó là gì (T_T).
+
+Theo wiki "Email spoofing is the creation of email messages with a forged sender address. ". Tiếng việt có thể hiểu là việc tạo ra các email message giả mạo người gửi (From user).
+
+Nguyên nhân chính là do yếu tố lịch sử, giao thức SMTP ban đầu quá đơn giản, kém bảo mật. Không có các cơ chế xác thực, mã hóa. Mãi sau này phải người ta phải nghĩ ra rất nhiều các cơ chế mở rộng (extends) để khắc phục dần các nhược điểm này. Tuy nhiên chỉ là sự chắp vá thôi.
+
+  
