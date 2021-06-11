@@ -52,9 +52,19 @@ Hoặc một số case ae cũng biết có những người biết chiều (1) n
 
 Quay lại lý do "Cũng có những người biết chiều (1) nhưng lại không làm". Mà cái tội biết mà không làm thì thực sự đáng trách. (Y_Y)
 
-Lý do mà nhiều ae hay đưa ra là họ sợ DROP nhầm mail của customer. DROP nhầm theo nghĩa là mail gửi đến đúng mà mail gateway bảo Fake và DROP luôn gây ra bị miss mail, sếp quở trách. Các ae hay lý giải cho việc DROP này như sau: "Nhiều mail server quản trị viên không cấu hình Mail Authenticaion (SPF/DKIM/DMARC) thế là enable tính năng check lên là mail gateway nó thịt (DROP) luôn những mail này". Do sợ hãi thôi cứ tắt đi cho lành. Và hậu quả bạn biết đó - email spoofing lại tiếp diễn như sự thật hiển nhiên.
+Lý do mà nhiều ae hay đưa ra là họ sợ DROP nhầm mail của customer. DROP nhầm theo nghĩa là mail gửi đến đúng mà mail gateway bảo Fake và DROP luôn gây ra bị miss mail, sếp quở trách. Các ae hay lý giải nguyên nhân cho việc DROP này như sau: "Nhiều mail server quản trị viên không cấu hình Mail Authenticaion (SPF/DKIM/DMARC) thế là enable tính năng check lên là mail gateway nó thịt (DROP) luôn những mail này". Do sợ hãi thôi cứ tắt đi cho lành. Và hậu quả bạn biết đó - email spoofing lại tiếp diễn như sự thật hiển nhiên. Hậu quả vừa trình bày trên.
 
-Vậy cách xử lý ở đây là gì?
+Vậy cách xử lý ở đây là gì? (Để giải quyết có thể cần phân tích sâu các email bị DROP)
 
+Ở đây tôi chỉ dám đề xuất phương án để ae vượt qua "Sợ hãi" ở trên. Ae vừa nói lo sợ xảy ra chuyện với các mail không cấu Email Authen vậy đơn giản là ta cứ by pass cho nó. Vì các domain không cấu SPF/DKIM/DMARC hiện giờ rất ít hoặc ít quan trọng (Không cấu google nó chém luôn hoặc không sớm muộn cũng bị cho vào Blacklist - ai cũng biết). Cùng lúc đề xuất **Chém mạnh tay - DROP** luôn bọn FAIL (Cả softfail và HarfFail) vì bọn này chắc chắn 99% là Fake - Tội biết mà không làm là tội to. 
 
+Hiện nay các loại mail gateway quá mạnh, bóc tách quá sâu header để ae thực hiện việc này. Lấy ví dụ với IRON PORT của CISO -  SP mail gateway quá ngon mà quá nhiều ae dùng.
+
+![IRON PORT]( {{site.url}}/assets/img/2021/06/11/210611_ironport.JPG){:width="500px"}
+
+Hãy mạnh dạn tick SoftFail và Fail và chọn action là DROP.
+
+### Kết,
+
+Cảm ơn ae đã đọc tới đây vì quá kiên nhẫn. Và đừng quên kiểm tra lại mail gateway của mình enable verify Email Authentication nhé (◉ω◉) (◉ω◉) (◉ω◉)
 
