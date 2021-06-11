@@ -36,6 +36,7 @@ Nguyên nhân chính là do yếu tố lịch sử, giao thức SMTP ban đầu 
 Để giải quyết vấn đề Email spoofing người ta sử dụng cơ chế Email authentication, or validation. Đại ý của cơ chế này là bằng cách nào đó để bên gửi và bên nhận có thể xác nhận "mình là mình" với bên kia mà không phải một Fucker nào đó. Vài phương pháp có thể là:
 
 * Sử dụng chữ ký số: DKIM
+
 * Sử dụng bản ghi DNS: SPF/DMARC
 
 Tới đây nội dung thế nào thì chắc tôi không cần nói nữa vì nó quá quen thuộc rồi. Nói lại sợ nhàm. 
@@ -43,6 +44,7 @@ Tới đây nội dung thế nào thì chắc tôi không cần nói nữa vì n
 Tuy nhiên một điểm luôn cần phải nhớ là "Email authentication" có tính hai chiều <==>.
 
 * Khi nhận mail luôn cần kiểm tra để xác thực nguồn gửi có tin cậy hay không (Nguồn mình nhận đúng là đối tác) (1). Để thực hiện chỉ cần enable tính năng verify SPF/DKIM/DMARC trên thiết bị nhận mail từ internet.
+
 * Khi gửi mail phải chứng minh là mình là mình (2). Để thực hiện cần cấu hình SPF/DMARC hoặc ký DKIM.
 
 Rất nhiều ae chỉ làm một chiều, thường là (2) mà bỏ quên chiều (1) còn lại. 
