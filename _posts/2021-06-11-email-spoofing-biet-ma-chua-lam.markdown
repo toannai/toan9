@@ -12,11 +12,11 @@ Gần đây công ty tôi nhận được một số thông tin khách hàng ph�
 
 Mục đích của email spoofing cũng không gì là lạ lẫm (Đặc biệt với ae system đã làm mail kiều gì cũng gặp). Có thể là spam quảng cáo, lừa đảo hoặc dải mã độc, ransomware. Một người dùng thông thường khi nhận được mail từ một địa chỉ email **họ nghĩ là** tin cậy không lý gì họ không mở, không click, không làm theo. Và chỉ sơ ý thôi là cũng có thành nạn nhân rồi. Hậu quả để lại nhiều khi không chỉ ảnh hưởng tới cá nhân nạn nhân mà đôi khi ảnh hưởng cả tổ chức (VD: Tình huống bị ransomware).
 
-Trước đây khi audit email của gov/com tôi rất hay gặp vấn đề này, bữa nay tôi muốn chia sẻ một số kinh nghiệm của tôi với các ae system. Hy vọng đọc xong bài này ae sẽ bớt chút thời gian coi lại hệ thống của mình, sẽ có những action cụ thể. Mỗi người góp tay một chút sẽ làm thế giới tốt đẹp hơn một tí (nghe to tát không)  ( ͡° ͜ʖ ͡°)
+Trước đây khi audit email của gov/com tôi rất hay gặp vấn đề này, bữa nay tôi muốn chia sẻ một số kinh nghiệm của tôi với các ae system. Hy vọng đọc xong bài này ae sẽ bớt chút thời gian coi lại hệ thống của mình, sẽ có những action cụ thể. Mỗi người góp tay một chút sẽ làm thế giới tốt đẹp hơn một tí (nghe to tát không)
 
 ## Những điều cần biết trước khi bắt đầu,
 
-Ở đây có cả những ae đã biết rồi và những ae mới. Cũng có thể ae biết rồi mà chưa biết gọi tên nó là gì (T_T).
+Ở đây có cả những ae đã biết rồi và những ae mới. Cũng có thể ae biết rồi mà chưa biết gọi tên nó là gì.
 
 Theo wiki "Email spoofing is the creation of email messages with a forged sender address. ". Tiếng việt có thể hiểu là việc tạo ra các email message giả mạo người gửi (From user).
 
@@ -51,7 +51,7 @@ Hoặc một số case ae cũng biết có những người biết chiều (1) n
 
 ## Biết nhưng không làm, cách vượt qua sợ hãi,
 
-Quay lại lý do "Cũng có những người biết chiều (1) nhưng lại không làm". Mà cái tội biết mà không làm thì thực sự đáng trách. (Y_Y)
+Quay lại lý do "Cũng có những người biết chiều (1) nhưng lại không làm". Mà cái tội biết mà không làm thì thực sự đáng trách.
 
 Lý do mà nhiều ae hay đưa ra là họ sợ DROP nhầm mail của customer. DROP nhầm theo nghĩa là mail gửi đến đúng mà mail gateway bảo Fake và DROP luôn gây ra bị miss mail, sếp quở trách. Các ae hay lý giải nguyên nhân cho việc DROP này như sau: "Nhiều mail server quản trị viên không cấu hình Mail Authenticaion (SPF/DKIM/DMARC) thế là enable tính năng check lên là mail gateway nó thịt (DROP) luôn những mail này". Do sợ hãi thôi cứ tắt đi cho lành. Và hậu quả bạn biết đó - email spoofing lại tiếp diễn như sự thật hiển nhiên. Hậu quả vừa trình bày trên.
 
@@ -67,5 +67,5 @@ Hiện nay các loại mail gateway quá mạnh, bóc tách quá sâu header đ�
 
 ### Kết,
 
-Cảm ơn ae đã đọc tới đây vì quá kiên nhẫn. Và đừng quên kiểm tra lại mail gateway của mình enable verify Email Authentication nhé (◉ω◉) (◉ω◉) (◉ω◉)
+Cảm ơn ae đã đọc tới đây vì quá kiên nhẫn. Và đừng quên kiểm tra lại mail gateway của mình enable verify Email Authentication nhé.
 
