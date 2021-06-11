@@ -22,7 +22,7 @@ Theo wiki "Email spoofing is the creation of email messages with a forged sender
 
 Nói về email spoofing chắc phải mất một buổi sáng (Đi training tôi hay mất tầm đó). Nhưng buổi nay chỉ xin nói một case khá phổ biến hay gặp nhất là spoofing bên ngoài domain tổ chức mà thôi. Hình thức này mô tả bằng hình sau:
 
-![fucker]( {{site.url}}/assets/img/2021/06/01/210611_fake_mail.png){:width="600px"}
+![fucker]( {{site.url}}/assets/img/2021/06/11/210611_fake_mail.png){:width="600px"}
 
 Nguyên nhân chính là do yếu tố lịch sử, giao thức SMTP ban đầu quá đơn giản, kém bảo mật. Không có các cơ chế xác thực, mã hóa. Mãi sau này phải người ta phải nghĩ ra rất nhiều các cơ chế mở rộng (extends) để khắc phục dần các nhược điểm này. Tuy nhiên do tính không đồng nhất mọi sự bổ sung sau này cho ta cảm giác nó chỉ là sự chắp vá.
 
