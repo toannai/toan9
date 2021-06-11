@@ -63,7 +63,7 @@ Hiện nay các loại mail gateway quá mạnh, bóc tách quá sâu header đ�
 
 ![IRON PORT]( {{site.url}}/assets/img/2021/06/11/210611_ironport.JPG){:width="500px"}
 
-Hãy mạnh dạn tick SoftFail và Fail và chọn action là DROP.
+>Hãy mạnh dạn tick SoftFail và Fail và chọn action là DROP.
 
 ### Kết,
 
