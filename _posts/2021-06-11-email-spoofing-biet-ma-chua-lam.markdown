@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Email spoofing vấn đề nhức nhối,
-date: 2020-06-23 00:32:20 +0700
-description: Email spoofing vấn đề nhức nhối, biết mà không làm,
+date: 2021-06-11 00:32:20 +0700
+description: Email spoofing vấn đề nhức nhối, có thể biết mà không làm,
 img: 2021/06/11/210611_email_spoofig.jpg
 fig-caption: # Add figcaption (optional)
 tags: [Security]
