@@ -22,4 +22,8 @@ Theo wiki "Email spoofing is the creation of email messages with a forged sender
 
 Nguyên nhân chính là do yếu tố lịch sử, giao thức SMTP ban đầu quá đơn giản, kém bảo mật. Không có các cơ chế xác thực, mã hóa. Mãi sau này phải người ta phải nghĩ ra rất nhiều các cơ chế mở rộng (extends) để khắc phục dần các nhược điểm này. Tuy nhiên chỉ là sự chắp vá thôi.
 
-  
+>Để biết SMTP ban đầu nó thế nào ae hãy thử cài postfix core mà coi. Thật sự chả có cái gì luôn. Không xác thực, không mã hóa gì, ..., không gì hết chỉ có gửi và nhận. Sau này muốn có thêm các tính năng ta sẽ phải cài thêm các module/add-on đảm nhiệm các extension mở rộng này OpenDKIM, dkim-milter, ... [Xem list plugin tại đây](http://www.postfix.org/addon.html#auth) 
+
+
+
+
