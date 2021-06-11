@@ -52,5 +52,9 @@ Hoặc một số case ae cũng biết có những người biết chiều (1) n
 
 Quay lại lý do "Cũng có những người biết chiều (1) nhưng lại không làm". Mà cái tội biết mà không làm thì thực sự đáng trách. (Y_Y)
 
-Lý do mà nhiều ae hay đưa ra là họ sợ DROP nhầm mail của customer. DROP nhầm theo nghĩa là mail gửi đến đúng mà mail gateway bảo Fake và DROP luôn gây ra bị miss mail, sếp quở trách. Để giải thích các ae hay lý giải là nhiều mail server quản trị viên không cấu hình Mail Authenticaion (SPF/DKIM/DMARC) thế là enable tính năng check lên là mail gateway nó thịt (DROP) luôn những mail này.
+Lý do mà nhiều ae hay đưa ra là họ sợ DROP nhầm mail của customer. DROP nhầm theo nghĩa là mail gửi đến đúng mà mail gateway bảo Fake và DROP luôn gây ra bị miss mail, sếp quở trách. Các ae hay lý giải cho việc DROP này như sau: "Nhiều mail server quản trị viên không cấu hình Mail Authenticaion (SPF/DKIM/DMARC) thế là enable tính năng check lên là mail gateway nó thịt (DROP) luôn những mail này". Do sợ hãi thôi cứ tắt đi cho lành. Và hậu quả bạn biết đó - email spoofing lại tiếp diễn như sự thật hiển nhiên.
+
+Vậy cách xử lý ở đây là gì?
+
+
 
