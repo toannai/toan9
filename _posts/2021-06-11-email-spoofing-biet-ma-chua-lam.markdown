@@ -14,7 +14,7 @@ Mục đích của email spoofing cũng không gì là lạ lẫm (Đặc biệt
 
 Trước đây khi audit email của gov/com tôi rất hay gặp vấn đề này, bữa nay tôi muốn chia sẻ một số kinh nghiệm của tôi với các ae system. Hy vọng đọc xong bài này ae sẽ bớt chút thời gian coi lại hệ thống của mình, sẽ có những action cụ thể. Mỗi người góp tay một chút sẽ làm thế giới tốt đẹp hơn một tí (nghe to tát không)  ( ͡° ͜ʖ ͡°)
 
-### Những điều cần biết trước khi bắt đầu,
+## Những điều cần biết trước khi bắt đầu,
 
 Ở đây có cả những ae đã biết rồi và những ae mới. Cũng có thể ae biết rồi mà chưa biết gọi tên nó là gì (T_T).
 
@@ -31,7 +31,7 @@ Nguyên nhân chính là do yếu tố lịch sử, giao thức SMTP ban đầu 
 >Để biết SMTP ban đầu nó thế nào ae hãy thử cài postfix core mà coi. Thật sự chả có cái gì luôn. Không xác thực, không mã hóa gì, ..., không gì hết chỉ có gửi và nhận. Sau này muốn có thêm các tính năng ta sẽ phải cài thêm các module/add-on đảm nhiệm các extension mở rộng này. Xem list modules/add-on tại đây](http://www.postfix.org/addon.html#auth) 
 
 
-### Các cách chống lại Email spoofing,
+## Các cách chống lại Email spoofing,
 
 Để giải quyết vấn đề Email spoofing người ta sử dụng cơ chế Email authentication, or validation. Đại ý của cơ chế này là bằng cách nào đó để bên gửi và bên nhận có thể xác nhận "mình là mình" với bên kia mà không phải một Fucker nào đó. Vài phương pháp có thể là:
 
@@ -49,7 +49,7 @@ Rất nhiều ae chỉ làm một chiều, thường là (2) mà bỏ quên chi�
 
 Hoặc một số case ae cũng biết có những người biết chiều (1) nhưng lại không làm vì lý do "sợ"
 
-### Biết nhưng không làm, cách vượt qua sợ hãi,
+## Biết nhưng không làm, cách vượt qua sợ hãi,
 
 Quay lại lý do "Cũng có những người biết chiều (1) nhưng lại không làm". Mà cái tội biết mà không làm thì thực sự đáng trách. (Y_Y)
 
