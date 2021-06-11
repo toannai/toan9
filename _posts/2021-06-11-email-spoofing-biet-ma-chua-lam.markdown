@@ -45,7 +45,8 @@ Tuy nhiên một điểm luôn cần phải nhớ là "Email authentication" có
 * Khi nhận mail luôn cần kiểm tra để xác thực nguồn gửi có tin cậy hay không (Nguồn mình nhận đúng là đối tác) (1). Để thực hiện chỉ cần enable tính năng verify SPF/DKIM/DMARC trên thiết bị nhận mail từ internet.
 * Khi gửi mail phải chứng minh là mình là mình (2). Để thực hiện cần cấu hình SPF/DMARC hoặc ký DKIM.
 
-Rất nhiều ae chỉ làm một chiều, thường là (2) mà bỏ quên chiều còn lại. 
+Rất nhiều ae chỉ làm một chiều, thường là (2) mà bỏ quên chiều (1) còn lại. 
+
 Hoặc một số case ae cũng biết có những người biết chiều (1) nhưng lại không làm vì lý do "sợ"
 
 ### Biết nhưng không làm, cách vượt qua sợ hãi,
