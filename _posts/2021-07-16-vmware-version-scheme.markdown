@@ -1,7 +1,7 @@
 ---
 layout: post
 title: VMware versioning scheme,
-date: 2021-07-19 00:32:20 +0700
+date: 2021-07-16 00:32:20 +0700
 description: VMware versioning scheme
 img: 2021/07/16/sematic_versioning.png
 fig-caption: # Add figcaption (optional)
