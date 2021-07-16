@@ -14,7 +14,7 @@ Làm việc với VMware cũng nhiều nhưng bình thường rất ít khi đ�
 
 ### Software versioning
 
-Khi phát triển ra một sản phẩm phần mềm (software) để quản lý và maintain nó người ta sẽ đặt cho nó một cái tên hoặc đánh cho nó một số version nhất định (VD: Ubuntu 16.04 LTS <=cũng được gọi là => Ubuntu Xenial Xerus). Khi nhắc đến đặt tên phiên bản người ta có đưa ra cái khái niệm **scheme**  - Một lược đồ đánh số phiên bản được tạo ra để theo dõi các phiên bản khác nhau của phần mềm. Có 2 loại scheme.
+Khi phát triển ra một sản phẩm phần mềm (software) để quản lý và maintain nó người ta sẽ đặt cho nó một cái tên hoặc đánh cho nó một số version nhất định (VD: Ubuntu 16.04 LTS <=cũng được gọi là => Ubuntu Xenial Xerus). Để đánh số phiên bản cho software người ta có đưa ra cái khái niệm **scheme**  - Một lược đồ đánh số phiên bản được tạo ra để theo dõi các phiên bản khác nhau của phần mềm. Có 2 loại scheme.
 
 * Internal version number: Chỉ có giá trị trong tổ chức. Cái này tăng nhiều lần trong 1 ngày. 
 * Release version: Dùng khi sản phẩm đã được release. Ít thay đổi hơn, và việc đặt tiên này thường áp dụng semantic versioning.
