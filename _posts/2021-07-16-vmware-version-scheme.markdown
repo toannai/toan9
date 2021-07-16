@@ -31,7 +31,8 @@ Ngoài bộ ba thành phần chính **Major.Minor.Patch** nó có thể kèm the
 
 Một số nhà phát triển dị hơn còn dụng thêm 1 số kí hiệu: alpha" (a), "beta" (b), or "release candidate" (rc) để thêm vào versioning cho phần mềm của mình. Nên các bạn đừng ngại nhiên khi thấy một số version như sau: 0.5, 0.6, 0.7, 0.8, 0.9 → 1.0b1, 1.0b2 (with some fixes), 1.0b3 (with more fixes) → 1.0rc1 (which, if it is stable enough), 1.0rc2 (if more bugs are found) → 1.0.
 
+Để dễ hình dung ta coi cái hình này.
 
-
+![scheme]( {{site.url}}/assets/img/2021/07/16/img_scheme.png)
 
 
