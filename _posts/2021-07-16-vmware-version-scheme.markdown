@@ -1,6 +1,6 @@
 ---
 layout: post
-title: VMware versioning scheme,
+title: VMware versioning,
 date: 2021-07-16 00:32:20 +0700
 description: VMware versioning scheme
 img: 2021/07/16/sematic_versioning.png
@@ -10,7 +10,7 @@ tags: [Linux]
 
 Cũng tại thời gian này trời nắng nóng, cứ về nhà cơm nước, tắm rửa xong là chui tọt vào phòng ngủ luôn. Không thèm ngồi vào bàn làm gì. Nay quyết tâm lắm nên mới ngồi vào bàn viết cái gì đó (anw kinh nghiệm là muốn làm gì thì cứ phải ngồi vào bàn chứ không vạ vật là ngủ ngay). Vãn hy vọng những gì mà mình notes lại có ích cho mọi người, không nhiều thì ít. Nên ai mà có hay đọc blogs của em thì nhớ cho một like và sub fb của em nhé. Viết một bài dù ngắn hay dài tính ra cũng mất nhiều thời gian phết đó.
 
-Làm việc với VMware cũng nhiều nhưng bình thường rất ít khi để ý về vấn đề versioning patches của nó. Mà không phải mình mình đâu mà cả mấy bác coi như là VMware Administrator luôn cũng ít khi để ý đến nó (Vì có bao giờ mấy bác patches mấy đâu mà để ý =))). Nên khi mình hỏi đến cũng ậm ừ lắm. Do vậy, mình cũng dành cả một buổi chiều để tìm hiểu chút ý về vấn đề này, cốt là tự trả lời một số câu hỏi bản thân đưa ra.
+Làm việc với VMware cũng nhiều nhưng bình thường rất ít khi để ý về vấn đề versioning của nó. Mà không phải mình mình đâu mà cả mấy bác coi như là VMware Administrator luôn cũng ít khi để ý đến nó (Vì có bao giờ mấy bác patches mấy đâu mà để ý =))). Nên khi mình hỏi đến cũng ậm ừ lắm. Do vậy, mình cũng dành cả một buổi chiều để tìm hiểu chút ý về vấn đề này, cốt là tự trả lời một số câu hỏi bản thân đưa ra.
 
 ### Software versioning
 
