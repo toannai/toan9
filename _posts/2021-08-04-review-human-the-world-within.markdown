@@ -7,7 +7,7 @@ img: 2021/08/03/intro.JPG
 fig-caption: # Add figcaption (optional)
 tags: [LifeZone]
 ---
->Bài viết spoiler nội dung phim, bạn nào không thích thì không nên đọc tiếp,
+>Bài viết spoiler nội dung phim, bạn nào không thích thì không nên đọc tiếp ...
 
 Đã bao giờ anh em thấy tim đập thình thịch khi đứng cạnh ai đó chưa, dù chả tiếp xúc tí nào (Chưa thì hơi bị phí ( ͡• ͜ʖ ͡•) ). Rõ ràng là chỉ mắt ta nhìn thấy & cảm nhận - con nhà ai mà xinh thế. Tim nằm sâu trong lồng ngực, bọc trong cả đống thứ như da,xương sườn, ai béo thì còn lớp mỡ dày nữa - chứ có liên quan tiếp xúc trực tiếp quái gì đâu vậy mà vấn bị ảnh hưởng, kỳ lạ.
 
