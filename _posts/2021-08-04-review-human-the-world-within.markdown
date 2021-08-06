@@ -24,11 +24,9 @@ Tại sao hôm nay tôi lại viết rõ là luyên thuyên mấy cái này? Cơ
 
 Lạc đề. Quay lại, series này nghe đâu được tài trợ bởi netflix luôn. Serise là một loạt các tập phim tài liệu khoa học về các hệ thống trong cơ thể: Hệ tuần hoàn, thần kinh, tiêu hóa, miễn dịch, về giác quan thứ 6, ... Các tập phim cố gắng truyền tải các kiến thức khoa học cho người xem dưới dạng bình dân dễ hiểu. Và hơn hết hé lộ giải thích rất nhiều thắc mắc của tôi từ trước (VD như vài cái ở trên).
 
-Tôi nghĩ đợt này WFH nhiều, thời gian di chuyển đi làm được tiết kiệm. AE có thể dành thời gian này để coi hết series này. Chắc chắn là có rất nhiều thông tin thú vị. Xem xong nhiều cái trước giờ cứ nghĩ là đúng mà lại không đúng thế mới đau.
+Tôi nghĩ đợt này WFH nhiều, thời gian di chuyển đi làm được tiết kiệm. AE có thể dành thời gian này để coi hết series này. Chắc chắn là có rất nhiều thông tin thú vị. Xem xong nhiều cái trước giờ cứ nghĩ là đúng mà lại không đúng thế mới đau. 
 
-....
-
-Sau này con lớn tôi sẽ cho nó về quê thật nhiều, chỉ vậy thôi, ... (Chả liên quan nhỉ)
+Nói đùa thôi, lớn rồi có tránh nhiệm tí với bản thân, làm sao để sống khoa học hơn tí cũng là điều mà tôi trăn trở lắm anh em ạ. 
 
 Chúc anh em cuối tuần vi vẻ nha, giờ tôi đi ngủ đây, mấy nay nã cf nhiều tối khó ngủ quá, chắc mai phải giảm liều xuống.
 
