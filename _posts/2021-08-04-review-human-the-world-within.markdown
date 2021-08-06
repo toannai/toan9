@@ -2,22 +2,46 @@
 layout: post
 title: Human, The world within,
 date: 2021-08-04 00:32:20 +0700
-description: Spoiler phim, dành cho những bạn hỏi nhiều nhưng hỏi ngu lại không ngừng hỏi,
+description: Nhiều người review sách nhưng tôi lười đọc sách, cho phép tôi review phim anh em ạ,
 img: 2021/08/03/intro.JPG
 fig-caption: # Add figcaption (optional)
 tags: [LifeZone]
 ---
->Bài viết spoiler nội dung phim, bạn nào không thích thì không nên đọc tiếp ...
 
-Đã bao giờ anh em thấy tim đập thình thịch khi đứng cạnh ai đó chưa, dù chả tiếp xúc tí nào (Chưa thì hơi bị phí ( ͡• ͜ʖ ͡•) ). Rõ ràng là chỉ mắt ta nhìn thấy & cảm nhận - con nhà ai mà xinh thế. Tim nằm sâu trong lồng ngực, bọc trong cả đống thứ như da,xương sườn, ai béo thì còn lớp mỡ dày nữa - chứ có liên quan tiếp xúc trực tiếp quái gì đâu vậy mà vấn bị ảnh hưởng, kỳ lạ.
+Trong một status hôm nọ tôi có nói tôi nghi ngờ về tác dụng phụ của việc chạy 15-20km trong một lúc buổi sáng :v. Rõ là lý sự của một đứa lười nhưng cũng không phải là không có logic phải không?
 
-FB tôi có mấy chị em bỉm sữa, lâu lâu lại post lên khoe ngày hút được bao nhiêu túi rồi, có chị còn so sánh mình với con bò sữa chất lượng cao. Nhưng sữa bò kiểu này 30 năm rồi tôi chưa được uống và cũng nào còn nhớ mùi nó thế nào - **Kể lạc đề thôi**. Các chị em cũng hay treo cái biển trên Wall fb của mình cảnh báo người tới nhà chơi **Làm ơn** không hôn hít trẻ nhỏ. Nói bậy, nó lại làm tôi nhớ tới vụ hồi nhỏ hàng xóm nhà tôi có con chó dữ lắm cắn 2,3 người. Để để phòng họ treo biển "Nhà có chó giữ, khách tới chơi cẩn thận" ở đầu ngõ. Đấy là tôi nói đùa thôi cho vui không chị em lại hiểu nhầm ý tôi làm tôi không còn cái mặt nào gặp mn nữa :'(. Ai cũng muốn điều tốt cho con mình (Cái này quá đúng, chả có gì sai đâu). Với tư duy logic thông thường, trẻ nhỏ đặc biệt mới sinh sức đề kháng yếu, hôn hít, vi khuẩn các kiểu nó bám vào làm trẻ dễ ốm - Rất khoa học, nghe thì chả có gì sai, không nói là quá đúng, ấy vậy mà thực tế thì chưa chắc đã đúng.
+Anh yêu em bằng cả con tim (Thôi đi ông, đừng có mà mồm điêu). Chưa hiểu cái câu này xuất phát từ đâu. Chỉ biết là khi ae đứng cạnh ai đó (tôi không dám nói là gái xinh vì vợ nghe thấy lại dỗi vài ngày thì tôi cũng đến chết - khổ) thì người rạo rực và tim đập thình thịch trong lồng ngực... Này anh, liệu anh có yêu bằng trái tim thật hay không? chị em nên nghi ngờ cho tôi.
 
-Hôm nọ tôi cũng kể, tôi có mấy anh/em chạy rất khỏe. Sáng có thể sách giầy lên chạy một mạch 15/20km trong 1-2 tiếng buổi sáng. Nhưng mà thực tế máy móc chạy càng nhiều càng hao mòn, chóng hỏng. Ổ SSD cũng chỉ giới hạn số lần ghi/đọc. Liệu chạy nhiều có thực sự tốt cho cơ thể không? - Mấy thằng lười biếng TDTT như tôi lý sự cùn thế, cơ mà nghe cũng không phải là không có lý phải không.
+Nhiều bà mẹ không dám cho con nghịch bẩn hồi nhọ vì sợ lây nhiễm vi khuẩn từ môi trường. Ngày xưa đến nhà chơi chủ nhà mà thấy khách hôn hít trẻ con thì cũng quý lắm. Nhưng giờ thì thôi, chủ nhà ghét lắm - Làm ơn đừng có hôn con tôi. Lý do thì tôi không cần nói nữa. Lý do ấy nghe rất là logic và khoa học. Nhưng mà tôi vẫn nhớ hồi bé bà với mẹ cũng hay mớn cơm cho chúng tôi, cũng đâu có sao. Nói tới đây chị em đừng ùa vào xỉa tôi, oan cho tôi lắm.
 
-Đi làm nhiều năm, mỡ tích tụ vào bụng to như bà bầu 6,7 tháng. Tôi vẫn chưa nghĩ ra cách nào giảm cân cả. Dĩ nhiên phải là cách giảm cân dàn cho người lười ý chứ, còn người chăm thì không nói. Câu hỏi đặt ra là làm sao để đốt bớt được lượng mỡ trong cơ thể của mình.
+3 năm trở lại đây tự dưng cứ trở mùa là tôi bị viêm mũi dị ứng dù trước đó thì không. Mà viêm mũi dị ứng khó chịu cực kỳ. Mũi lúc nào cũng nghẹt cứng. Nhẹ thì xụt xịt nặng thì không thở được. Thuốc thì uống cơ man, có vài lần đi bệnh viện tôi xài hết 1,2 tr tiền thuốc - nó quá là bình thường :) Đôi lần đi nv mà tiết kiệm được là cũng đủ cái airpod pro rồi chứ chơi - tiếc thật. Tôi không nói về tiền ở đây đâu, nhưng tới giờ tôi cũng chưa hiểu tại sao tự dưng lại bị dị ứng dù trước đó tôi đâu có bị. Thông thường dị ứng sẽ bị từ nhỏ rồi :) tôi đây tóc sắp bạc rồi.
 
-... Còn rất nhiều câu hỏi kiểu kiểu như thế liên quan tới cơ thể chúng ta. Tính tôi hay hỏi mà lại còn hỏi ngu nữa :) 
+Dạo này tôi rõ là béo, mà béo đâu không béo cứ béo bụng. Gần đây lại tăng thêm 5 cân, thú thật chụp ảnh cứ phải hóp bụng - rõ khổ. Nhưng đó còn bình thường, khổ hơn là khi tôi ngồi đâu đó chật chật một tí chân mà ép vào bụng là tôi khó thở lắm :'( địu mía. Làm sao để lười mà vẫn giảm cân được đây? chăm thì không tính.
+
+....
+
+Tại sao hôm nay tôi lại viết rõ là luyên thuyên mấy cái này? Cơ mà không sao từ từ rồi nó liên quan. Chả là đợt này tôi đang xem một series film trên netflix khá hay. Tên là "Human, the world within". Thể loại phim khoa học. **Thôi đi ông, đừng có mà trí thức giả** - ae đừng nghĩ thế oan cho tôi. Tôi cũng không hiểu tôi nữa. Hồi bé tôi thích xem phim trung quốc bay lượn chim cò, lên năm 18 thích xem phim Hàn lãng mạng. Tới năm 20 xem phim Nhật =)). Năm 22 chuyển qua xem phim Mỹ nhanh và xôi thịt. và đến giờ, 30 tuổi tôi lại thích xem phim khoa học hoặc thế giới độc vật. Có lẽ tại già.
+
+Lạc đề. Quay lại, series này nghe đâu được tài trợ bởi netflix luôn. Serise là một loạt các tập phim tài liệu khoa học về các hệ thống trong cơ thể: Hệ tuần hoàn, thần kinh, tiêu hóa, miễn dịch, về giác quan thứ 6, ... Các tập phim cố gắng truyền tải các kiến thức khoa học cho người xem dưới dạng bình dân dễ hiểu. Và hơn hết hé lộ giải thích rất nhiều thắc mắc của tôi từ trước (VD như vài cái ở trên).
+
+Tôi nghĩ đợt này WFH nhiều, thời gian di chuyển đi làm được tiết kiệm. AE có thể dành thời gian này để coi hết series này. Chắc chắn là có rất nhiều thông tin thú vị. Xem xong nhiều cái trước giờ cứ nghĩ là đúng mà lại không đúng thế mới đâu.
+
+....
+
+Sau này con lớn tôi sẽ cho nó về quê thật nhiều, chỉ vậy thôi, ... (Chả liên quan nhỉ)
+
+Chúc anh em cuối tuần vi vẻ nha, giờ tôi đi ngủ đây, mấy nay nã cf nhiều tối khó ngủ quá, chắc mai phải giảm liều xuống.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
