@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Các hình thức logon trong Windows,
+title: Tất tần tật các hình thức logon trong Windows,
 date: 2021-10-07 00:32:20 +0700
-description: Các hình thức logon trong Windows,
+description: Tất tần tật các hình thức logon trong Windows,
 img: 2021/10/07/intro.jpg
 fig-caption: # Add figcaption (optional)
 tags: [Windows]
