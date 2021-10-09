@@ -66,8 +66,8 @@ Kiểu logon này được cho phép bằng đặc quyền (privilege) SeService
 
 Có rất nhiều các thông tin hay ho khác nữa muốn biết chi tiết hãy coi mấy link tôi đã dẫn trong bài nha.
 
-## Tham khảo (khác)
+### Tham khảo
 
-[link1](https://zer1t0.gitlab.io/posts/attacking_ad/?fbclid=IwAR1mS2fiTXJSnALObPQU4NrHjN1uhzuf3WviOefvvec9D6TK6MJX1GZhMzI#interactive-logon)
++ [https://zer1t0.gitlab.io](https://zer1t0.gitlab.io/posts/attacking_ad/?fbclid=IwAR1mS2fiTXJSnALObPQU4NrHjN1uhzuf3WviOefvvec9D6TK6MJX1GZhMzI#interactive-logon)
 
-[link2](https://ldapwiki.com/wiki/Windows%20Logon%20Types)
++ [https://ldapwiki.com](https://ldapwiki.com/wiki/Windows%20Logon%20Types)
