@@ -5,7 +5,7 @@ date: 2019-09-15 00:32:20 +0700
 description: Phú Yên 2019 - Loanh quanh VN,
 img: 2019/09/15/maybay.JPG
 fig-caption: # Add figcaption (optional)
-tags: [Linux]
+tags: [LifeZone]
 ---
 
 Đặt tay type bài này không phải mang ý reviews này nọ về Phú Yên đơn giản vì những nơi đã đi, những việc đã làm và những gì đã trải qua ở đó quá là nhỏ bé không đáng kể. Đây chỉ là những ghi chép nhỏ, trải nghiệm cá nhân trong khoảng happy time cũng những người bạn thú vị mà thôi.
