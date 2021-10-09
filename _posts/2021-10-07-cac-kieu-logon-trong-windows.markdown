@@ -13,7 +13,7 @@ Gần đây chúng tôi có một yêu cầu là giới hạn chỉ cho phép us
 Theo tài liệu của microsoft mô tả [tại đây](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/reference-tools-logon-types) thì có 7 hình thức logon mà windows hỗ trợ: Interactive (also known as, Logon locally), Network, Batch, Service, NetworkCleartext, NewCredentials, RemoteInteractive.
 
 
-##Interactive (Logon Locally)
+## Interactive (Logon Locally)
 
 Microsoft nói "Authentication is interactive when a user is prompted to supply logon information". Điều đó là các hình thức mà cứ yêu hiện lên thông báo cung cấp thông tin đăng nhập là interactive logon. Microsoft cũng chia ra trường hợp interactive logon vơi Local và Domain. Bạn nào muốn hiểu chi tiết nó tương tác ở mức subsystem thì có thể coi [tại đây](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc780332(v=ws.10)?redirectedfrom=MSDN).
 
@@ -23,7 +23,7 @@ Kiểu interactive logon trong thực tế đơn giản nhất là ngồi tại 
 
 Kiểu logon này được cho phép bằng đặc quyền (privilege) SeInteractiveLogonRight trên windows.
 
-###Net logon
+## Net logon
 
 Hình thức logon này tôi không thấy microsoft định nghĩa chắc nịch. Chỉ thấy mô tả một cách chung chung là kiểu **Remote logon** mà **không yêu cầu người dùng cung cấp logon infomation** mà thôi. 
 
@@ -43,7 +43,7 @@ Một vài kiểu net logon trong thực tế: Câu lệnh Net use * \\SERVER ( 
 Để control interactive logon ta sử dụng option "Allow/Deny Net logon" trong GPO (local và AD).
 
 
-###Batch logon
+## Batch logon
 
 Theo MS "When you use the Add Scheduled Task Wizard to schedule a task to run under a particular user name and password, that user is automatically assigned the Log on as a batch job user right". Điều này có nghĩa là batch logon sẽ xảy ra khi tạo tash scheduler run dưới 1 user khác (có thể cần cung cấp username+password) mà không có sự can thiệp trực tiếp của họ.
 
@@ -54,7 +54,7 @@ Kiểu logon này được cho phép bằng đặc quyền (privilege) SeBatchLo
 Để control interactive logon ta sử dụng option "Allow/Deny Batch logon" trong GPO (local và AD).
 
 
-###Service logon
+## Service logon
 
 Service logon được sử dụng khi một dịch vụ được khởi chạy trong context (ngữ cảnh) của người dùng. Logon infomation được cache trong vùng nhớ của lsass process khi dịch vụ được thực thi.
 
@@ -67,7 +67,7 @@ Kiểu logon này được cho phép bằng đặc quyền (privilege) SeService
 
 Có rất nhiều các thông tin hay ho khác nữa muốn biết chi tiết hãy coi mấy link tôi đã dẫn trong bài nha.
 
-###Tham khảo (khác)
+## Tham khảo (khác)
 
 https://zer1t0.gitlab.io/posts/attacking_ad/?fbclid=IwAR1mS2fiTXJSnALObPQU4NrHjN1uhzuf3WviOefvvec9D6TK6MJX1GZhMzI#interactive-logon
 
