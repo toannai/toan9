@@ -70,4 +70,4 @@ Có rất nhiều các thông tin hay ho khác nữa muốn biết chi tiết h�
 
 [link1](https://zer1t0.gitlab.io/posts/attacking_ad/?fbclid=IwAR1mS2fiTXJSnALObPQU4NrHjN1uhzuf3WviOefvvec9D6TK6MJX1GZhMzI#interactive-logon)
 
-[link2][https://ldapwiki.com/wiki/Windows%20Logon%20Types)
+[link2](https://ldapwiki.com/wiki/Windows%20Logon%20Types)
