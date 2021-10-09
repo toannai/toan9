@@ -38,7 +38,7 @@ Với windows hay dùng một số protocol thực hiện net logon
 * NTLM, for compatibility with Windows Server NT 4.0-based systems
 * Netlogon Remote Protocol
 
-Một vài kiểu net logon trong thực tế: Câu lệnh Net use * \\SERVER ( bao gồm cả Net use * \\SERVER /u:user) để dùng ổ network; MMC snap-ins to remote computer (VD: RSAT, Eventviewer remote, ...); PowerShell WinRM; PSExec (without explicit creds); Remote Registry; Remote Desktop Gateway (Bước Authenticating to Remote Desktop Gateway).
+Một vài kiểu net logon trong thực tế: Câu lệnh `Net use * \\SERVER` ( bao gồm cả `Net use * \\SERVER /u:user`) để dùng ổ network; MMC snap-ins to remote computer (VD: RSAT, Eventviewer remote, ...); PowerShell WinRM; PSExec (without explicit creds); Remote Registry; Remote Desktop Gateway (Bước Authenticating to Remote Desktop Gateway).
 
 Để control Net logon ta sử dụng option "Allow/Deny Net logon" trong GPO (local và AD).
 
