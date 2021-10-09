@@ -45,7 +45,7 @@ Một vài kiểu net logon trong thực tế: Câu lệnh Net use * \\SERVER ( 
 
 ## Batch logon
 
-Theo MS "When you use the Add Scheduled Task Wizard to schedule a task to run under a particular user name and password, that user is automatically assigned the Log on as a batch job user right". Điều này có nghĩa là batch logon sẽ xảy ra khi tạo tash scheduler run dưới 1 user khác (có thể cần cung cấp username+password) mà không có sự can thiệp trực tiếp của họ.
+Theo MS "When you use the Add Scheduled Task Wizard to schedule a task to run under a particular user name and password, that user is automatically assigned the Log on as a batch job user right". Điều này có nghĩa là batch logon sẽ xảy ra khi tạo task schedule run dưới 1 user khác (có thể cần cung cấp username+password) mà không có sự can thiệp trực tiếp của họ.
 
 Quá trình logon này đương nhiên chỉ diễn ra khi thực thi task schedule chứ không phải khi tạo task.
 
