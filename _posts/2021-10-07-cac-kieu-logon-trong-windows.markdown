@@ -19,7 +19,9 @@ Microsoft nói "Authentication is interactive when a user is prompted to supply 
 
 Kiểu interactive logon trong thực tế đơn giản nhất là ngồi tại máy login vào màn hình đăng nhập; RUNAS thực hiện tại máy; đăng nhập qua console (kể cả remote console kvm/vmware/...). Đáng đặc biệt hơn là RDP, thậm trí là cả psexec (trường hợp enter username và password) vẫn là interactive logon chứ không phải Net logon nha.
 
-Để control interactive logon ta sử dụng option "Logon locally" trong GPO (local và AD).
+Để control interactive logon ta sử dụng option "Allow/Deny Logon locally" trong GPO (local và AD).
+
+Kiểu logon này được cho phép bằng đặc quyền (privilege) SeInteractiveLogonRight trên windows.
 
 ###Net logon
 
@@ -38,11 +40,19 @@ Với windows hay dùng một số protocol thực hiện net logon
 
 Một vài kiểu net logon trong thực tế: Câu lệnh Net use * \\SERVER ( bao gồm cả Net use * \\SERVER /u:user) để dùng ổ network; MMC snap-ins to remote computer (VD: RSAT, Eventviewer remote, ...); PowerShell WinRM; PSExec (without explicit creds); Remote Registry; Remote Desktop Gateway (Bước Authenticating to Remote Desktop Gateway).
 
+Để control interactive logon ta sử dụng option "Allow/Deny Net logon" trong GPO (local và AD).
+
+
 ###Batch logon
 
 Theo MS "When you use the Add Scheduled Task Wizard to schedule a task to run under a particular user name and password, that user is automatically assigned the Log on as a batch job user right". Điều này có nghĩa là batch logon sẽ xảy ra khi tạo tash scheduler run dưới 1 user khác (có thể cần cung cấp username+password) mà không có sự can thiệp trực tiếp của họ.
 
 Quá trình logon này đương nhiên chỉ diễn ra khi thực thi task schedule chứ không phải khi tạo task.
+
+Kiểu logon này được cho phép bằng đặc quyền (privilege) SeBatchLogonRight trên windows.
+
+Để control interactive logon ta sử dụng option "Allow/Deny Batch logon" trong GPO (local và AD).
+
 
 ###Service logon
 
@@ -50,4 +60,15 @@ Service logon được sử dụng khi một dịch vụ được khởi chạy 
 
 Quá trình logon này đương nhiên chỉ diễn ra khi thực thi service running.
 
+Kiểu logon này được cho phép bằng đặc quyền (privilege) SeServiceLogonRight trên windows.
 
+Để control interactive logon ta sử dụng option "Allow/Deny Service logon" trong GPO (local và AD).
+
+
+Có rất nhiều các thông tin hay ho khác nữa muốn biết chi tiết hãy coi mấy link tôi đã dẫn trong bài nha.
+
+###Tham khảo (khác)
+
+https://zer1t0.gitlab.io/posts/attacking_ad/?fbclid=IwAR1mS2fiTXJSnALObPQU4NrHjN1uhzuf3WviOefvvec9D6TK6MJX1GZhMzI#interactive-logon
+
+https://ldapwiki.com/wiki/Windows%20Logon%20Types
