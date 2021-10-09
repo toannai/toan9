@@ -13,4 +13,41 @@ Gần đây chúng tôi có một yêu cầu là giới hạn chỉ cho phép us
 Theo tài liệu của microsoft mô tả [tại đây](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/reference-tools-logon-types) thì có 7 hình thức logon mà windows hỗ trợ: Interactive (also known as, Logon locally), Network, Batch, Service, NetworkCleartext, NewCredentials, RemoteInteractive.
 
 
+##Interactive (Logon Locally)
+
+Microsoft nói "Authentication is interactive when a user is prompted to supply logon information". Điều đó là các hình thức mà cứ yêu hiện lên thông báo cung cấp thông tin đăng nhập là interactive logon. Microsoft cũng chia ra trường hợp interactive logon vơi Local và Domain. Bạn nào muốn hiểu chi tiết nó tương tác ở mức subsystem thì có thể coi [tại đây](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc780332(v=ws.10)?redirectedfrom=MSDN).
+
+Kiểu interactive logon trong thực tế đơn giản nhất là ngồi tại máy login vào màn hình đăng nhập; RUNAS thực hiện tại máy; đăng nhập qua console (kể cả remote console kvm/vmware/...). Đáng đặc biệt hơn là RDP, thậm trí là cả psexec (trường hợp enter username và password) vẫn là interactive logon chứ không phải Net logon nha.
+
+Để control interactive logon ta sử dụng option "Logon locally" trong GPO (local và AD).
+
+###Net logon
+
+Hình thức logon này tôi không thấy microsoft định nghĩa chắc nịch. Chỉ thấy mô tả một cách chung chung là kiểu **Remote logon** mà **không yêu cầu người dùng cung cấp logon infomation** mà thôi. 
+
+Với hình thức logon này, thông tin xác thực đã được thiết lập trước đó hoặc sử dụng một phương pháp khác để thu thập thông tin xác thực được nhận diện người dùng. Quá trình này xác nhận danh tính của người dùng đối với bất kỳ dịch vụ mạng nào mà người dùng đang cố gắng truy cập. Quá trình này thường ẩn đối với người dùng trừ khi phải cung cấp thông tin đăng nhập thay thế.
+
+Với windows hay dùng một số protocol thực hiện net logon
+
+* Kerberos version 5 protocol
+* Public Key certificates
+* Secure Socket Layer/Transport Layer Security (SSL/TLS)
+* Digest SSP
+* NTLM, for compatibility with Windows Server NT 4.0-based systems
+* Netlogon Remote Protocol
+
+Một vài kiểu net logon trong thực tế: Câu lệnh Net use * \\SERVER ( bao gồm cả Net use * \\SERVER /u:user) để dùng ổ network; MMC snap-ins to remote computer (VD: RSAT, Eventviewer remote, ...); PowerShell WinRM; PSExec (without explicit creds); Remote Registry; Remote Desktop Gateway (Bước Authenticating to Remote Desktop Gateway).
+
+###Batch logon
+
+Theo MS "When you use the Add Scheduled Task Wizard to schedule a task to run under a particular user name and password, that user is automatically assigned the Log on as a batch job user right". Điều này có nghĩa là batch logon sẽ xảy ra khi tạo tash scheduler run dưới 1 user khác (có thể cần cung cấp username+password) mà không có sự can thiệp trực tiếp của họ.
+
+Quá trình logon này đương nhiên chỉ diễn ra khi thực thi task schedule chứ không phải khi tạo task.
+
+###Service logon
+
+Service logon được sử dụng khi một dịch vụ được khởi chạy trong context (ngữ cảnh) của người dùng. Logon infomation được cache trong vùng nhớ của lsass process khi dịch vụ được thực thi.
+
+Quá trình logon này đương nhiên chỉ diễn ra khi thực thi service running.
+
 
