@@ -40,7 +40,7 @@ Với windows hay dùng một số protocol thực hiện net logon
 
 Một vài kiểu net logon trong thực tế: Câu lệnh Net use * \\SERVER ( bao gồm cả Net use * \\SERVER /u:user) để dùng ổ network; MMC snap-ins to remote computer (VD: RSAT, Eventviewer remote, ...); PowerShell WinRM; PSExec (without explicit creds); Remote Registry; Remote Desktop Gateway (Bước Authenticating to Remote Desktop Gateway).
 
-Để control interactive logon ta sử dụng option "Allow/Deny Net logon" trong GPO (local và AD).
+Để control Net logon ta sử dụng option "Allow/Deny Net logon" trong GPO (local và AD).
 
 
 ## Batch logon
@@ -51,7 +51,7 @@ Quá trình logon này đương nhiên chỉ diễn ra khi thực thi task sched
 
 Kiểu logon này được cho phép bằng đặc quyền (privilege) SeBatchLogonRight trên windows.
 
-Để control interactive logon ta sử dụng option "Allow/Deny Batch logon" trong GPO (local và AD).
+Để control batch logon ta sử dụng option "Allow/Deny Batch logon" trong GPO (local và AD).
 
 
 ## Service logon
@@ -62,13 +62,12 @@ Quá trình logon này đương nhiên chỉ diễn ra khi thực thi service ru
 
 Kiểu logon này được cho phép bằng đặc quyền (privilege) SeServiceLogonRight trên windows.
 
-Để control interactive logon ta sử dụng option "Allow/Deny Service logon" trong GPO (local và AD).
-
+Để control Service logon ta sử dụng option "Allow/Deny Service logon" trong GPO (local và AD).
 
 Có rất nhiều các thông tin hay ho khác nữa muốn biết chi tiết hãy coi mấy link tôi đã dẫn trong bài nha.
 
 ## Tham khảo (khác)
 
-https://zer1t0.gitlab.io/posts/attacking_ad/?fbclid=IwAR1mS2fiTXJSnALObPQU4NrHjN1uhzuf3WviOefvvec9D6TK6MJX1GZhMzI#interactive-logon
+[link1](https://zer1t0.gitlab.io/posts/attacking_ad/?fbclid=IwAR1mS2fiTXJSnALObPQU4NrHjN1uhzuf3WviOefvvec9D6TK6MJX1GZhMzI#interactive-logon)
 
-https://ldapwiki.com/wiki/Windows%20Logon%20Types
+[link2][https://ldapwiki.com/wiki/Windows%20Logon%20Types)
