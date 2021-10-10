@@ -1,15 +1,5 @@
 ---
 layout: post
-title: "Những ngày ở Myanmar - Lần đầu xuất ngoại, 1Day"
-author: "sysman"
-categories: 
- - Linh tinh
-tags:
-- Công tác
----
-
----
-layout: post
 title: Những ngày ở Myanmar - Lần đầu xuất ngoại, 1Day,
 date: 2019-07-29 00:32:20 +0700
 description: Những ngày ở Myanmar - Lần đầu xuất ngoại, 1Day,
