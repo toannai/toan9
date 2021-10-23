@@ -10,19 +10,19 @@ tags: [Security, WebSecurity]
 
 Trong notes này, chúng ta sẽ đề cập tới một số key features của XML có liên quan đến lỗ hổng XXE.
 
-** XML là gì?
+### XML là gì?
 
 XML là viết tắt của "extensible markup language". XML là một ngôn ngữ được thiết kế để lưu trữ và vận chuyển dữ liệu. Giống như HTML, XML sử dụng cấu trúc dạng cây gồm các tags và data. Không giống như HTML, XML không sử dụng các tags được định nghĩa trước và vì vậy các thẻ có thể được đặt tên để mô tả dữ liệu (Để chỉ nhìn tag là biết nó dùng để define cho cái gì). Trước đây XML khá thịnh hành như một định dạng truyền tải dữ liệu ("X" trong "AJAX" là viết tắt của "XML"). Nhưng sự phổ biến của nó hiện đã giảm hẳn và đang dần bị thay thế bởi JSON.
 
-** XML entities là gì?
+### XML entities là gì?
 
 XML entities là một cách thể item của data trong tài liệu XML, thay vì sử dụng chính dữ liệu đó. Các entities khác nhau được xây dựng trong đặc tả của ngôn ngữ XML. Ví dụ: các entities & lt; và & gt; đại diện cho các ký tự <và>. Đây là các siêu ký tự được sử dụng để biểu thị các thẻ XML và do đó thường phải được biểu diễn bằng cách sử dụng các thực thể của chúng khi chúng xuất hiện trong dữ liệu.
 
-** Document type definition là gì?
+### Document type definition là gì?
 
 XML document type definition (DTD) chứa các khai báo có thể định nghĩa cấu trúc của tài liệu XML, các kiểu dữ liệu mà nó có thể chứa và các items khác. DTD được khai báo trong phần tử DOCTYPE và có thể tùy chọn định nghĩa ở đầu tài liệu XML. DTD có thể hoàn toàn độc lập trong chính tài liệu (được gọi là "internal DTD") hoặc có thể được load từ nơi khác (được gọi là "external DTD") hoặc có thể kết hợp cả hai.
 
-** Các XML custom entities là gì?
+### Các XML custom entities là gì?
 
 XML cho phép các thực thể tùy chỉnh được định nghĩa trong DTD. Ví dụ:
 
@@ -30,7 +30,7 @@ XML cho phép các thực thể tùy chỉnh được định nghĩa trong DTD. 
 
 Định nghĩa này có nghĩa là mọi cách sử dụng tham chiếu thực thể & myentity; trong tài liệu XML sẽ được thay thế bằng giá trị đã xác định: "my entity value".
 
-** Các XML external entities là gì?
+### Các XML external entities là gì?
 
 Các XML external entities là một loại thực thể tùy chỉnh có định nghĩa nằm bên ngoài DTD nơi chúng được khai báo.
 
