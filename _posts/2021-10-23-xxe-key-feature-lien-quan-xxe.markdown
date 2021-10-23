@@ -42,4 +42,4 @@ URL có thể sử dụng file:// protocol, do đó XML external entities có th
 
 ```<! DOCTYPE foo [<! ENTITY ext SYSTEM "file:///path/to/file">]>```
 
-Các XML external entities cung cấp các thức để thực hiện các cuộc tấn công XXE(XML external entity attacks). 
+Các XML external entities cung cấp cách thức để thực hiện các cuộc tấn công XXE(XML external entity attacks). 
