@@ -16,7 +16,7 @@ XML là viết tắt của "extensible markup language". XML là một ngôn ng�
 
 ### XML entities là gì?
 
-XML entities là một cách thể hiện một item của data trong tài liệu XML, thay vì sử dụng chính dữ liệu đó. Các entities khác nhau được xây dựng trong đặc tả của ngôn ngữ XML. Ví dụ: các entities &lt; và &gt; đại diện cho các ký tự **<** và **>**. Đây là các metacharacters được sử dụng để biểu thị các thẻ XML và do đó thường phải được biểu diễn bằng cách sử dụng các entities của chúng khi chúng xuất hiện trong dữ liệu.
+XML entities là một cách thể hiện một item của data trong tài liệu XML, thay vì sử dụng chính dữ liệu đó. Các entities khác nhau được xây dựng trong đặc tả của ngôn ngữ XML. Ví dụ: các entities &lt; và &gt; đại diện cho các ký tự **<** và **>**. Đây là các metacharacters được sử dụng để biểu thị các tag XML và do đó thường phải được biểu diễn bằng cách sử dụng các entities của chúng khi chúng xuất hiện trong dữ liệu.
 
 ### Document type definition là gì?
 
