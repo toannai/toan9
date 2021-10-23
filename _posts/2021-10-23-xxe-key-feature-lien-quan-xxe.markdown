@@ -12,11 +12,11 @@ Trong notes này, chúng ta sẽ đề cập tới một số key features của
 
 ### XML là gì?
 
-XML là viết tắt của "extensible markup language". XML là một ngôn ngữ được thiết kế để lưu trữ và vận chuyển dữ liệu. Giống như HTML, XML sử dụng cấu trúc dạng cây gồm các tags và data. Không giống như HTML, XML không sử dụng các tags được định nghĩa trước và vì vậy các thẻ có thể được đặt tên để mô tả dữ liệu (Để chỉ nhìn tag là biết nó dùng để define cho cái gì). Trước đây XML khá thịnh hành như một định dạng truyền tải dữ liệu ("X" trong "AJAX" là viết tắt của "XML"). Nhưng sự phổ biến của nó hiện đã giảm hẳn và đang dần bị thay thế bởi JSON.
+XML là viết tắt của "extensible markup language". XML là một ngôn ngữ được thiết kế để lưu trữ và truyền dữ liệu. Giống như HTML, XML sử dụng cấu trúc dạng cây gồm các tags và data. Không giống như HTML, XML không sử dụng các tags được định nghĩa trước, chính vì vậy các thẻ có thể được đặt tên để mô tả dữ liệu (Để chỉ nhìn tag là biết nó dùng để define cho cái gì). Trước đây XML khá thịnh hành như một định dạng truyền tải dữ liệu ("X" trong "AJAX" là viết tắt của "XML"). Nhưng sự phổ biến của nó hiện đã giảm hẳn và đang dần bị thay thế bởi JSON.
 
 ### XML entities là gì?
 
-XML entities là một cách thể item của data trong tài liệu XML, thay vì sử dụng chính dữ liệu đó. Các entities khác nhau được xây dựng trong đặc tả của ngôn ngữ XML. Ví dụ: các entities & lt; và & gt; đại diện cho các ký tự <và>. Đây là các siêu ký tự được sử dụng để biểu thị các thẻ XML và do đó thường phải được biểu diễn bằng cách sử dụng các thực thể của chúng khi chúng xuất hiện trong dữ liệu.
+XML entities là một cách thể hiện một item của data trong tài liệu XML, thay vì sử dụng chính dữ liệu đó. Các entities khác nhau được xây dựng trong đặc tả của ngôn ngữ XML. Ví dụ: các entities &lt; và &gt; đại diện cho các ký tự **<** và **>**. Đây là các metacharacters được sử dụng để biểu thị các thẻ XML và do đó thường phải được biểu diễn bằng cách sử dụng các entities của chúng khi chúng xuất hiện trong dữ liệu.
 
 ### Document type definition là gì?
 
@@ -26,7 +26,7 @@ XML document type definition (DTD) chứa các khai báo có thể định nghĩ
 
 XML cho phép các thực thể tùy chỉnh được định nghĩa trong DTD. Ví dụ:
 
-<! DOCTYPE foo [<! ENTITY myentity "my entity value">]>
+```<! DOCTYPE foo [<! ENTITY myentity "my entity value">]>```
 
 Định nghĩa này có nghĩa là mọi cách sử dụng tham chiếu thực thể & myentity; trong tài liệu XML sẽ được thay thế bằng giá trị đã xác định: "my entity value".
 
@@ -36,10 +36,10 @@ Các XML external entities là một loại thực thể tùy chỉnh có địn
 
 Khai báo của một XML external entities sử dụng từ khóa SYSTEM và phải chỉ định một URL mà từ đó giá trị của thực thể sẽ được load. Ví dụ:
 
-<! DOCTYPE foo [<! ENTITY ext SYSTEM "http://normal-website.com">]>
+```<! DOCTYPE foo [<! ENTITY ext SYSTEM "http://normal-website.com">]>```
 
 URL có thể sử dụng file:// protocol, do đó XML external entities có thể được load file. Ví dụ:
 
-<! DOCTYPE foo [<! ENTITY ext SYSTEM "file:///path/to/file">]>
+```<! DOCTYPE foo [<! ENTITY ext SYSTEM "file:///path/to/file">]>```
 
 Các XML external entities cung cấp các thức để thực hiện các cuộc tấn công XXE(XML external entity attacks). 
