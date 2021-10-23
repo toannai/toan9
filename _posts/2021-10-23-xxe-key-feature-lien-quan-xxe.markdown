@@ -24,7 +24,7 @@ XML document type definition (DTD) chứa các khai báo có thể định nghĩ
 
 ### Các XML custom entities là gì?
 
-XML cho phép các thực thể tùy chỉnh được định nghĩa trong DTD. Ví dụ:
+XML cho phép các custom entities được định nghĩa trong DTD. Ví dụ:
 
 ```<! DOCTYPE foo [<! ENTITY myentity "my entity value">]>```
 
