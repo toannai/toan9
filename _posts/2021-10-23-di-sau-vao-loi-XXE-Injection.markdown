@@ -194,3 +194,7 @@ Và cứ như vậy, bất kỳ tệp cục bộ nào mà máy chủ web có th�
 
 Lưu ý: Permission là quan trọng trong cuộc tấn công này. Nếu máy chủ web (hoặc người dùng www-data) không có quyền, nó sẽ không trả lại nội dung file. Đây là lý do tại sao chúng ta load ```/etc/passwd``` thay vì ```/etc/shadow``` trong các Proof of Concept (PoC) này.  
 
+
+## Tham khảo
+
++ SRT Blog: https://www.synack.com/blog/a-deep-dive-into-xxe-injection/
