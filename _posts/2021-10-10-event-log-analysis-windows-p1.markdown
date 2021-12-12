@@ -8,11 +8,11 @@ fig-caption: # Add figcaption (optional)
 tags: [Windows, Forensic]
 ---
 
-Trước đây phần nhiều thời gian tôi dành cho việc làm việc trên các hệ thống linux. Thỉnh thoảng có đá qua làm một chút với Windows. Đang làm với Linux quen sang làm Windows rất là bực. Khó chịu nhất là việc troubleshoot lỗi trên Windows. Info trong log rất nhiều và rối dắm. Đến cái công cụ Log management dùng cũng muốn đập cho phát vì tra cứu rất hay treo. Mà thôi bỏ qua nói vậy hết cả ngày, nhiều việc không thích vẫn phải làm cho tốt. Hôm nay rảnh đọc được tài liệu khá hay nên tôi sẽ dành thời gian để note lại một số thứ mà mình thấy hay hay liên tới Event log Windows. Nói thì buồn cười nhưng mà thôi cứ làm vậy. Notes của tôi - tôi note, ai rảnh đọc chơi chơi.
+Trước đây phần nhiều thời gian tôi dành cho việc làm việc trên các hệ thống linux. Thỉnh thoảng có đá qua làm một chút với Windows. Đang làm với Linux quen sang làm Windows rất là bực. Khó chịu nhất là việc troubleshoot lỗi trên Windows. Info trong log rất nhiều và rối dắm. Đến cái công cụ view log dùng cũng muốn đập cho phát vì tra cứu rất hay treo. Mà thôi bỏ qua nói vậy hết cả ngày, nhiều việc không thích vẫn phải làm cho tốt. Hôm nay rảnh tôi vui vì đọc được tài liệu khá hay nên sẽ dành thời gian để note lại một số thứ liên tới Event logs Windows. Nói thì buồn cười nhưng mà thôi cứ làm vậy. Notes của tôi - tôi note, ai rảnh đọc chơi chơi.
 
 ### Log và Event log
 
-Log là cái gì? Nếu vác định nghĩa ra cũng mơ hồ. Chỉ cần mang máng là những thông tin (Message/Event) mà trong quá trình developer viết mã (code) phần mềm ghi ra mà thôi. Log có nhiều mục đích nhưng phổ biến nhất là để hỗ trợ troubleshoot hoặc truyền đạt thông tin gì đó tới người dùng. 
+Log là cái gì? Nếu vác ra để định nghĩa ra cũng mơ hồ. Chỉ cần mang máng là những thông tin (Message/Event) mà trong quá trình developer viết mã (code) phần mềm ghi ra mà thôi. Log có nhiều mục đích nhưng phổ biến nhất là để hỗ trợ troubleshoot hoặc truyền đạt thông tin gì đó tới người dùng. 
 
 Đặc điểm của các message này là dữ liệu dạng text - không có cấu trúc. Cũng không mấy khi được tuân theo một chuẩn ngon nghẻ cho lắm, mỗi ông ghi một kiểu khá loạn xạ dù cũng nhiều chuẩn được đề xuất. 
 
@@ -30,7 +30,8 @@ Các thông tin được ghi lại bao gồm:
 * Thông tin system functions
 * Security
 
-Mỗi một message log trong Windows họ gọi là một Event. Nhiều Event thì gọi là Event logs (Windows Events) (Định nghĩa thật loằng ngoằng phải không?). Khi đọc một event để forensic thông thường ta sẽ cần phải chú ý các thông tin sau:
+Mỗi một message log trong Windows họ gọi là một Event. Nhiều Event thì gọi là Event logs/Windows Events (Định nghĩa thật loằng ngoằng phải không?). Khi đọc một event để forensic thông thường ta sẽ cần phải chú ý các thông tin sau:
+s
 
 ![Event Info]( {{site.url}}/assets/img/2021/10/10/event_info.png)
 
