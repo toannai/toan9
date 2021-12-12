@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Event log analysis 1 - Những thông cơ bản nhất,
+title: Event logs analysis 1 - Những thông cơ bản về Event logs,
 date: 2021-10-10 00:32:20 +0700
-description: Mổ sẻ Event logon/logofftrong Windows,
+description: Event logs analysis 1 - Những thông cơ bản về Event logs,
 img: 2021/10/10/ev_top.png
 fig-caption: # Add figcaption (optional)
 tags: [Windows, Forensic]
