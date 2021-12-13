@@ -5,7 +5,7 @@ date: 2021-10-10 00:32:20 +0700
 description: Event logs analysis 1 - Những thông cơ bản về Event logs,
 img: 2021/10/10/ev_top.png
 fig-caption: # Add figcaption (optional)
-tags: [Windows]
+tags: [Windows, Forensic]
 ---
 
 Trước đây phần nhiều thời gian tôi dành cho việc làm việc trên các hệ thống linux. Thỉnh thoảng có đá qua làm một chút với Windows. Đang làm với Linux quen sang làm Windows rất là bực. Khó chịu nhất là việc troubleshoot lỗi trên Windows. Info trong log rất nhiều và rối dắm. Đến cái công cụ view log dùng cũng muốn đập cho phát vì tra cứu rất hay treo. Mà thôi bỏ qua nói vậy hết cả ngày, nhiều việc không thích vẫn phải làm cho tốt. Hôm nay rảnh tôi vui vì đọc được tài liệu khá hay nên sẽ dành thời gian để note lại một số thứ liên tới Event logs Windows. Nói thì buồn cười nhưng mà thôi cứ làm vậy. Notes của tôi - tôi note, ai rảnh đọc chơi chơi.
