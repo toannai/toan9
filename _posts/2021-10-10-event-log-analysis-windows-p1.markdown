@@ -51,7 +51,7 @@ Với mỗi kiểu lại chia thành các level khác nhau mô tả mức độ 
 * Error: Các vấn đề nghiêm trọng. Có thể gây mất mát dữ liệu hoặc lỗi tính năng. VD: Service không start được
 
 * Warning: Ít nghiêm trọng hơn. Lỗi không xảy ra ngay mà tiềm ẩn xảy ra trong tương lai. VD: Disk sắp full
-s
+
 * Infomation: Các thông tin không thêm. VD: Service đã được start
 
 ####  Level ở mức độ Security:
