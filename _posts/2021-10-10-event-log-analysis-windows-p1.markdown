@@ -32,7 +32,7 @@ Các thông tin được ghi lại bao gồm:
 
 Mỗi một message log trong Windows họ gọi là một Event. Nhiều Event thì gọi là Event logs/Windows Events (Định nghĩa thật loằng ngoằng phải không?). Khi đọc một event để forensic thông thường ta sẽ cần phải chú ý các thông tin sau:
 
-![Event Info]( {{site.url}}/assets/img/2021/10/10/event_info.png){:width="450px"}
+![Event Info]( {{site.url}}/assets/img/2021/10/10/event_info.png)
 
 Windows Event logs được chia thành các kiểu sau:
 
@@ -83,7 +83,7 @@ Trong những lần đi xử lý sự cố không phải toàn bộ loại log c
 
 Bản chất cốt lõi là trả lời cho các câu hỏi: Kẻ xấu xâm nhập qua đâu, vào lúc nào, như thế nào, đã làm gì trên hệ thống (Lấy được gì/sửa đổi gì). Để giải quyết các câu hỏi này ta cần tập trung vào các Event security Category sau:
 
-![cate log]( {{site.url}}/assets/img/2021/10/10/log_cate.png){:width="450px"}
+![cate log]( {{site.url}}/assets/img/2021/10/10/log_cate.png)
 
 Thỉnh thoảng ta vẫn hay băn khăn khi đưa ra tiêu chuẩn thiết lập log cho máy chủ thì cần nhưng thông tin nào? Có lẽ bảng trên là một câu trả lời rõ ràng cho câu hỏi này :)
 
