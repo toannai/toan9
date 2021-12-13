@@ -92,6 +92,9 @@ Trên đây là các thông tin cơ bản liên quan tới Event logs của Wind
 
 Good night!
 
+**Tham khảo:** 
+
+SAN FOR500
 
 
 
