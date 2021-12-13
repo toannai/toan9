@@ -67,9 +67,11 @@ Nếu như linux lưu log dưới dạng text file thì Windows lưu các file n
 
 Dĩ nhiên là ta cũng có thể thay đổi vị trí lưu log bằng việc thay đổi key trong registry tại đường dẫn sau:
 
-`HKLM\SYSTEM\CurentControlSet\Services\EventLog\Application`
-`HKLM\SYSTEM\CurentControlSet\Services\EventLog\System`
-`HKLM\SYSTEM\CurentControlSet\Services\EventLog\Security`
+[x] HKLM\SYSTEM\CurentControlSet\Services\EventLog\Application
+
+[x] HKLM\SYSTEM\CurentControlSet\Services\EventLog\System
+
+[x] HKLM\SYSTEM\CurentControlSet\Services\EventLog\Security
 
 
 ### Các điểm cần tập trung khi forensic sử dụng Event Logs?
