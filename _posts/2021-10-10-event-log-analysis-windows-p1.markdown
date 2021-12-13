@@ -37,11 +37,8 @@ Mỗi một message log trong Windows họ gọi là một Event. Nhiều Event 
 Windows Event logs được chia thành các kiểu sau:
 
 * Security: Ghi lại access control và các security setting infomation. Các thông tin được ghi trong log này được thiết lập bằng Group Policy. Ví dụ: Sự kiện Success/Failed logon, access file/folder, ... .Nhìn trung thì đây là loại log quan trọng nhất khi forensic sự cố security. Các loại log còn lại bên dưới chủ yếu sử dụng để troubleshoot lỗi trong quá trình vận hành hệ thống/service.
-
 * System: Log liên quan tới các service, system component, Driver, resource của windows. ví dụ: Service started/stoped, reboot/shutdown, ... 
-
 * Application: Các software event. Ví dụ: SQL server failed, ...
-
 * Custom: Các loại custom application log. Ví dụ: Directory Service, DNS Server, FRS, ... 
 
 Với mỗi kiểu lại chia thành các level khác nhau mô tả mức độ quan trọng của thông tin. Các level này bao gồm:
@@ -49,9 +46,7 @@ Với mỗi kiểu lại chia thành các level khác nhau mô tả mức độ 
 ####  Level ở mức độ Administration (Quản trị):
 
 * Error: Các vấn đề nghiêm trọng. Có thể gây mất mát dữ liệu hoặc lỗi tính năng. VD: Service không start được
-
 * Warning: Ít nghiêm trọng hơn. Lỗi không xảy ra ngay mà tiềm ẩn xảy ra trong tương lai. VD: Disk sắp full
-
 * Infomation: Các thông tin không thêm. VD: Service đã được start
 
 ####  Level ở mức độ Security:
