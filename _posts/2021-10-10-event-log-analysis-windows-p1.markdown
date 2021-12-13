@@ -59,19 +59,20 @@ Với mỗi kiểu lại chia thành các level khác nhau mô tả mức độ 
 
 ### Event logs được lưu trữ ở thư mục nào trong hệ điều hành?
 
-Với Win NT/XP/2k3 lưu tại `%systemroot%\System32\config` với đuôi mở rộng .evt
+Với Win NT/XP/2k3 lưu tại **%systemroot%\System32\config** với đuôi mở rộng .evt
 
-Với Win 7/8/10/2k8/2k12/2k16 lưu tại `%systemroot%\System32\winevt\logs` với đuôi mở rộng .evtx
+Với Win 7/8/10/2k8/2k12/2k16 lưu tại **%systemroot%\System32\winevt\logs** với đuôi mở rộng .evtx
 
 Nếu như linux lưu log dưới dạng text file thì Windows lưu các file này dưới dạng binary và không thể đọc được bằng text editor thông thường. 
 
 Dĩ nhiên là ta cũng có thể thay đổi vị trí lưu log bằng việc thay đổi key trong registry tại đường dẫn sau:
 
-[x] HKLM\SYSTEM\CurentControlSet\Services\EventLog\Application
 
-[x] HKLM\SYSTEM\CurentControlSet\Services\EventLog\System
+HKLM\SYSTEM\CurentControlSet\Services\EventLog\Application
 
-[x] HKLM\SYSTEM\CurentControlSet\Services\EventLog\Security
+HKLM\SYSTEM\CurentControlSet\Services\EventLog\System
+
+HKLM\SYSTEM\CurentControlSet\Services\EventLog\Security
 
 
 ### Các điểm cần tập trung khi forensic sử dụng Event Logs?
