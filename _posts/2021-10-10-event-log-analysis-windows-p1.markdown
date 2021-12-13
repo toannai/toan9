@@ -5,7 +5,7 @@ date: 2021-10-10 00:32:20 +0700
 description: Event logs analysis 1 - Những thông cơ bản về Event logs,
 img: 2021/10/10/ev_top.png
 fig-caption: # Add figcaption (optional)
-tags: [Windows, Forensic]
+tags: [Windows]
 ---
 
 Trước đây phần nhiều thời gian tôi dành cho việc làm việc trên các hệ thống linux. Thỉnh thoảng có đá qua làm một chút với Windows. Đang làm với Linux quen sang làm Windows rất là bực. Khó chịu nhất là việc troubleshoot lỗi trên Windows. Info trong log rất nhiều và rối dắm. Đến cái công cụ view log dùng cũng muốn đập cho phát vì tra cứu rất hay treo. Mà thôi bỏ qua nói vậy hết cả ngày, nhiều việc không thích vẫn phải làm cho tốt. Hôm nay rảnh tôi vui vì đọc được tài liệu khá hay nên sẽ dành thời gian để note lại một số thứ liên tới Event logs Windows. Nói thì buồn cười nhưng mà thôi cứ làm vậy. Notes của tôi - tôi note, ai rảnh đọc chơi chơi.
@@ -49,7 +49,9 @@ Với mỗi kiểu lại chia thành các level khác nhau mô tả mức độ 
 ####  Level ở mức độ Administration (Quản trị):
 
 * Error: Các vấn đề nghiêm trọng. Có thể gây mất mát dữ liệu hoặc lỗi tính năng. VD: Service không start được
+
 * Warning: Ít nghiêm trọng hơn. Lỗi không xảy ra ngay mà tiềm ẩn xảy ra trong tương lai. VD: Disk sắp full
+s
 * Infomation: Các thông tin không thêm. VD: Service đã được start
 
 ####  Level ở mức độ Security:
@@ -59,9 +61,9 @@ Với mỗi kiểu lại chia thành các level khác nhau mô tả mức độ 
 
 ### Event logs được lưu trữ ở thư mục nào trong hệ điều hành?
 
-Với Win NT/XP/2k3 lưu tại **%systemroot%\System32\config** với đuôi mở rộng .evt
+Với Win NT/XP/2k3 lưu tại `%systemroot%\System32\config` với đuôi mở rộng .evt
 
-Với Win 7/8/10/2k8/2k12/2k16 lưu tại **%systemroot%\System32\winevt\logs** với đuôi mở rộng .evtx
+Với Win 7/8/10/2k8/2k12/2k16 lưu tại `%systemroot%\System32\winevt\logs` với đuôi mở rộng .evtx
 
 Nếu như linux lưu log dưới dạng text file thì Windows lưu các file này dưới dạng binary và không thể đọc được bằng text editor thông thường. 
 
