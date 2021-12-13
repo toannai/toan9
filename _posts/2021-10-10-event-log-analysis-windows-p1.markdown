@@ -21,7 +21,7 @@ Log là cái gì? Nếu vác ra để định nghĩa ra cũng mơ hồ. Chỉ c�
 Event Viewer: Ứng dụng giúp đọc Event logs trên môi trường Windows. 
 
 
-### Các thông tin nào có trong Windows Events?
+### Các thông tin nào có trong Windows Events
 
 Các thông tin được ghi lại bao gồm:
 
@@ -43,34 +43,34 @@ Windows Event logs được chia thành các kiểu sau:
 
 Với mỗi kiểu lại chia thành các level khác nhau mô tả mức độ quan trọng của thông tin. Các level này bao gồm:
 
-#### Level ở mức độ Administration (Quản trị):
+#### Level ở mức độ Administration (Quản trị)
 
 * Error: Các vấn đề nghiêm trọng. Có thể gây mất mát dữ liệu hoặc lỗi tính năng. VD: Service không start được
 * Warning: Ít nghiêm trọng hơn. Lỗi không xảy ra ngay mà tiềm ẩn xảy ra trong tương lai. VD: Disk sắp full
 * Infomation: Các thông tin không thêm. VD: Service đã được start
 
-#### Level ở mức độ Security:
+#### Level ở mức độ Security
 
 * Success Audit: Audited Security Event thành công. Ví dụ: Logon thành công
 * Failed Audit: Audited security Event không thành công. Ví dụ: Không thể kết nối tới ổ shared
 
 ### Event logs được lưu trữ ở thư mục nào trong hệ điều hành?
 
-Với Win NT/XP/2k3 lưu tại `%systemroot%\System32\config` với đuôi mở rộng .evt
+Với Win NT/XP/2k3 lưu tại ```%systemroot%\System32\config``` với đuôi mở rộng .evt
 
-Với Win 7/8/10/2k8/2k12/2k16 lưu tại `%systemroot%\System32\winevt\logs` với đuôi mở rộng .evtx
+Với Win 7/8/10/2k8/2k12/2k16 lưu tại ```%systemroot%\System32\winevt\logs``` với đuôi mở rộng .evtx
 
 Nếu như linux lưu log dưới dạng text file thì Windows lưu các file này dưới dạng binary và không thể đọc được bằng text editor thông thường. 
 
 Dĩ nhiên là ta cũng có thể thay đổi vị trí lưu log bằng việc thay đổi key trong registry tại đường dẫn sau:
 
-
+```
 HKLM\SYSTEM\CurentControlSet\Services\EventLog\Application
 
 HKLM\SYSTEM\CurentControlSet\Services\EventLog\System
 
 HKLM\SYSTEM\CurentControlSet\Services\EventLog\Security
-
+```
 
 ### Các điểm cần tập trung khi forensic sử dụng Event Logs?
 
