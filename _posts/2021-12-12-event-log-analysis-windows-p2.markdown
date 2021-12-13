@@ -14,7 +14,27 @@ tags: [Windows, Forensic]
 
 > Để chuẩn bị cho phần này tôi nghĩ trước tiên các bạn hãy đọc bài viết "Tất tần tật các hình thức logon trong Windows" của tôi để có cái nhìn tổng quát về các kênh logon mà Windows Support cũng như cách thức để block các hình thức logon này.
 
-Tracking account là một trong những task hay được thực hiện nhất khi review Events Logs. Việc tracking này sẽ giúp ta trả lời các câu hỏi Account nào bị compromise. Vào thời điểm nào, kéo dài bao lâu. Qua hình thức logon nào và nguồn gốc các truy cập từ đâu. Các thông tin này là vô cùng quan trọng trong quá trình forensic ở giai đoạn đầu.
+Tracking account là một trong những task hay được thực hiện nhất khi review Events Logs. Việc tracking này sẽ giúp ta trả lời các câu hỏi Account nào bị compromise. Vào thời điểm nào, kéo dài bao lâu. Qua hình thức logon nào và nguồn gốc các truy cập từ đâu. Các thông tin này là vô cùng quan trọng trong quá trình forensic.
+
+Một số Event IDs cần quan tâm trong kịch bản này:
+
+* 4624 - Success Logon
+* 4625 - Failed Logon
+* 4634 / 4647 - Successful Logoff
+* 4672 - Account logon với superuser right (Administrator)
+
+Hãy nhớ một số điều sau đây:
+
+* Các Event desription cung cấp cho chúng ta các mô tả rất chi tiết. Do vậy nếu quên ý nghía của các trường có thể tham khảo tại phần description này. Tuy nhiên nhược điểm là MS viết quá chi tiết đến nỗi dài không ai muốn đọc luôn :)
+
+![Logon Des]( {{site.url}}/assets/img/2021/12/14/logon_des.PNG){:width="500px"}
+
+* Các logon event không xuất hiện khi máy bị bị một số dạng exploit (RCE, privilege escalation, service exploitation, malware).  
+
+Ngó qua xem Event Logon 4624 có gì nào?
+
+![Logon Event]( {{site.url}}/assets/img/2021/12/14/logon_event.PNG)
+
 
 ### Phân tích việc truy cập File và Folder, network shared,
 
