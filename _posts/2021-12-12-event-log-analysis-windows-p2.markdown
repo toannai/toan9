@@ -35,9 +35,11 @@ Tracking account là một trong những task hay được thực hiện nhất 
 
 ![Logon event]( {{site.url}}/assets/img/2021/12/14/event-4624.png){:width="600px"}
 
-Không quá khó để luận ra ý nghĩa của các trường - Khá trong sáng. Ở đây chỉ mô tả một số trường quan trọng mà thôi.
+Không quá khó để luận ra ý nghĩa của các trường. Ở đây chỉ mô tả một số trường quan trọng mà thôi.
 
-* Phần **Subject***
+Đầu tiên bạn hãy để ý tới **Logged** => Thời gian thực hiện hành vi logon.
+
+* Phần **Subject**
 
 Xác định "account" - đối tượng mà user request log on tới - Không phải là người dùng đã logged on. Subject thường NULL hoặc là một Service Pricipal. Các thông tin trường này thường không có ý nghĩa nhiều cho việc forensic - Có thể bỏ qua không cần quan tâm. Xem phần New Logon để biết thông tin về người dùng đã logon vào hệ thống. 
 
