@@ -10,7 +10,7 @@ tags: [Windows, Forensic]
 
 Ở bài viết trước ta đã có một số hiểu biết cơ bản nhất về Windows Event Logs. Bài viết này ta sẽ tiếp tục đi vào một số kịch bản cụ thể ứng dụng trong quá trình forensic Windows Event Logs thực tế. Đây không phải là tất tần tật các việc cần làm nhưng sẽ là gợi ý không tồi cho các bạn mới khi mà ta không biết bắt đầu từ đâu :). OK, chúng ta bắt đầu thôi.
 
-### Phân tích sự kiện đăng nhập trong Windows,
+## Phân tích sự kiện đăng nhập trong Windows,
 
 > Để chuẩn bị cho phần này tôi nghĩ trước tiên các bạn hãy đọc bài viết "Tất tần tật các hình thức logon trong Windows" của tôi để có cái nhìn tổng quát về các kênh logon mà Windows Support cũng như cách thức để block các hình thức logon này.
 
@@ -36,10 +36,10 @@ Tracking account là một trong những task hay được thực hiện nhất 
 ![Logon Event]( {{site.url}}/assets/img/2021/12/14/logon_event.PNG)
 
 
-### Phân tích việc truy cập File và Folder, network shared,
+## Phân tích việc truy cập File và Folder, network shared,
 
-### Phân tích việc create/exit process,
+## Phân tích việc create/exit process,
 
-### Phân tích việc cố tình thay đổi cấu hình thời gian hệ thống,
+## Phân tích việc cố tình thay đổi cấu hình thời gian hệ thống,
 
-### Phân tích việc sử dụng các external driver,
+## Phân tích việc sử dụng các external driver,
