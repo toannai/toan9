@@ -27,13 +27,13 @@ Tracking account là một trong những task hay được thực hiện nhất 
 
 * Các Event desription cung cấp cho chúng ta các mô tả rất chi tiết. Do vậy nếu quên ý nghía của các trường có thể tham khảo tại phần description này. Tuy nhiên nhược điểm là MS viết quá chi tiết đến nỗi dài không ai muốn đọc luôn :)
 
-![Logon Des]( {{site.url}}/assets/img/2021/12/14/logon_des.PNG){:width="500px"}
+![Logon Des]( {{site.url}}/assets/img/2021/12/14/logon_des.PNG){:width="600px"}
 
 * Các logon event không xuất hiện khi máy bị bị một số dạng exploit (RCE, privilege escalation, service exploitation, malware).  Không nên đi tìm hoặc tìm không ra là không có.
 
 #### Ngó qua xem Event Logon 4624 có gì nào?
 
-![Logon Event]( {{site.url}}/assets/img/2021/12/14/logon_event.PNG){:width="500px"}
+![Logon Event]( {{site.url}}/assets/img/2021/12/14/logon_event.PNG){:width="600px"}
 
 
 ## Phân tích việc truy cập File và Folder, network shared,
