@@ -33,7 +33,7 @@ Tracking account là một trong những task hay được thực hiện nhất 
 
 #### Ngó qua xem Event Logon 4624 có gì nào?
 
-![Logon Event]( {{site.url}}/assets/img/2021/12/14/logon_event.PNG)
+![Logon Event]( {{site.url}}/assets/img/2021/12/14/logon_event.PNG){:width="500px"}
 
 
 ## Phân tích việc truy cập File và Folder, network shared,
