@@ -87,6 +87,13 @@ PHần này giúp nhận diện user thực hiện loggon từ máy client nào.
 
 Là các thông tin chi tiết về quá trinhg loggon. Phần này cũng không quan trọng lắm trong forensic nên thôi tôi bỏ qua. Bạn nào hứng thú có thể đọc tại đây nha: https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4624
 
+#### Kết hợp Logon và Log off để xác định độ dài phiên
+
+Ta có thể sử dụng trường Logon ID để link 2 sự kiện logon và log off để xác định độ dài của session người dùng.
+
+![Logon session]( {{site.url}}/assets/img/2021/12/14/session_logon.PNG){:width="600px"}
+
+OK ta có thời gian bắt đầu logon (Trường Logged trong event 4624). Ta có độ dài session logon. Có loggon ID từ đó có thể dễ dàng xác định phạm vi các hành động mà user đã thực hiện trong suốt phiên (session) hoạt động của mình. Từ đây có thể xác định attacker đã làm gì trên hệ thống của ta.
 
 ## Phân tích việc truy cập File và Folder, network shared,
 
