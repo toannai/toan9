@@ -93,7 +93,13 @@ Ta có thể sử dụng trường Logon ID để link 2 sự kiện logon và l
 
 ![Logon session]( {{site.url}}/assets/img/2021/12/14/session_logon.PNG){:width="600px"}
 
-OK ta có thời gian bắt đầu logon (Trường Logged trong event 4624). Ta có độ dài session logon. Có loggon ID từ đó có thể dễ dàng xác định phạm vi các hành động mà user đã thực hiện trong suốt phiên (session) hoạt động của mình. Từ đây có thể xác định attacker đã làm gì trên hệ thống của ta.
+OK ta có thời gian bắt đầu logon (Trường Logged trong event 4624). Ta có độ dài session logon. Có loggon ID để liên kết các action. Từ đó có thể dễ dàng xác định phạm vi các hành động mà user đã thực hiện trong suốt phiên (session) hoạt động của mình. Từ đây có thể xác định attacker đã làm gì trên hệ thống của ta.
+
+#### Quan sát Sự kiện logon còn có giá trị để giảm thiểu rủi do từ việc bị brute force
+
+Trong trường hợp có quá nhiều event 4624 mà kết quả là Failed. Rất có thể ta đang bị bruteforce. Lúc này đừng quên quan sát lại tổng thể event logon nhất là xác định các thông tin các trường snhư Account, logon type, source logon để xác định là kẻ tấn công có nguồn góc từ đâu (IP nào), brute force vào account nào với hình thức brute force qua kênh nào vd: RDP, Netlogon, ... Từ đó có cách xử lý cho hợp lý.
+
+![Logon bruteforce]( {{site.url}}/assets/img/2021/12/14/brute_force.PNG){:width="600px"}
 
 ## Phân tích việc truy cập File và Folder, network shared,
 
