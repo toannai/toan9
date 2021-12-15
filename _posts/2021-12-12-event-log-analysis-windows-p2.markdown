@@ -33,7 +33,57 @@ Tracking account là một trong những task hay được thực hiện nhất 
 
 #### Ngó qua xem Event Logon 4624 có gì nào?
 
-![Logon Event]( {{site.url}}/assets/img/2021/12/14/logon_event.PNG){:width="600px"}
+![Logon event]( {{site.url}}/assets/img/2021/12/14/event-4624.png){:width="600px"}
+
+Không quá khó để luận ra ý nghĩa của các trường - Khá trong sáng. Ở đây chỉ mô tả một số trường quan trọng mà thôi.
+
+* Phần **Subject***
+
+Xác định "account" - đối tượng mà user request log on tới - Không phải là người dùng đã logged on. Subject thường NULL hoặc là một Service Pricipal. Các thông tin trường này thường không có ý nghĩa nhiều cho việc forensic - Có thể bỏ qua không cần quan tâm. Xem phần New Logon để biết thông tin về người dùng đã logon vào hệ thống. 
+
+* Phần **Logon Infomation**
+
+**Logon Type** Chỉ ra hình thức logon đã được sử dụng. Từ logon type này ta có thể nhận ra user thực hiện hành vi logon qua kênh nào vd: RDP, Net logon, ... từ đó quá trình hardening/response sẽ hiệu quả hơn (Chả hạn biết chặn các lần logon tương tự của attacker như thế nào). Trong blog của tôi cũng có bài viết mô tả rất chi tiết **Tất tần tật các hình thức logon trong windows** các bạn có thể tham khảo nếu muốn biết sâu hơn.
+
+**Restricted Admin Mode** Logon có sử dụng mode Restricted hay không? Giá trị Yes/No/None(-)
+
+* Phần **New logon**
+
+Đây là phần chứa nhiều thông tin quan trọng nhất:
+
+**Security ID**: SID của account
+
+**Account Name**: Logon name của account
+
+**Account Domain**: Domain name của account hoặc là DNS name (chữ hoa hoặc thường) hoặc NETBIOS domain name.  Trong trường hợp các đối tượng đặc biệt (như well know security principals) giống như SYSTEM, LOCAL SERVICE, NETWORK SERVICE, ANONYMOUS LOGON trường này sẽ là "NT AUTHORITY".  Nó cũng có thể là "NT Service" trong trường hợp virtual accounts của services.  Nếu là local account nó sẽ là tên của computer.
+
+**Logon ID**: Là một số semi-unique (unique giữa các lần reboots). Số này được sử dụng đẻ nhận dạng logon session, nó được sinh ra từ khi đầu trình khởi tạo sesion.  Mọi events logged sau này trong suốt logon session này sẽ có cùng một Logon ID cho tới khi logoff với event ID là 4647 or 4634 - Trường này sẽ giúp link các event trong phiên logon lại với nhau.
+
+**Linked Login ID**: (Win2016/10) Được sử dụng để User Account Control và interactive logons.  Khi admin interactive logon vào hệ thống với UAC enabled, Windows thực chất sẽ tạo 2 logon sessions - một cái có privileage và  một cái không có privilege.  Điều này được gọi là split token và trường này giúp links 2 sessions với nhau.  (Đù móa đọc thật khó hiểu).
+
+**Network Account Name**: (Win2016/10)  Thấy luôn là "-".  
+
+**Logon GUID**:  Trường ngày giúp correlate (liên kết) logon events trên máy tính local computer với authentication events trên the domain controller.  Giúp link 4624 trên member computer trong miền với 4769 trên DC (Domain controller).  Tuy nhiên  GUIDs không match giữa logon events trên member computers và authentication events trên domain controller.
+
+* Phần **Process Information**
+
+ProcessID: là ID của process được thi hành khi việc logon bắt đầu
+
+Process Name: Tên process thực hiện quá trinhg logon
+
+* Phần **Network Infomation**
+
+PHần này giúp nhận diện user thực hiện loggon từ máy client nào. Các thông tin sẽ là None (-) khi logon từ máy local.
+
+**Workstation name**: Tên máy Client
+
+**Source Network Address**: IP của máy client
+
+**Source port**: TCP port thực hiện loggon
+
+* Phần **Detailed Authentication Information**
+
+Là các thông tin chi tiết về quá trinhg loggon. Phần này cũng không quan trọng lắm trong forensic nên thôi tôi bỏ qua. Bạn nào hứng thú có thể đọc tại đây nha: https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4624
 
 
 ## Phân tích việc truy cập File và Folder, network shared,
