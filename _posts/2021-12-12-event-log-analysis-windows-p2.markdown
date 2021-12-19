@@ -85,7 +85,7 @@ Source port: TCP port thực hiện loggon
 
 * Phần Detailed Authentication Information
 
-Là các thông tin chi tiết về quá trinhg loggon. Phần này cũng không quan trọng lắm trong forensic nên thôi tôi bỏ qua. Bạn nào hứng thú có thể đọc tại đây nha: https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4624
+Là các thông tin chi tiết về quá trinhg loggon. Phần này cũng không quan trọng lắm trong forensic nên thôi tôi bỏ qua. Bạn nào hứng thú có thể đọc tại đây nha: [Link Here](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4624)
 
 #### Kết hợp Logon và Log off để xác định độ dài phiên
 
