@@ -12,7 +12,7 @@ tags: [Windows, Forensic]
 
 ## 1. Phân tích sự kiện đăng nhập trong Windows,
 
-> Để chuẩn bị cho phần này tôi nghĩ trước tiên các bạn hãy đọc bài viết "Tất tần tật các hình thức logon trong Windows" của tôi để có cái nhìn tổng quát về các kênh logon mà Windows Support cũng như cách thức để block các hình thức logon này.
+>Để chuẩn bị cho phần này tôi nghĩ trước tiên các bạn hãy đọc bài viết "Tất tần tật các hình thức logon trong Windows" của tôi để có cái nhìn tổng quát về các kênh logon mà Windows Support cũng như cách thức để block các hình thức logon này.
 
 Tracking account là một trong những task hay được thực hiện nhất khi review Events Logs. Việc tracking này sẽ giúp ta trả lời các câu hỏi Account nào bị compromise. Vào thời điểm nào, kéo dài bao lâu. Qua hình thức logon nào và nguồn gốc các truy cập từ đâu. Các thông tin này là vô cùng quan trọng trong quá trình forensic.
 
@@ -39,17 +39,17 @@ Không quá khó để luận ra ý nghĩa của các trường. Ở đây chỉ
 
 Đầu tiên bạn hãy để ý tới **Logged** => Thời gian thực hiện hành vi logon.
 
-* Phần **Subject**
+* Phần Subject
 
 Xác định "account" - đối tượng mà user request log on tới - Không phải là người dùng đã logged on. Subject thường NULL hoặc là một Service Pricipal. Các thông tin trường này thường không có ý nghĩa nhiều cho việc forensic - Có thể bỏ qua không cần quan tâm. Xem phần New Logon để biết thông tin về người dùng đã logon vào hệ thống. 
 
-* Phần **Logon Infomation**
+* Phần Logon Infomation
 
 **Logon Type** Chỉ ra hình thức logon đã được sử dụng. Từ logon type này ta có thể nhận ra user thực hiện hành vi logon qua kênh nào vd: RDP, Net logon, ... từ đó quá trình hardening/response sẽ hiệu quả hơn (Chả hạn biết chặn các lần logon tương tự của attacker như thế nào). Trong blog của tôi cũng có bài viết mô tả rất chi tiết **Tất tần tật các hình thức logon trong windows** các bạn có thể tham khảo nếu muốn biết sâu hơn.
 
 **Restricted Admin Mode** Logon có sử dụng mode Restricted hay không? Giá trị Yes/No/None(-)
 
-* Phần **New logon**
+* Phần New logon
 
 Đây là phần chứa nhiều thông tin quan trọng nhất:
 
@@ -67,13 +67,13 @@ Xác định "account" - đối tượng mà user request log on tới - Không 
 
 **Logon GUID**:  Trường ngày giúp correlate (liên kết) logon events trên máy tính local computer với authentication events trên the domain controller.  Giúp link 4624 trên member computer trong miền với 4769 trên DC (Domain controller).  Tuy nhiên  GUIDs không match giữa logon events trên member computers và authentication events trên domain controller.
 
-* Phần **Process Information**
+* Phần Process Information
 
 ProcessID: là ID của process được thi hành khi việc logon bắt đầu
 
 Process Name: Tên process thực hiện quá trinhg logon
 
-* Phần **Network Infomation**
+* Phần Network Infomation
 
 PHần này giúp nhận diện user thực hiện loggon từ máy client nào. Các thông tin sẽ là None (-) khi logon từ máy local.
 
@@ -83,9 +83,9 @@ PHần này giúp nhận diện user thực hiện loggon từ máy client nào.
 
 **Source port**: TCP port thực hiện loggon
 
-* Phần **Detailed Authentication Information**
+* Phần Detailed Authentication Information
 
-Là các thông tin chi tiết về quá trinhg loggon. Phần này cũng không quan trọng lắm trong forensic nên thôi tôi bỏ qua. Bạn nào hứng thú có thể đọc tại đây nha: ```https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4624```
+Là các thông tin chi tiết về quá trinhg loggon. Phần này cũng không quan trọng lắm trong forensic nên thôi tôi bỏ qua. Bạn nào hứng thú có thể đọc tại đây nha: https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4624
 
 #### Kết hợp Logon và Log off để xác định độ dài phiên
 
