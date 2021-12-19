@@ -47,7 +47,7 @@ Xác định "account" - đối tượng mà user request log on tới - Không 
 
 **Logon Type**: Chỉ ra hình thức logon đã được sử dụng. Từ logon type này ta có thể nhận ra user thực hiện hành vi logon qua kênh nào vd: RDP, Net logon, ... từ đó quá trình hardening/response sẽ hiệu quả hơn (Chả hạn biết chặn các lần logon tương tự của attacker như thế nào). Trong blog của tôi cũng có bài viết mô tả rất chi tiết "Tất tần tật các hình thức logon trong windows" các bạn có thể tham khảo nếu muốn biết sâu hơn.
 
-**Restricted**: Admin Mode: Logon có sử dụng mode Restricted hay không? Giá trị Yes/No/None(-)
+**Restricted Admin Mode**: Logon có sử dụng mode Restricted hay không? Giá trị Yes/No/None(-)
 
 * Phần New logon
 
