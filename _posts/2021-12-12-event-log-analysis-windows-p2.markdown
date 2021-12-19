@@ -85,7 +85,7 @@ PHần này giúp nhận diện user thực hiện loggon từ máy client nào.
 
 * Phần **Detailed Authentication Information**
 
-Là các thông tin chi tiết về quá trinhg loggon. Phần này cũng không quan trọng lắm trong forensic nên thôi tôi bỏ qua. Bạn nào hứng thú có thể đọc tại đây nha: https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4624
+Là các thông tin chi tiết về quá trinhg loggon. Phần này cũng không quan trọng lắm trong forensic nên thôi tôi bỏ qua. Bạn nào hứng thú có thể đọc tại đây nha: ```https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4624```
 
 #### Kết hợp Logon và Log off để xác định độ dài phiên
 
@@ -103,8 +103,16 @@ Trong trường hợp có quá nhiều event 4624 mà kết quả là Failed. R�
 
 ## 2. Phân tích việc truy cập File và Folder, network shared,
 
+Phan 2
+
 ## 3. Phân tích việc create/exit process,
+
+Phan 3
 
 ## 4. Phân tích việc cố tình thay đổi cấu hình thời gian hệ thống,
 
+Phan 4
+
 ## 5. Phân tích việc sử dụng các external driver,
+
+Phan 5
