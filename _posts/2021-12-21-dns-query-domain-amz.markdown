@@ -8,7 +8,7 @@ fig-caption: # Add figcaption (optional)
 tags: [Linux]
 ---
 
-DNS là cái quá cũ rồi, ai cũng hiểu nó làm gì. Tuy nhiên gần đây có tới 2 người hỏi tôi về cấu hình DNS. Nguyên nhân cơ bản là đang lẫn lộn giữa Recursive & Interactive vs Forwarder (Lý thuyết thì ai cũng biết nhưng thực tế nó hay lẫn lộn). Hôm nay tôi viết cái bài này để làm rõ 3 khái niệm này. Hy vọng các CCEI bạn của tôi xin nhẹ tay tôi chỉ là Sysadmin không phải network admin.
+DNS là cái quá cũ rồi, ai cũng hiểu nó làm gì. Tuy nhiên gần đây có tới 2 người hỏi tôi về cấu hình DNS. Nguyên nhân cơ bản là đang lẫn lộn giữa Recursive & Interactive vs Forwarder (Lý thuyết thì ai cũng biết nhưng thực tế nó hay lẫn lộn). Hôm nay tôi viết cái bài này để làm rõ 3 khái niệm này (Theo tôi hiểu ná). Hy vọng các CCEI bạn của tôi xin nhẹ tay tôi chỉ là Sysadmin không phải network admin.
 
 ## Nhắc lại về Recersive và Interactive Query
 
