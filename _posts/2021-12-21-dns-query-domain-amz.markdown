@@ -3,7 +3,7 @@ layout: post
 title: DNS nào thì recursive, interactive, forwarder cũ mà mới,
 date: 2021-12-21 00:32:20 +0700
 description: Event logs analysis 2 - Một số kịch bản thực tế hay sử dụng,
-img: 2021/12/13/ev_top.png
+img: 2021/12/21/dnsintro.jpg
 fig-caption: # Add figcaption (optional)
 tags: [Linux]
 ---
