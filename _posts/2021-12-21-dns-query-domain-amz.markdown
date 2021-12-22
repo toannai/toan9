@@ -19,7 +19,7 @@ Trước hết do là người Việt nên tôi tạm dịch tạm ra tiếng Vi
 
 Sau khi biết nghĩa tiếng việt rồi thì chỉ cần nhìn cái hình này là hiểu và nhớ. Một cái mang tính "đệ quy" và một cái mang tính "Tương tác qua lại".
 
-![DNS query]( {{site.url}}/assets/img/2021/12/21/recersive_interactive.PNG){:width="600px"}
+![DNS query]( {{site.url}}/assets/img/2021/12/21/recersive_interactive.PNG)
 
 Đọc đến đây bạn có tự hỏi là thế hàng ngày máy tính của tôi nó dùng interactive hay recersive query vậy? Câu trả lời đọc tiếp phần sau.
 
@@ -33,13 +33,13 @@ recursion yes | no;
 
 Trong mạng thông thường thì các dns nội bộ mà ta hay sử dụng thường là loại **DNS recursive resolver**. Với loại này quá trình query DNS của máy tính chúng ta là sự kết hợp của cả 2 kiểu query Recersive và Interactive.
 
-![DNS resolver]( {{site.url}}/assets/img/2021/12/21/resolver.PNG){:width="600px"}
+![DNS resolver]( {{site.url}}/assets/img/2021/12/21/resolver.PNG)
 
 Tuy nhiên các DNS recursive resolver này cũng có nhược điểm là có nguy bị lợi dụng để tạo ra kiểu tấn công **DNS Amplification Attack**
 
 Vậy google dns có phải là kiểu **DNS recursive resolver** hay không? Thử dùng wireshark để bắt gói tin thì DNS hỏi dâm trí thì tôi thấy.
 
-![DNS dantri]( {{site.url}}/assets/img/2021/12/21/dantri.PNG){:width="600px"}
+![DNS dantri]( {{site.url}}/assets/img/2021/12/21/dantri.PNG)
 
 OK hỏi một phát google 8.8.8.8 trả lời luôn không bắt tôi đi hỏi lòng vòng => Vậy google là một **DNS recursive resolver** rồi.
 
@@ -49,7 +49,7 @@ Tôi là người quản trị mạng. Nếu dùng một **DNS recursive resolve
 
 Việc cấu hình forwarder được thực hiện trên DNS server (tạm gọi là DNS local). Lúc này DNS local sẽ không thực hiện phân giải mà forward các query mà DNS local không có/không biết sang một DNS Forwarder bên ngoài. DNS bên ngoài sẽ là thằng trả lời câu hỏi cho client. DNS nội bộ chỉ làm nhiệm vụ forward không hơn không kém. 
 
-![DNS forwarder]( {{site.url}}/assets/img/2021/12/21/forward.PNG){:width="600px"}
+![DNS forwarder]( {{site.url}}/assets/img/2021/12/21/forward.PNG)
 
 Kết quả là ta chỉ cần mở từ DNS nộ bộ tới DNS Forwarder bên ngoài mà thôi không cần phải mở ANY DEST. Vừa lòng mấy ông chưa.
 
