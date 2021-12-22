@@ -53,6 +53,6 @@ Việc cấu hình forwarder được thực hiện trên DNS server (tạm gọ
 
 Kết quả là ta chỉ cần mở từ DNS nộ bộ tới DNS Forwarder bên ngoài mà thôi không cần phải mở ANY DEST. Vừa lòng mấy ông chưa.
 
-Ext: DNS server nó còn có rule forward theo ACL nữa các ông có thể tìm hiểu nha khi cần.
+Ext: DNS server nó còn có rule forward theo ACL nữa (VD domain này thì forward đến DNS này xử lý, Domain kia thì forward tới DNS kia xử lý) các ông có thể tìm hiểu nha khi cần.
 
 Thôi tôi đi ngủ,
