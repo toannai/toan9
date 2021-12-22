@@ -47,9 +47,9 @@ OK hỏi một phát google 8.8.8.8 trả lời luôn không bắt tôi đi hỏ
 
 Tôi là người quản trị mạng. Nếu dùng một **DNS recursive resolver** nghĩa là tôi phải mở port DNS tới ANY DEST. Điều này tôi không hề muốn vì như vậy hay bị mấy ông Security Soi mói. Vậy có cách nào không? Câu trả lời là có sử dụng DNS Forwarder.
 
-DNS Forwarder thì không phải là **DNS recursive resolver** vì nó không query interactive tới một loạt con DNS khác để tổng hợp các câu hỏi cho client.
+DNS cấu hình forward thì không phải là **DNS recursive resolver** vì nó không query interactive tới một loạt con DNS khác để tổng hợp các câu hỏi cho client.
 
-Việc cấu hình forwarder được thực hiện trên DNS server (tạm gọi là DNS local). Lúc này DNS local sẽ không thực hiện phân giải mà forward các query mà DNS local không có/không biết sang một DNS Forwarder bên ngoài. DNS bên ngoài sẽ là thằng trả lời câu hỏi cho client. DNS nội bộ chỉ làm nhiệm vụ forward không hơn không kém. 
+Việc cấu hình forward được thực hiện trên DNS server (tạm gọi là DNS local). Lúc này DNS local sẽ không thực hiện phân giải mà forward các query mà DNS local không có/không biết sang một DNS Forwarder bên ngoài. DNS bên ngoài sẽ là thằng trả lời câu hỏi cho client. DNS nội bộ chỉ làm nhiệm vụ forward không hơn không kém. 
 
 ![DNS forwarder]( {{site.url}}/assets/img/2021/12/21/forward.PNG)
 
