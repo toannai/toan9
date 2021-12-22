@@ -41,7 +41,7 @@ Vậy google dns có phải là kiểu **DNS recursive resolver** hay không? Th
 
 ![DNS dantri]( {{site.url}}/assets/img/2021/12/21/dantri.PNG){:width="600px"}
 
-OK hỏi một phát trả lời luôn không lòng vòng => Vậy google là một **DNS recursive resolver** rồi.
+OK hỏi một phát google 8.8.8.8 trả lời luôn không bắt tôi đi hỏi lòng vòng => Vậy google là một **DNS recursive resolver** rồi.
 
 ## DNS Forwarder
 
