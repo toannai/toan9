@@ -27,7 +27,13 @@ Sau khi biết nghĩa tiếng việt rồi thì chỉ cần nhìn cái hình nà
 
 ## DNS recursive resolver
 
-DNS server sẽ quyết định việc mình phục vụ client theo kiểu Recersive hay Iterative. Với bind9 thì enable bằng option sau:
+Client có thể quyết định query dùng Recursive/Iterative. Với nslookup config bằng lệnh sau:
+
+```
+nslookup set [no]recurse
+```
+
+DNS server cũng có thể tự quyết định việc mình phục vụ client theo kiểu Recersive hay Iterative. Với bind9 thì enable bằng option sau:
 
 ```
 recursion yes | no;
