@@ -27,6 +27,18 @@ Sau khi biết nghĩa tiếng việt rồi thì chỉ cần nhìn cái hình nà
 
 ## DNS recursive resolver
 
+Mặc định client nslookup, dig sẽ sử dụng recursive query. Tuy nhiên nếu thích ta cũng có thể cho client sử dụng iterative query để phân dải domain. VD: Với dig thì tôi biết cú pháp nó như sau (Lệnh này hay dùng để debug dns):
+
+```
+$dig +trace www.example.com
+```
+
+Máy chủ DNS cũng có thể quyết định mình có cung cấp dịch vụ recursive hay không. Ví dụ: Với bind9 ta có thể enable/disable bằng thông số sau.
+
+```
+recursion yes/no;
+```
+
 Trong mạng thông thường thì các dns nội bộ mà ta hay sử dụng thường là **DNS recursive resolver**. Với loại này quá trình query DNS của máy tính chúng ta là sự kết hợp của cả 2 kiểu query Recersive và Iterative.
 
 ![DNS resolver]( {{site.url}}/assets/img/2021/12/21/resolver.PNG)
