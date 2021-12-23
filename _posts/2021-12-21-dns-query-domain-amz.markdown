@@ -41,7 +41,7 @@ recursion yes/no;
 
 DNS servers chia thành 4 categories: Recursive resolvers, root nameservers, TLD nameservers, và authoritative nameservers. Bốn loại này tương tác kết hợp để thực hiện quá trình phân giải DNS.
 
-Trong mạng thông thường các dns nội bộ mà ta hay sử dụng thường là **DNS recursive resolver**. Với loại này quá trình query DNS của máy tính chúng ta được thực hiện kết hợp của cả 2 kiểu query Recersive và Iterative với 3 category còn lại.
+Trong mạng thông thường các dns nội bộ mà ta hay sử dụng thường là **DNS recursive resolver**. Với loại này quá trình query DNS của máy tính chúng ta được thực hiện kết hợp của cả 2 kiểu query Recersive và Iterative tương tác với 3 category còn lại.
 
 ![DNS resolver]( {{site.url}}/assets/img/2021/12/21/resolver.PNG)
 
