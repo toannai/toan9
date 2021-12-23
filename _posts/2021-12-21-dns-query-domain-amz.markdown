@@ -15,9 +15,9 @@ DNS là cái quá cũ rồi, ai cũng hiểu nó làm gì. Tuy nhiên gần đâ
 Trước hết do là người Việt nên tôi tạm dịch tạm ra tiếng Việt vậy.
 
 - Recursive -  Đệ quy 
-- Iterative -  Lặp đi lặp lại 
+- Iterative -  Lặp đi lặp lại
 
-Sau khi biết nghĩa tiếng việt rồi thì chỉ cần nhìn cái hình này là hiểu và nhớ. Một cái mang tính "Đệ quy" và một cái mang tính "Lặp đi lặp lại".
+Sau khi biết nghĩa tiếng việt rồi thì chỉ cần nhìn cái hình này là hiểu và nhớ. Một cái mang tính "Đệ quy" và một cái mang tính "Lặp đi lặp lại - Tương tác qua lại".
 
 (Focus vào đoạn local DNS Server Query thôi nha)
 
