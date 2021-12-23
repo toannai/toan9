@@ -14,10 +14,12 @@ DNS là cái quá cũ rồi, ai cũng hiểu nó làm gì. Tuy nhiên gần đâ
 
 Trước hết do là người Việt nên tôi tạm dịch tạm ra tiếng Việt vậy.
 
-- Recersive -  Đệ quy 
+- Recursive -  Đệ quy 
 - Interactive - Tương tác 
 
 Sau khi biết nghĩa tiếng việt rồi thì chỉ cần nhìn cái hình này là hiểu và nhớ. Một cái mang tính "đệ quy" và một cái mang tính "Tương tác qua lại".
+
+(Focus vào đoạn local DNS Server Query thôi nha)
 
 ![DNS query]( {{site.url}}/assets/img/2021/12/21/recersive_interactive.PNG)
 
@@ -34,6 +36,8 @@ recursion yes | no;
 Trong mạng thông thường thì các dns nội bộ mà ta hay sử dụng thường là loại **DNS recursive resolver**. Với loại này quá trình query DNS của máy tính chúng ta là sự kết hợp của cả 2 kiểu query Recersive và Interactive.
 
 ![DNS resolver]( {{site.url}}/assets/img/2021/12/21/resolver.PNG)
+
+Đối với loại này khi người dùng query hỏi DNS resolver nó sẽ tự Interact Query với các DNS khác (Root, Top Level, Authoritative DNS) để có được thông tin cần thiết trả lại cho người dùng.
 
 Tuy nhiên các DNS recursive resolver này cũng có nhược điểm là có nguy bị lợi dụng để tạo ra kiểu tấn công **DNS Amplification Attack**
 
