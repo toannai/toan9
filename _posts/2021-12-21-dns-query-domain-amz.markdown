@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DNS nào thì recursive, Iterative, forwarder cũ mà mới,
+title: DNS nào thì recursive, iterative, forwarder cũ mà mới,
 date: 2021-12-21 00:32:20 +0700
 description: DNS nào thì recursive, Iterative, forwarder cũ mà mới, nhiều khi dùng mà cứ loạn lên dùng mà nhiều ông cứ bị lẫn. Hôm nay tôi tổng hợp tại đây để sau cấu hình DNS thì không bị loạn lên nữa.
 img: 2021/12/21/dnsintro.jpg
@@ -10,7 +10,7 @@ tags: [Linux]
 
 DNS là cái quá cũ rồi, ai cũng hiểu nó làm gì. Tuy nhiên gần đây có tới 2 người hỏi tôi về cấu hình DNS. Nguyên nhân cơ bản là đang lẫn lộn giữa Recursive  & Iterative vs Forwarder (Lý thuyết thì ai cũng biết nhưng thực tế nó hay lẫn lộn). Hôm nay tôi viết cái bài này để làm rõ 3 khái niệm này (Theo tôi hiểu ná). Hy vọng các CCEI bạn của tôi xin nhẹ tay tôi chỉ là Sysadmin không phải network admin.
 
-## Nhắc lại về Recersive và %terative Query
+## Nhắc lại về Recersive và Iterative Query
 
 Trước hết do là người Việt nên tôi tạm dịch tạm ra tiếng Việt vậy.
 
