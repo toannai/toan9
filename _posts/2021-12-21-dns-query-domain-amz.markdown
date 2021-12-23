@@ -27,13 +27,7 @@ Sau khi biết nghĩa tiếng việt rồi thì chỉ cần nhìn cái hình nà
 
 ## DNS recursive resolver
 
-DNS server cũng có thể tự quyết định việc mình phục vụ client theo kiểu Recersive hay Iterative. Với bind9 thì enable bằng option sau:
-
-```
-recursion yes | no;
-```
-
-Trong mạng thông thường thì các dns nội bộ mà ta hay sử dụng thường là loại **DNS recursive resolver**. Với loại này quá trình query DNS của máy tính chúng ta là sự kết hợp của cả 2 kiểu query Recersive và Iterative.
+Trong mạng thông thường thì các dns nội bộ mà ta hay sử dụng thường là **DNS recursive resolver**. Với loại này quá trình query DNS của máy tính chúng ta là sự kết hợp của cả 2 kiểu query Recersive và Iterative.
 
 ![DNS resolver]( {{site.url}}/assets/img/2021/12/21/resolver.PNG)
 
