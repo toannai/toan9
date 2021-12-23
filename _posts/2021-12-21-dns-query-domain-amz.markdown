@@ -23,10 +23,6 @@ Sau khi biết nghĩa tiếng việt rồi thì chỉ cần nhìn cái hình nà
 
 ![DNS query]( {{site.url}}/assets/img/2021/12/21/recersive_interactive.PNG)
 
-Đọc đến đây bạn có tự hỏi là thế hàng ngày máy tính của tôi nó dùng Iterative hay recersive query vậy? Câu trả lời đọc tiếp phần sau.
-
-## DNS recursive resolver
-
 Mặc định client nslookup, dig sẽ sử dụng recursive query. Tuy nhiên nếu thích ta cũng có thể cho client sử dụng iterative query để phân dải domain. VD: Với dig thì tôi biết cú pháp nó như sau (Lệnh này hay dùng để debug dns):
 
 ```
@@ -39,11 +35,17 @@ Máy chủ DNS cũng có thể quyết định mình có cung cấp dịch vụ 
 recursion yes/no;
 ```
 
-Trong mạng thông thường thì các dns nội bộ mà ta hay sử dụng thường là **DNS recursive resolver**. Với loại này quá trình query DNS của máy tính chúng ta là sự kết hợp của cả 2 kiểu query Recersive và Iterative.
+Đọc đến đây bạn có tự hỏi là thế hàng ngày máy tính của tôi nó dùng Iterative hay recersive query vậy? Câu trả lời đọc tiếp phần sau.
+
+## DNS recursive resolver
+
+DNS servers chia thành 4 categories: Recursive resolvers, root nameservers, TLD nameservers, và authoritative nameservers. Bốn loại này tương tác kết hợp để thực hiện quá trình phân giải DNS.
+
+Trong mạng thông thường các dns nội bộ mà ta hay sử dụng thường là **DNS recursive resolver**. Với loại này quá trình query DNS của máy tính chúng ta được thực hiện kết hợp của cả 2 kiểu query Recersive và Iterative với 3 category còn lại.
 
 ![DNS resolver]( {{site.url}}/assets/img/2021/12/21/resolver.PNG)
 
-Đối với loại này khi người dùng query hỏi DNS resolver nó sẽ tự Iterative Query với các DNS khác (Root, Top Level, Authoritative DNS) để có được thông tin cần thiết trả lại cho người dùng.
+Như vậy khi người dùng query hỏi DNS resolver nó sẽ tự Iterative Query với các DNS khác (Root, Top Level, Authoritative DNS) để có được thông tin cần thiết trả lại cho người dùng.
 
 Tuy nhiên các DNS recursive resolver này cũng có nhược điểm là có nguy bị lợi dụng để tạo ra kiểu tấn công **DNS Amplification Attack**
 
