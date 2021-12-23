@@ -70,3 +70,7 @@ Kết quả là ta chỉ cần mở từ DNS nộ bộ tới DNS Forwarder bên 
 Ext: DNS server nó còn có rule forward theo ACL nữa (VD domain này thì forward đến DNS này xử lý, Domain kia thì forward tới DNS kia xử lý) các ông có thể tìm hiểu nha khi cần.
 
 Thôi tôi đi ngủ,
+
+### Tham khảo:
+
+[https://www.cloudflare.com/learning/dns/dns-server-types/](https://www.cloudflare.com/learning/dns/dns-server-types/)
