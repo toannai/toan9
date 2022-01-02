@@ -155,7 +155,7 @@ Thực tế cho thấy IPS hiện tại đang sử dụng 2 cơ chế chính đ�
 ![Mc ssl2]( {{site.url}}/assets/img/2022/01/02/mc2.png){:width="500px"}
 
 
-*Note*: Bài học là khi lựa chọn IPS cần phải tỉnh táo với tính năng này lựa chọn loại phù hợp với môi trường hiện tại của mình và đừng quên test lại xem có vấn đề gì không để khẳng định, không tới lúc cần mới biết "Có cũng như không".
+*Note*: Bài học là khi lựa chọn IPS/IDS cần phải tỉnh táo với tính năng này lựa chọn loại phù hợp với môi trường hiện tại của mình và đừng quên test lại xem có vấn đề gì không để khẳng định lại xem IPS/IDS có thực sự hoạt động hiệu quả không.
 
 
 ## Tham khảo:
