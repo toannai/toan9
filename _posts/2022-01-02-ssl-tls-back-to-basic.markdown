@@ -8,7 +8,7 @@ fig-caption: # Add figcaption (optional)
 tags: [Security]
 ---
 
-Hồi còn làm tại VCS có xảy ra một case là có PCAP và SSL/TLS private key (Có thể kèm master secret) liệu có thể đọc được dữ liệu trong PCAP không? Hôm ấy cũng tranh cãi khá nhiều, sau đó tôi không follow case này cũng không rõ kết quả mãi tới gần đây công việc lại va phải nên nay tôi đọc lại để trả lời cho câu hỏi này :) ... Cuộc sống mà không trả lời câu hỏi này hôm nay thì chắc mai lại gặp lại thôi =)) 
+Hồi còn làm tại cty cũ một lần XLSC có xảy ra một case là ae có được PCAP và khách hàng sẵn sàng cung cấp SSL/TLS private key (Có thể kèm master secret), ae tập trung tìm xem liệu có thể đọc được dữ liệu trong PCAP không? Hôm ấy cũng tranh cãi khá nhiều, sau đó tôi không follow case này cũng không rõ kết quả mãi tới gần đây công việc lại va phải nên nay tôi đọc lại để trả lời cho câu hỏi này :) ... Cuộc sống mà không trả lời câu hỏi này hôm nay thì chắc mai lại gặp lại thôi =)) 
 
 ## Tả phí lù liên quan:
 
