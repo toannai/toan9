@@ -8,11 +8,11 @@ fig-caption: # Add figcaption (optional)
 tags: [Security]
 ---
 
-Hồi còn làm tại cty cũ một lần XLSC có xảy ra một case là ae có được PCAP và khách hàng sẵn sàng cung cấp SSL/TLS private key (Có thể kèm master secret), ae tập trung tìm xem liệu có thể đọc được dữ liệu trong PCAP không? Hôm ấy cũng tranh cãi khá nhiều, sau đó tôi không follow case này cũng không rõ kết quả mãi tới gần đây công việc lại va phải nên nay tôi đọc lại để trả lời cho câu hỏi này :) ... Cuộc sống mà không trả lời câu hỏi này hôm nay thì chắc mai lại gặp lại thôi =)) 
+Hồi còn làm tại cty cũ một lần XLSC có xảy ra một case là ae có được PCAP và khách hàng sẵn sàng cung cấp SSL/TLS private key (Có thể kèm master secret), ae tập trung tìm xem liệu có thể đọc được dữ liệu trong PCAP không? Hôm ấy cũng tranh cãi khá nhiều, sau đó tôi không follow case này cũng không rõ kết quả mãi tới gần đây công việc lại va phải nên nay tôi đọc lại để trả lời cho câu hỏi này :) ... Cuộc sống mà không trả lời câu hỏi này hôm nay thì chắc mai lại gặp lại thôi =)) Kinh nghiệm là có gặp gì đó chưa rõ ràng hãy cố mà trả lời bằng được.
 
 ## Tả phí lù liên quan:
 
-Qua một thời gian làm dài làm việc tôi nhận ra rằng có lẽ ý tưởng xiên suốt của networking là ý tưởng phân tầng (Layer).  Việc bảo vệ dữ liệu sử dụng mã hóa có lẽ cũng phụ thuộc vào ý tưởng này. Ta có thể lựa chọn mã dữ liệu ở một tầng nhất định trong OSI. Tầng nào cũng được tùy thuộc vào security protocol sử dụng.
+Qua một thời gian làm dài làm việc tôi nhận ra rằng có lẽ ý tưởng xiên suốt của networking là ý tưởng phân tầng (Layer).  Việc bảo vệ dữ liệu sử dụng mã hóa có lẽ cũng phụ thuộc vào ý tưởng này. Ta có thể lựa chọn mã hóa dữ liệu ở một tầng nhất định trong OSI. Tầng nào cũng được tùy thuộc vào security protocol sử dụng.
 
 ![security protocol layer]( {{site.url}}/assets/img/2022/01/02/protocol-stack.png){:width="700px"}
 
