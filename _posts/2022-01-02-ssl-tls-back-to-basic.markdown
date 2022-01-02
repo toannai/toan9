@@ -111,13 +111,15 @@ Câu trả lời là vừa có vừa không :d
 
 + Nếu SSL/TLS handshark dùng RSA thì việc giải mã có thể thực hiện được (Với 1 số điều kiện nhất định - [https://wiki.wireshark.org/TLS](https://wiki.wireshark.org/TLS)). Lý do PCAP sẽ chứa Pre-master key có thể sử dụng để tính toán ra session key để decrypt data.
 
-+ Nếu SSL/TLS handshark sử dụng Diffie Helman thì việc giải mã không thể thực hiện được. Lý do là PCAP không hề chứa Pre-master key mà chỉ chứa các DH parameters. Có các DH parameters gần như không thể tính toán được Pre-master key từ đó không lấy được Session key. (Để hiểu chi tiết chắc cần phải đọc khá dài về thuật toán này)
++ Nếu SSL/TLS handshark sử dụng Diffie Helman thì việc giải mã không thể thực hiện được. Lý do là PCAP không hề chứa Pre-master key mà chỉ chứa các DH parameters. Có các DH parameters gần như không thể tính toán được Pre-master key từ đó không lấy được Session key. (Để hiểu chi tiết chắc cần phải đọc về thuật toán này [tại đây](https://tinhte.vn/thread/giai-ngo-https-hoi-2-canh-2-suc-manh-cua-diffie-hellman-dh-key-exchange-protocol-den-tu-dau.3200798/))
 
 + Ta có thể import SSL/TLS private key server (trong trường hợp sử dụng RSA Handshark) hoặc Pre-master key trong bất kỳ trường hợp nào vào wireshark để thực hiện decrypt SSL traffic theo hướng dẫn của wrireshark [https://wiki.wireshark.org/TLS](https://wiki.wireshark.org/TLS)
 
+(Anw chắc sẽ có một bài sử dụng wireshark đọc HTTPS traffic nhưng chắc không phải ở đây vì dài quá rồi, đọc phát ngán)
+
 ## SSL/TLS cipher suite
 
-Trong bài viết ta có nhắc tới khái niệm Cipher suite. Vậy cipher suite là gì?
+**Trong bài viết ta có nhắc tới khái niệm Cipher suite. Vậy cipher suite là gì?**
 
 Cipher Suites đơn giản chỉ là một tập các thuật toán mã hóa (cryptographic algorithms) mà client và server sẽ thống nhất sử dụng trong một phiên SSL/TLS. Mỗi thuật toán sử dụng cho 1 số các công việc cụ thể:
 
@@ -129,17 +131,31 @@ Cipher Suites đơn giản chỉ là một tập các thuật toán mã hóa (cr
 
 ![cipher suite]( {{site.url}}/assets/img/2022/01/02/cipher_suite.PNG)
 
+**Ai là người lựa chọn Cipher Suite?**
+
+Thật ra là cả server và client. Client gửi lên danh sách cipher suite trong message client hello và từ danh sách này server sẽ chấm điểm chọn cái nào.  
+
 
 ## Các thiết bị IPS và những vấn đề liên quan,
 
+Ngày nay các dữ liệu web truyền trên mạng chủ yếu là được mã hóa HTTPS - SSL/TLS. Điều này làm cho việc truy cập web trở nên an toàn hơn nhưng cũng tạo ra điểm "mù" cho các thiết bị IDS/IPS khi đứng ở giữa, rõ ràng chúng không thể nhìn thấy các traffic này. Muốn IPS/IDS hoạt động ngon lành với SSL/TLS phải giải quyết bài toán này.
+
+Thực tế cho thấy IPS hiện tại đang sử dụng 2 cơ chế chính để đọc dữ liệu SSL/TLS (Dĩ nhiên là) đã import TLS/SSL Certs)
+
++ Forward proxy: Loại này nó đứng giữa coi mình như proxy server (fake backend). Đại diện tiêu biểu là Paloalto:
+
+![Forward proxy]( {{site.url}}/assets/img/2022/01/02/pl.PNG)
+
++ None - Forward Proxy (Chưa biết gọi là loại gì nên đặt tên tạm là vậy): Với loại này cố gắng đọc pre-master key chứ không **thèm** làm fake - Server. Đại diện tiêu biểu là McAfee. Loại này nếu dùng RSA thì không cần cài agent. Còn nếu dùng DH thì phải cài agent để backend nơi mà thực hiện encrypt đẩy Pre-master key về IPS. (Còn không có agent thì gần như IPS chào thua với DH. Lý do tại sao đã giải thích rõ ở phần trên rồi).
 
 
+![Mc ssl1]( {{site.url}}/assets/img/2022/01/02/mc1.png){:width="500px"}
 
 
+![Mc ssl2]( {{site.url}}/assets/img/2022/01/02/mc2.png){:width="500px"}
 
 
-
-
+*Note*: Bài học là khi lựa chọn IPS cần phải tỉnh táo với tính năng này lựa chọn loại phù hợp với môi trường hiện tại của mình và đừng quên test lại xem có vấn đề gì không.
 
 
 ## Tham khảo:
