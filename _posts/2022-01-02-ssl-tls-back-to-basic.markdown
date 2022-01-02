@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Từ SSL/TLS handshake - back to basic,
+title: Từ SSL/TLS handshake - back to basic, đến vấn đề chọn IDS/IPS,
 date: 2022-01-02 00:32:20 +0700
 description: Hồi còn làm tại VCS có xảy ra một case là có PCAP và SSL/TLS private key server (Có thể kèm master secret) liệu có thể đọc được dữ liệu trong PCAP không? Hôm ấy cũng tranh cãi khá nhiều, sau đó tôi không follow case này cũng không rõ kết quả mãi tới gần đây công việc lại va phải nên nay tôi đọc lại để trả lời cho câu hỏi này :) ... Cuộc sống mà không trả lời câu hỏi này hôm nay thì chắc mai lại gặp lại thôi =))
 img: 2022/01/02/sslvatls.jpg
@@ -136,11 +136,11 @@ Cipher Suites đơn giản chỉ là một tập các thuật toán mã hóa (cr
 Thật ra là cả server và client. Client gửi lên danh sách cipher suite trong message client hello và từ danh sách này server sẽ chấm điểm chọn cái nào.  
 
 
-## Các thiết bị IPS và những vấn đề liên quan,
+## Các thiết bị IDS/IP và những vấn đề liên quan,
 
 Ngày nay các dữ liệu web truyền trên mạng chủ yếu là được mã hóa HTTPS - SSL/TLS. Điều này làm cho việc truy cập web trở nên an toàn hơn nhưng cũng tạo ra điểm "mù" cho các thiết bị IDS/IPS khi đứng ở giữa, rõ ràng chúng không thể nhìn thấy các traffic này. Muốn IPS/IDS hoạt động ngon lành với SSL/TLS phải giải quyết bài toán này.
 
-Thực tế cho thấy IPS hiện tại đang sử dụng 2 cơ chế chính để đọc dữ liệu SSL/TLS (Dĩ nhiên là) đã import TLS/SSL Certs)
+Thực tế cho thấy IPS hiện tại đang sử dụng 2 cơ chế chính để đọc dữ liệu SSL/TLS - Dĩ nhiên là đã phải import TLS/SSL Private key server. Nhưng như vừa phân tích, không phải cứ có SSL/TLS Private key server là đọc được Encrypted traffic. 
 
 + Forward proxy: Loại này nó đứng giữa coi mình như proxy server (fake backend). Đại diện tiêu biểu là Paloalto:
 
@@ -155,7 +155,7 @@ Thực tế cho thấy IPS hiện tại đang sử dụng 2 cơ chế chính đ�
 ![Mc ssl2]( {{site.url}}/assets/img/2022/01/02/mc2.png){:width="500px"}
 
 
-*Note*: Bài học là khi lựa chọn IPS cần phải tỉnh táo với tính năng này lựa chọn loại phù hợp với môi trường hiện tại của mình và đừng quên test lại xem có vấn đề gì không.
+*Note*: Bài học là khi lựa chọn IPS cần phải tỉnh táo với tính năng này lựa chọn loại phù hợp với môi trường hiện tại của mình và đừng quên test lại xem có vấn đề gì không để khẳng định, không tới lúc cần mới biết "Có cũng như không".
 
 
 ## Tham khảo:
