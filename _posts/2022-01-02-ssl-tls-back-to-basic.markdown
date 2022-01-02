@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Từ SSL/TLS handshake - back to basic tới IPS,
+title: Từ SSL/TLS handshake - back to basic,
 date: 2022-01-02 00:32:20 +0700
-description: Hồi còn làm tại VCS có xảy ra một case là có PCAP và SSL/TLS private key (Có thể kèm master secret) liệu có thể đọc được dữ liệu trong PCAP không? Hôm ấy cũng tranh cãi khá nhiều, sau đó tôi không follow case này cũng không rõ kết quả mãi tới gần đây công việc lại va phải nên nay tôi đọc lại để trả lời cho câu hỏi này :) ... Cuộc sống mà không trả lời câu hỏi này hôm nay thì chắc mai lại gặp lại thôi =))
+description: Hồi còn làm tại VCS có xảy ra một case là có PCAP và SSL/TLS private key server (Có thể kèm master secret) liệu có thể đọc được dữ liệu trong PCAP không? Hôm ấy cũng tranh cãi khá nhiều, sau đó tôi không follow case này cũng không rõ kết quả mãi tới gần đây công việc lại va phải nên nay tôi đọc lại để trả lời cho câu hỏi này :) ... Cuộc sống mà không trả lời câu hỏi này hôm nay thì chắc mai lại gặp lại thôi =))
 img: 2022/01/02/sslvatls.jpg
 fig-caption: # Add figcaption (optional)
 tags: [Security]
@@ -26,12 +26,14 @@ Phổ biến nhất mà ai chắc cũng từng nghe là HTTPS và SSL/TLS. Có t
 
 Ứng dụng tiêu biểu của mã hóa (đặc biệt là mã bất đối xứng) là để Mã hóa & Chống chối bỏ (Xác thực tôi là tôi chứ không phải là ai khác).
 
-# SSL/TLS handshake, Cipher Suites là gì
+# SSL/TLS handshake, 
 
 Quay trở lại vấn đề với SSL/TLS (Từ đây nếu không nhắc gì xin coi SSL/TLS là TLS cho ngắn gọn). Quá trình mã hóa này sử dụng kết hợp cả mẫ hóa đối xứng và bất đối xứng. Mô tả cơ bản của quá trình này gồm 2 step:
 
 + Step 1: Hai bên (Client & Server) sẽ sử dụng mã hóa bất đối xứng để xác nhận nhau (Chống chối bỏ) và trao đổi/thống nhất một khóa phiên (session key).
 + Step 2:  Session key ra ở step trước sẽ được sử dụng để mã hóa dữ liệu trao đổi sử dụng khóa đối xứng. 
+
+=> Rõ ràng bằng cách nào đó lấy được Session key thì có thể đọc được dữ liệu trao đổi. Như vậy chỉ cần tập trung vào đây thôi.
 
 TLS handshake chính là Step 1 trong quá trình trên. Nếu vẽ bằng hình thì nó diễn ra thế này:
 
@@ -95,7 +97,47 @@ Nếu sử dụng RSA thì quá trình diễn ra như sau:
 + **Server is ready**
 + **Secure symmetric encryption achieved**
 
-## Diễn dải nhiều thế thế tóm lại: "Có được PCAP và SSL Private key SSL (kèm master secret nếu có) liệu có thể decrypt được data hay không?"
+### Chú ý: 
+
+Tôi thấy đoạn trên hơi dài nên chỉ tóm tắt mấy một điểm chú ý bạn cần nhớ thôi:
+
+>Điểm khác nhau cơ bản giữa việc sử dụng RSA và DH trong TLS Handshark chính là việc RSA thì truyền Pre-master key trong message trao đổi giữa Client và Server. Còn nếu sử dụng DH thì không trao đổi Pre-master key mà trao đổi DH parameter.  
+
+## Có được PCAP và SSL/TLS Private key server (kèm master secret nếu có) liệu có thể decrypt được data hay không?"
+
+Câu trả lời là vừa có vừa không :d
+
++ Như vừa nói ở trên "Điểm khác nhau cơ bản giữa việc sử dụng RSA và DH trong TLS Handshark chính là việc RSA thì truyền Pre-master key trong message trao đổi giữa Client và Server. Còn nếu sử dụng DH thì không trao đổi Pre-master key mà trao đổi DH parameter"
+
++ Nếu SSL/TLS handshark dùng RSA thì việc giải mã có thể thực hiện được (Với 1 số điều kiện nhất định - [https://wiki.wireshark.org/TLS](https://wiki.wireshark.org/TLS)). Lý do PCAP sẽ chứa Pre-master key có thể sử dụng để tính toán ra session key để decrypt data.
+
++ Nếu SSL/TLS handshark sử dụng Diffie Helman thì việc giải mã không thể thực hiện được. Lý do là PCAP không hề chứa Pre-master key mà chỉ chứa các DH parameters. Có các DH parameters gần như không thể tính toán được Pre-master key từ đó không lấy được Session key. (Để hiểu chi tiết chắc cần phải đọc khá dài về thuật toán này)
+
++ Ta có thể import SSL/TLS private key server (trong trường hợp sử dụng RSA Handshark) hoặc Pre-master key trong bất kỳ trường hợp nào vào wireshark để thực hiện decrypt SSL traffic theo hướng dẫn của wrireshark [https://wiki.wireshark.org/TLS](https://wiki.wireshark.org/TLS)
+
+## SSL/TLS cipher suite
+
+Trong bài viết ta có nhắc tới khái niệm Cipher suite. Vậy cipher suite là gì?
+
+Cipher Suites đơn giản chỉ là một tập các thuật toán mã hóa (cryptographic algorithms) mà client và server sẽ thống nhất sử dụng trong một phiên SSL/TLS. Mỗi thuật toán sử dụng cho 1 số các công việc cụ thể:
+
+* Key exchange
+* Bulk encryption
+* Message authentication 
+
+ Cấu trúc cơ bản như sau:
+
+![cipher suite]( {{site.url}}/assets/img/2022/01/02/cipher_suite.PNG)
+
+
+## Các thiết bị IPS và những vấn đề liên quan,
+
+
+
+
+
+
+
 
 
 
