@@ -16,21 +16,24 @@ Qua một thời gian làm dài làm việc tôi nhận ra rằng có lẽ ý t�
 
 ![security protocol layer]( {{site.url}}/assets/img/2022/01/02/protocol-stack.png){:width="700px"}
 
-Phổ biến nhất mà ai chắc cũng từng nghe là HTTPS và SSL/TLS. Reviews nhanh thì TLS cơ bản là người kế nhiệm - phiên bản thay thế của SSL. Còn HTTPS là một sự "implementation" (cài đặt cho một t/h cụ thể) của SSL/TLS cho giao thức HTTP, chính vì vậy sẽ không có sự tách rời của HTTPS và SSL/TLS.
 
-Nhắc lại: Có 2 loại mã hóa chính là đối xứng và bất đối xứng - cái này là thứ mà ai cũng từng nghe thao thao bất tuyệt cả thời sinh viên.
+Phổ biến nhất mà ai chắc cũng từng nghe là HTTPS và SSL/TLS. Có thể nhiều a/e đều đã biết nhưng tôi vẫn cứ reviews nhanh một chút: TLS cơ bản là người kế nhiệm - phiên bản thay thế của SSL. Còn HTTPS là một sự "implementation" (cài đặt cho một t/h cụ thể) của SSL/TLS cho giao thức HTTP, chính vì quan hệ "Trèo đầu cưỡi cổ" vậy sẽ không có sự tách rời của HTTPS và SSL/TLS.
 
-![algorithm]( {{site.url}}/assets/img/2022/01/02/algorithms.png){:width="700px"}
+**Nhắc lại**: Có 2 loại mã hóa chính là đối xứng và bất đối xứng - cái này là thứ mà ai cũng từng nghe thao thao bất tuyệt cả thời sinh viên do vậy tôi nghĩ cũng không cần nhắc lại nó là gì ở đây.
 
-Dù có mã hóa dì đi chăng nữa thì có lẽ cần phải nhớ rằng 2 bên ít nhất đều phải trao đổi hoặc giữ một yếu tố "Bí mật" nào đó. 
+![algorithm]( {{site.url}}/assets/img/2022/01/02/algorithms.png){:width="400px"}
+ 
 
-2 ứng dụng tiêu biểu của mã hóa là để Mã hóa & Chống chối bỏ (Xác thực tôi là tôi chứ không phải là ai khác).
+Ứng dụng tiêu biểu của mã hóa (đặc biệt là mã bất đối xứng) là để Mã hóa & Chống chối bỏ (Xác thực tôi là tôi chứ không phải là ai khác).
 
 ## SSL/TLS handshake, Cipher Suites là gì
 
-Quay trở lại vấn đề với SSL/TLS (Từ đây nếu không nhắc gì xin coi SSL/TLS là TLS cho ngắn gọn). Quá trình mã hóa này sử dụng kết hợp cả mẫ hóa đối xứng và bất đối xứng. Mô tả cơ bản của quá trình này: 2 bên sẽ sử dụng mã hóa bất đối xứng để xác nhận nhau - Chống chối bỏ và trao đổi/thống nhất một khóa phiên, khóa phiên này sẽ được sử dụng để mã hóa dữ liệu trao đổi sử dụng khóa đối xứng. 
+Quay trở lại vấn đề với SSL/TLS (Từ đây nếu không nhắc gì xin coi SSL/TLS là TLS cho ngắn gọn). Quá trình mã hóa này sử dụng kết hợp cả mẫ hóa đối xứng và bất đối xứng. Mô tả cơ bản của quá trình này gồm 2 step:
 
-TLS handshake chính là đoạn đầu để "2 bên sẽ sử dụng mã hóa bất đối xứng để xác nhận nhau - Chống chối bỏ và trao đổi/thống nhất một khóa phiên". TLS/SSL sử dụng chính là các thuật toán bất đối xứng. Nếu vẽ bằng hình thì nó diễn ra thế này:
++ Step 1: Hai bên (Client & Server) sẽ sử dụng mã hóa bất đối xứng để xác nhận nhau (Chống chối bỏ) và trao đổi/thống nhất một khóa phiên (session key).
++ Step 2:  Session key ra ở step trước sẽ được sử dụng để mã hóa dữ liệu trao đổi sử dụng khóa đối xứng. 
+
+TLS handshake chính là Step 1 trong quá trình trên. Nếu vẽ bằng hình thì nó diễn ra thế này:
 
 
 ![tls handshark]( {{site.url}}/assets/img/2022/01/02/tls_handshark.PNG){:width="700px"}
@@ -39,7 +42,7 @@ Nhấn mạnh lại (Nói đi nói lại quá nhiều lần) ý kết thúc SSL/
 
 + Xác nhận client/server - Chống chối bỏ (Đảm bảo rằng Client/Server xác nhận là tôi chính là tôi mà không phải là ai khác)
 
-+ Thống nhất được 1 khóa phiên để mã hóa dữ liệu trao đổi giữa 2 bên.
++ Thống nhất được 1 session key để mã hóa dữ liệu trao đổi giữa 2 bên.
 
 Tùy thuộc vào thuật toán/lược đồ trao đổi khóa mà SSL/tLS handshark diễn ra các bước chi tiết - message khác nhau. Ta sẽ thường thấy loại phổ biến chính là Rivest–Shamir–Adleman(RSA) và Diffie-Hellman (DH).
 
