@@ -50,6 +50,9 @@ Tùy thuộc vào thuật toán/lược đồ trao đổi khóa mà SSL/tLS hand
 
 Nếu sử dụng RSA thì quá trình diễn ra như sau:
 
+![tls rsa]( {{site.url}}/assets/img/2022/01/02/ssl_handshake_rsa.jpg)
+
+
 + **Client hello** message: client khởi tạo quá trình handshake bằng việc gửi đi "Client hello" message tới server. Message này sẽ bao gồm TLS version, cipher suites (Cipher suites là gì sẽ mô tả ở sau) mà client support, kèm theo một chuỗi các bytes là một random string do client sinh ra gọi là "client random."
 
 + **Server hello** message: Trả lời của server cho 'client hello' message, message này bao gồm server's SSL certificate, cipher suite mà server đã lựa chọn từ danh sách client gửi lên, kèm một "server random," - một chuỗi bytes là random string được sinh ra bởi the server
@@ -74,6 +77,8 @@ Nếu sử dụng RSA thì quá trình diễn ra như sau:
 
 ### SSL/TLS sử dụng Diffie Helman (DH)
 
+![tls dh]( {{site.url}}/assets/img/2022/01/02/ssl_handshake_diffie_hellman.jpg)
+
 + **Client hello**: Client sẽ gửi một 'client hello' message có chứa TLS version, client random, và một list các cipher suites client support.
 
 + **Server hello**: server sẽ phản hồi lại client SSL certificate của nó, một cipher suite lựa chọn từ danh sách client gửi lên, và the server random. (Tới đây vẫn giống khi sử dụng RSA)
@@ -95,7 +100,10 @@ Nếu sử dụng RSA thì quá trình diễn ra như sau:
 
 
 
+## Tham khảo:
+[https://blog.cloudflare.com/keyless-ssl-the-nitty-gritty-technical-details/](https://blog.cloudflare.com/keyless-ssl-the-nitty-gritty-technical-details/)
 
+[https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/)
 
 
 
