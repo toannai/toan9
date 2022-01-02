@@ -133,7 +133,7 @@ Cipher Suites đơn giản chỉ là một tập các thuật toán mã hóa (cr
 
 **Ai là người lựa chọn Cipher Suite?**
 
-Thật ra là cả server và client. Client gửi lên danh sách cipher suite trong message client hello và từ danh sách này server sẽ chấm điểm chọn cái nào.  
+Thật ra là cả server và client. Client gửi lên danh sách cipher suite trong message client hello và từ danh sách này server sẽ chấm chọn cái nào cả 2 support => Server được ưu tiên hơn 1 chút vì là người chọn sau. Điều này nghĩa là cơ bản ta cũng tác động ở phía server được bằng việc đẩy Priority khi cấu hình list cipher suite trên server để một Cipher suite nào đó có độ "Ưu tiên" cao hơn 1 chút. 
 
 
 ## Các thiết bị IDS/IP và những vấn đề liên quan,
@@ -142,17 +142,17 @@ Ngày nay các dữ liệu web truyền trên mạng chủ yếu là được m�
 
 Thực tế cho thấy IPS hiện tại đang sử dụng 2 cơ chế chính để đọc dữ liệu SSL/TLS - Dĩ nhiên là đã phải import TLS/SSL Private key server. Nhưng như vừa phân tích, không phải cứ có SSL/TLS Private key server là đọc được Encrypted traffic. 
 
-+ Forward proxy: Loại này nó đứng giữa coi mình như proxy server (fake backend). Đại diện tiêu biểu là Paloalto:
++ Forward proxy: Loại này nó đứng giữa coi mình như proxy server (fake server dịch vụ thật thật với client, fake client với server dịch vụ thật thật). Đại diện tiêu biểu là Paloalto:
 
 ![Forward proxy]( {{site.url}}/assets/img/2022/01/02/pl.PNG)
 
-+ None - Forward Proxy (Chưa biết gọi là loại gì nên đặt tên tạm là vậy): Với loại này cố gắng đọc pre-master key chứ không **thèm** làm fake - Server. Đại diện tiêu biểu là McAfee. Loại này nếu dùng RSA thì không cần cài agent. Còn nếu dùng DH thì phải cài agent để backend nơi mà thực hiện encrypt đẩy Pre-master key về IPS. (Còn không có agent thì gần như IPS chào thua với DH. Lý do tại sao đã giải thích rõ ở phần trên rồi).
++ None - Forward Proxy (Chưa biết gọi là loại gì nên đặt tên tạm là vậy): Với loại này cố gắng kiếm pre-master key để decrypt traffic chứ không **thèm** làm fake - Server. Đại diện tiêu biểu là McAfee. Loại này nếu dùng RSA thì không cần cài agent. Còn nếu dùng DH thì phải cài agent để backend nơi mà thực hiện encrypt đẩy Pre-master key về IPS. (Còn không có agent thì gần như IPS chào thua với DH. Lý do tại sao đã giải thích rõ ở phần trên rồi).
 
 
-![Mc ssl1]( {{site.url}}/assets/img/2022/01/02/mc1.png){:width="500px"}
+![Mc ssl1]( {{site.url}}/assets/img/2022/01/02/mc_1.png){:width="500px"}
 
 
-![Mc ssl2]( {{site.url}}/assets/img/2022/01/02/mc2.png){:width="500px"}
+![Mc ssl2]( {{site.url}}/assets/img/2022/01/02/mc_2.png){:width="500px"}
 
 
 *Note*: Bài học là khi lựa chọn IPS/IDS cần phải tỉnh táo với tính năng này lựa chọn loại phù hợp với môi trường hiện tại của mình và đừng quên test lại xem có vấn đề gì không để khẳng định lại xem IPS/IDS có thực sự hoạt động hiệu quả không.
