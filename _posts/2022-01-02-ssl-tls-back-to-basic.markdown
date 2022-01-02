@@ -10,7 +10,7 @@ tags: [Security]
 
 Hồi còn làm tại cty cũ một lần XLSC có xảy ra một case là ae có được PCAP và khách hàng sẵn sàng cung cấp SSL/TLS private key (Có thể kèm master secret), ae tập trung tìm xem liệu có thể đọc được dữ liệu trong PCAP không? Hôm ấy cũng tranh cãi khá nhiều, sau đó tôi không follow case này cũng không rõ kết quả mãi tới gần đây công việc lại va phải nên nay tôi đọc lại để trả lời cho câu hỏi này :) ... Cuộc sống mà không trả lời câu hỏi này hôm nay thì chắc mai lại gặp lại thôi =)) Kinh nghiệm là có gặp gì đó chưa rõ ràng hãy cố mà trả lời bằng được.
 
-## Tả phí lù liên quan:
+## 1. Tả phí lù liên quan:
 
 Qua một thời gian làm dài làm việc tôi nhận ra rằng có lẽ ý tưởng xiên suốt của networking là ý tưởng phân tầng (Layer).  Việc bảo vệ dữ liệu sử dụng mã hóa có lẽ cũng phụ thuộc vào ý tưởng này. Ta có thể lựa chọn mã hóa dữ liệu ở một tầng nhất định trong OSI. Tầng nào cũng được tùy thuộc vào security protocol sử dụng.
 
@@ -26,7 +26,7 @@ Phổ biến nhất mà ai chắc cũng từng nghe là HTTPS và SSL/TLS. Có t
 
 Ứng dụng tiêu biểu của mã hóa (đặc biệt là mã bất đối xứng) là để Mã hóa & Chống chối bỏ (Xác thực tôi là tôi chứ không phải là ai khác).
 
-## SSL/TLS handshake, Cipher Suites là gì
+## 2. SSL/TLS handshake, Cipher Suites là gì
 
 Quay trở lại vấn đề với SSL/TLS (Từ đây nếu không nhắc gì xin coi SSL/TLS là TLS cho ngắn gọn). Quá trình mã hóa này sử dụng kết hợp cả mẫ hóa đối xứng và bất đối xứng. Mô tả cơ bản của quá trình này gồm 2 step:
 
@@ -46,7 +46,7 @@ Nhấn mạnh lại (Nói đi nói lại quá nhiều lần) ý kết thúc SSL/
 
 Tùy thuộc vào thuật toán/lược đồ trao đổi khóa mà SSL/tLS handshark diễn ra các bước chi tiết - message khác nhau. Ta sẽ thường thấy loại phổ biến chính là Rivest–Shamir–Adleman(RSA) và Diffie-Hellman (DH).
 
-### SSL/TLS sử dụng RSA
+### 2.1 SSL/TLS sử dụng RSA
 
 Nếu sử dụng RSA thì quá trình diễn ra như sau:
 
@@ -56,7 +56,7 @@ Nếu sử dụng RSA thì quá trình diễn ra như sau:
 
 **Authentication**: Sau khi nhận được 'Server hello', client sẽ verifie server's SSL certificate với certificate authority đã issued SSL Certificate (Bằng các CA cert trong cấu hình sẵn của OS). Việc này để đảm bảo rằng server mà client đang kết nối tới chính là nó chứ không phải là ai khác giả mạo. Nếu Verify là đúng thì quá trình tiếp tục, nếu verify sai thì browser hiện lên cái ô confirm quen thuộc yêu cầu người dùng có tiếp tục không hay là break tại đây :)
 
-![tls warn]( {{site.url}}/assets/img/2022/01/02/browser_warnings_1.png)
+![tls warn]( {{site.url}}/assets/img/2022/01/02/browser_warnings_1.png){:width="400px"}
 
 (Dĩ nhiên nếu ok hoặc người dùng chấp nhận rủi do thì quá trình TLS handshark với tiếp tục các step sau)
 
@@ -72,7 +72,7 @@ Nếu sử dụng RSA thì quá trình diễn ra như sau:
 
 **Secure symmetric encryption achieved**: Quá trình handshake hoàn thành, và kết nối ở pharse sau được tiếp tục với session key đã thỏa thuận ở 2 bên Client và Server.
 
-### SSL/TLS sử dụng Diffie Helman (DH)
+### 2.2 SSL/TLS sử dụng Diffie Helman (DH)
 
 **Client hello**: Client sẽ gửi một 'client hello' message có chứa TLS version, client random, và một list các cipher suites client support.
 
