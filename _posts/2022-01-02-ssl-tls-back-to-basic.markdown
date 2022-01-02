@@ -77,7 +77,7 @@ Nếu sử dụng RSA thì quá trình diễn ra như sau:
 
 + **Secure symmetric encryption achieved**: Quá trình handshake hoàn thành, và kết nối ở pharse sau được tiếp tục với session key đã thỏa thuận ở 2 bên Client và Server.
 
-### SSL/TLS sử dụng Diffie Helman (DH)
+### SSL/TLS sử dụng Diffie Hellman (DH)
 
 ![tls dh]( {{site.url}}/assets/img/2022/01/02/ssl_handshake_diffie_hellman.jpg)
 
@@ -85,7 +85,7 @@ Nếu sử dụng RSA thì quá trình diễn ra như sau:
 
 + **Server hello**: server sẽ phản hồi lại client SSL certificate của nó, một cipher suite lựa chọn từ danh sách client gửi lên, và the server random. (Tới đây vẫn giống khi sử dụng RSA)
 
-+ **Server's digital signature**: Server sử dụng private key của nó để encrypt client random, server random, và các paramater dùng trong thuật toán Diffie Helman (DH). This Dữ liệu được mã hóa này coi như là server's digital signature, được mã hóa bằng server private key cái mà matches với public key trong SSL certificate của server.
++ **Server's digital signature**: Server sử dụng private key của nó để encrypt client random, server random, và các paramater dùng trong thuật toán Diffie Hellman (DH). This Dữ liệu được mã hóa này coi như là server's digital signature, được mã hóa bằng server private key cái mà matches với public key trong SSL certificate của server.
 
 + **Digital signature confirmed**: The client giải mã server's digital signature với public key của server, verify rằng server sở hữu đúng private key tức là Server chính là nó không phải là một ai khác giả mạo. Sau đó Client gửi lại server các DH parameter của nó.
 
@@ -111,7 +111,7 @@ Câu trả lời là vừa có vừa không :d
 
 + Nếu SSL/TLS handshark dùng RSA thì việc giải mã có thể thực hiện được (Với 1 số điều kiện nhất định - [https://wiki.wireshark.org/TLS](https://wiki.wireshark.org/TLS)). Lý do PCAP sẽ chứa Pre-master key có thể sử dụng để tính toán ra session key để decrypt data.
 
-+ Nếu SSL/TLS handshark sử dụng Diffie Helman thì việc giải mã không thể thực hiện được. Lý do là PCAP không hề chứa Pre-master key mà chỉ chứa các DH parameters. Có các DH parameters gần như không thể tính toán được Pre-master key từ đó không lấy được Session key. (Để hiểu chi tiết chắc cần phải đọc về thuật toán này [tại đây](https://tinhte.vn/thread/giai-ngo-https-hoi-2-canh-2-suc-manh-cua-diffie-hellman-dh-key-exchange-protocol-den-tu-dau.3200798/))
++ Nếu SSL/TLS handshark sử dụng Diffie Hellman thì việc giải mã không thể thực hiện được. Lý do là PCAP không hề chứa Pre-master key mà chỉ chứa các DH parameters. Có các DH parameters gần như không thể tính toán được Pre-master key từ đó không lấy được Session key. (Để hiểu chi tiết chắc cần phải đọc về thuật toán này [tại đây](https://tinhte.vn/thread/giai-ngo-https-hoi-2-canh-2-suc-manh-cua-diffie-hellman-dh-key-exchange-protocol-den-tu-dau.3200798/))
 
 + Ta có thể import SSL/TLS private key server (trong trường hợp sử dụng RSA Handshark) hoặc Pre-master key trong bất kỳ trường hợp nào vào wireshark để thực hiện decrypt SSL traffic theo hướng dẫn của wrireshark [https://wiki.wireshark.org/TLS](https://wiki.wireshark.org/TLS)
 
