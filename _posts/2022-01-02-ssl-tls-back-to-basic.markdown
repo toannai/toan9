@@ -38,15 +38,15 @@ Quay trở lại vấn đề với SSL/TLS (Từ đây nếu không nhắc gì x
 TLS handshake chính là Step 1 trong quá trình trên. Nếu vẽ bằng hình thì nó diễn ra thế này:
 
 
-![tls handshark]( {{site.url}}/assets/img/2022/01/02/tls_handshark.PNG){:width="700px"}
+![tls handshake]( {{site.url}}/assets/img/2022/01/02/tls_handshark.PNG){:width="700px"}
 
-Nhấn mạnh lại (Nói đi nói lại quá nhiều lần) ý kết thúc SSL/TLS handshark phải đảm bảo 2 công việc.
+Nhấn mạnh lại (Nói đi nói lại quá nhiều lần) ý kết thúc SSL/TLS handshake phải đảm bảo 2 công việc.
 
 + Xác nhận client/server - Chống chối bỏ (Đảm bảo rằng Client/Server xác nhận là tôi chính là tôi mà không phải là ai khác)
 
 + Thống nhất được 1 session key để mã hóa dữ liệu trao đổi giữa 2 bên.
 
-Tùy thuộc vào thuật toán/lược đồ trao đổi khóa mà SSL/tLS handshark diễn ra các bước chi tiết - message khác nhau. Ta sẽ thường thấy loại phổ biến chính là Rivest–Shamir–Adleman(RSA) và Diffie-Hellman (DH).
+Tùy thuộc vào thuật toán/lược đồ trao đổi khóa mà SSL/tLS handshake diễn ra các bước chi tiết - message khác nhau. Ta sẽ thường thấy loại phổ biến chính là Rivest–Shamir–Adleman(RSA) và Diffie-Hellman (DH).
 
 ### SSL/TLS sử dụng RSA
 
@@ -63,7 +63,7 @@ Nếu sử dụng RSA thì quá trình diễn ra như sau:
 
 ![tls warn]( {{site.url}}/assets/img/2022/01/02/browser_warnings_1.png){:width="400px"}
 
-(Dĩ nhiên nếu ok hoặc người dùng chấp nhận rủi do thì quá trình TLS handshark với tiếp tục các step sau)
+(Dĩ nhiên nếu ok hoặc người dùng chấp nhận rủi do thì quá trình TLS handshake với tiếp tục các step sau)
 
 + **The premaster secret**: Client sẽ gửi lại một chuỗi bytes có giá trị là random string gọi là "premaster secret". Premaster secret được mã hóa (encrypted) bằng public key của server và duy nhất có thể decrypted bằng private key của server server. (Client lấy public key từ SSL certificate của server).
 
@@ -101,19 +101,19 @@ Nếu sử dụng RSA thì quá trình diễn ra như sau:
 
 Tôi thấy đoạn trên hơi dài nên chỉ tóm tắt mấy một điểm chú ý bạn cần nhớ thôi:
 
->Điểm khác nhau cơ bản giữa việc sử dụng RSA và DH trong TLS Handshark chính là việc RSA thì truyền Pre-master key trong message trao đổi giữa Client và Server. Còn nếu sử dụng DH thì không trao đổi Pre-master key mà trao đổi DH parameter.  
+>Điểm khác nhau cơ bản giữa việc sử dụng RSA và DH trong TLS handshake chính là việc RSA thì truyền Pre-master key trong message trao đổi giữa Client và Server. Còn nếu sử dụng DH thì không trao đổi Pre-master key mà trao đổi DH parameter.  
 
 ## Có được PCAP và SSL/TLS Private key server (kèm master secret nếu có) liệu có thể decrypt được data hay không?"
 
 Câu trả lời là vừa có vừa không :d
 
-+ Như vừa nói ở trên "Điểm khác nhau cơ bản giữa việc sử dụng RSA và DH trong TLS Handshark chính là việc RSA thì truyền Pre-master key trong message trao đổi giữa Client và Server. Còn nếu sử dụng DH thì không trao đổi Pre-master key mà trao đổi DH parameter"
++ Như vừa nói ở trên "Điểm khác nhau cơ bản giữa việc sử dụng RSA và DH trong TLS handshake chính là việc RSA thì truyền Pre-master key trong message trao đổi giữa Client và Server. Còn nếu sử dụng DH thì không trao đổi Pre-master key mà trao đổi DH parameter"
 
-+ Nếu SSL/TLS handshark dùng RSA thì việc giải mã có thể thực hiện được (Với 1 số điều kiện nhất định - [https://wiki.wireshark.org/TLS](https://wiki.wireshark.org/TLS)). Lý do PCAP sẽ chứa Pre-master key có thể sử dụng để tính toán ra session key để decrypt data.
++ Nếu SSL/TLS handshake dùng RSA thì việc giải mã có thể thực hiện được (Với 1 số điều kiện nhất định - [https://wiki.wireshark.org/TLS](https://wiki.wireshark.org/TLS)). Lý do PCAP sẽ chứa Pre-master key có thể sử dụng để tính toán ra session key để decrypt data.
 
-+ Nếu SSL/TLS handshark sử dụng Diffie Hellman thì việc giải mã không thể thực hiện được. Lý do là PCAP không hề chứa Pre-master key mà chỉ chứa các DH parameters. Có các DH parameters gần như không thể tính toán được Pre-master key từ đó không lấy được Session key. (Để hiểu chi tiết chắc cần phải đọc về thuật toán này [tại đây](https://tinhte.vn/thread/giai-ngo-https-hoi-2-canh-2-suc-manh-cua-diffie-hellman-dh-key-exchange-protocol-den-tu-dau.3200798/))
++ Nếu SSL/TLS handshake sử dụng Diffie Hellman thì việc giải mã không thể thực hiện được. Lý do là PCAP không hề chứa Pre-master key mà chỉ chứa các DH parameters. Có các DH parameters gần như không thể tính toán được Pre-master key từ đó không lấy được Session key. (Để hiểu chi tiết chắc cần phải đọc về thuật toán này [tại đây](https://tinhte.vn/thread/giai-ngo-https-hoi-2-canh-2-suc-manh-cua-diffie-hellman-dh-key-exchange-protocol-den-tu-dau.3200798/))
 
-+ Ta có thể import SSL/TLS private key server (trong trường hợp sử dụng RSA Handshark) hoặc Pre-master key trong bất kỳ trường hợp nào vào wireshark để thực hiện decrypt SSL traffic theo hướng dẫn của wrireshark [https://wiki.wireshark.org/TLS](https://wiki.wireshark.org/TLS)
++ Ta có thể import SSL/TLS private key server (trong trường hợp sử dụng RSA handshake) hoặc Pre-master key trong bất kỳ trường hợp nào vào wireshark để thực hiện decrypt SSL traffic theo hướng dẫn của wrireshark [https://wiki.wireshark.org/TLS](https://wiki.wireshark.org/TLS)
 
 (Anw chắc sẽ có một bài sử dụng wireshark đọc HTTPS traffic nhưng chắc không phải ở đây vì dài quá rồi, đọc phát ngán)
 
