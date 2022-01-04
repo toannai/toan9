@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Hành trình đăng ký thường trú ở Hà Nội,
-date: 2020-10-10 00:32:20 +0700
+date: 2022-01-04 00:32:20 +0700
 description: Hành trình vào một số trang web bị chặn tại Việt Nam
-img: 2020/10/10/mcc.jpg
+img: 2022/01/04/hanhchinh.jpg
 fig-caption: # Add figcaption (optional)
 tags: [LifeZone]
 ---
@@ -37,6 +37,9 @@ Ok, lúc này ta cần thực hiện làm "Xác nhận 2 địa chỉ là 1". Đ
 Mang tất cả giấy tờ ra chuẩn bị ra **Công an phường để nộp***. Nhớ mang theo cả bản chính các giấy tờ để họ đối chiếu. Đối với mấy cái mẫu phiếu thì nhớ in lấy 3-4 chiếc để nguyên cả phần trống .... để nhỡ sai còn có cái mà sửa khỏi phải chạy đi chạy về.
 
 Đừng quên mang bản chính về vì họ chỉ được phép thu bản photo (Không cần công chứng).
+
+OK, chúc bạn may mắn,
+
 
 
 
