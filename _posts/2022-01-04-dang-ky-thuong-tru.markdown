@@ -21,7 +21,7 @@ Ngày xưa thì cần tách khẩu với nhập khẩu nhưng ngày nay thì đ�
 
 ## Chuẩn bị
 
-+ Điền vào mẫu [này](https://csdl.dichvucong.gov.vn/web/jsp/download_file.jsp?ma=3fd96e2f8a19e97c). Thường ở phường họ cũng có sẵn xin được nhưng thôi cứ chắc ăn mang ra vài tờ mang ra lỡ sai thì có cái mà ghi khỏi phải xin họ.
++ Điền vào mẫu [này](https://csdl.dichvucong.gov.vn/web/jsp/download_file.jsp?ma=3fd96e2f8a19e97c). Thường ở phường họ cũng có sẵn xin được nhưng thôi cứ chắc ăn mang ra vài tờ, lỡ sai thì có cái mà ghi khỏi phải xin họ.
 + Bản photo sổ đỏ / Giấy tờ mua bán nhà
 + Bản photo chứng minh (Chuẩn bị thế thôi chưa chắc đã cần)
 + Bản photo giấy ký kết hôn
