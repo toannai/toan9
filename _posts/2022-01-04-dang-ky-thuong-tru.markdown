@@ -2,7 +2,7 @@
 layout: post
 title: Góc mì chính - hành trình đăng ký thường trú ở Hà Nội,
 date: 2022-01-04 00:32:20 +0700
-description: Hành trình vào một số trang web bị chặn tại Việt Nam
+description: Góc mì chính - Đăng ký thường trú (hộ khẩu) ở Hà Nội khá loằng ngoằng. Bài viết tôi sẽ mô tả lại các bước cần làm để thực hiện việc này.
 img: 2022/01/04/hanhchinh.jpg
 fig-caption: # Add figcaption (optional)
 tags: [LifeZone]
