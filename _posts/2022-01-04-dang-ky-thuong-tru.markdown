@@ -26,7 +26,7 @@ Ngày xưa thì cần tách khẩu với nhập khẩu nhưng ngày nay thì đ�
 + Bản photo chứng minh (Chuẩn bị thế thôi chưa chắc đã cần)
 + Bản photo giấy ký kết hôn
 + Bản photo giấy khai sinh của con
-+ Sổ hộ khẩu cũ chứa tên bạn nếu chưa bị thu. Nếu bị thu rồi thì thôi nhưng nếu chưa thu thì lần này họ sẽ thu và cho bạn cái phiếu ghi nhận là đã thu rồi vì họ sẽ số hóa. Cứ có thay đổi là auto thu sổ của những người liên quan đến thay đổi đó.
++ Sổ hộ khẩu cũ chứa tên những người thay đổi nếu chưa bị thu. Nếu bị thu rồi thì thôi nhưng nếu chưa thu thì lần này họ sẽ thu và cho bạn cái phiếu ghi nhận là đã thu rồi vì họ sẽ số hóa. Cứ có thay đổi là auto thu sổ của những người liên quan đến thay đổi đó.
 
 **Extends trong trường hợp đặc biệt:** Kiểm tra lại xem địa chỉ trong sổ đỏ có ghi rõ tổ dân phố, phường nào, quận, TP nào không hay chỉ ghi số nhà, đường, quận, TP thôi thôi. Nếu chỉ ghi là số nhà, đường, quận thôi thì cần làm thêm một cái giấy gọi là "Xác nhận 2 địa chỉ là 1". Lý do là vì khi đăng ký thường trú nó lại yêu cầu địa chỉ theo tổ dân phố bao nhiêu, phường nào, quận nào, TP nào về cơ bản là không match với địa chỉ trong sổ đỏ hoặc giấy tờ mua bán đất nên cần làm cái giấy này.
 
