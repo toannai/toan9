@@ -34,7 +34,7 @@ Ok, lúc này ta cần thực hiện làm "Xác nhận 2 địa chỉ là 1" (Đ
 
 ## Xong rồi nộp thôi
 
-Sau khi chuẩn bị xong mang tất cả giấy tờ ra chuẩn bị ra **Công an phường để nộp***. Nhớ mang theo cả bản chính các giấy tờ để họ đối chiếu. Đối với mấy cái mẫu phiếu thì nhớ in lấy 3-4 chiếc để nguyên cả phần trống .... để nhỡ sai còn có cái mà sửa khỏi phải chạy đi chạy lại sửa và in.
+Sau khi chuẩn bị xong mang tất cả giấy tờ ra chuẩn bị ra **Công an phường để nộp**. Nhớ mang theo cả bản chính các giấy tờ để họ đối chiếu. Đối với mấy cái mẫu phiếu thì nhớ in lấy 3-4 chiếc để nguyên cả phần trống .... để nhỡ sai còn có cái mà sửa khỏi phải chạy đi chạy lại sửa và in.
 
 À đừng quên mang bản chính về vì họ chỉ được phép thu bản photo (Không cần công chứng).
 
