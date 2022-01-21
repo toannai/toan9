@@ -10,7 +10,7 @@ tags: [Security]
 
 Trong thời gian làm việc với Windows tôi cũng có nghe tới Windows Management Instrumentation (WMI). Thỉnh thoảng cũng có đọc qua qua nhưng không hiểu/nhớ nhiều lắm. Gần đây đọc được một tài liệu của FireEye khá thú vị về WMIC. Hôm nay có thời gian tôi tóm tắt lại nội dung của bài report đó hy vọng nó có chứa thông tin gì đó hữu ích cho các bạn đọc blog của tôi, vậy thôi. Tôi rất thích các bài report của FireEye vì nó có chứa nhiều thông tin tôi chưa biết hoặc thắc mắc lại được giải thích rất cặn kẽ và dễ hiểu.
 
-## Giới thiệu qua về WMI tí. 
+## Giới thiệu qua về WMI,
 
 Nói hơi dài dòng tí thì ban đầu người ta đề xuất ra một cái chuẩn để quản lý và kết hợp các thông tin từ các hệ thống quản lý hardware và software khác nhau gọi là Web-Based Enterprise Management (WBEM). WBEM này được base trên Common Information Model (CIM) schema (CIM - Schema có thể hiểu là một cấu trúc chuẩn định nghĩa sẵn để các bên tuân theo giúp dễ intergration với nhau). WMI này của MS là implement cho cái WEBEM này.
 
