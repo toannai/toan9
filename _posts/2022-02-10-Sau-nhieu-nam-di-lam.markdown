@@ -26,7 +26,7 @@ Chia sẻ: Đừng ngại chia sẻ cho người khác vì những gì bạn là
 
 ### Góc tếch ních
 
-**Office:**
+**Office**
 
 Học thói quen sử dụng outlook: tổ chức thư mục, cây inbox, outbox, không quên sử dụng chữ ký. 
 
