@@ -38,7 +38,7 @@ Excel và Word - bắt buộc học cơ bản, không thạo rất mệt (như m
 
 Học sử dụng cách tổ chức Directory (thư mục), File trên máy tính. Việc này giúp tiết kiệm thời gian, làm việc hiệu quả hơn và tránh bị nhầm lẫn. Directory - Có nhiều người tổ chức cục mịch theo năm/tháng/ngày, có người lại thích theo prefix - số thứ tự. File - Tên mô tả ngắn nội dung file, có Prefix - ngày khỏi tạo kèm postfix - số version edit, ... vân vân và về vê. Nói chung tùy style sao cho tiện là được, nhưng nhất định phải học và chọn cho mình một style ngăn nắp.
 
-Học cách quản lý mật khẩu: Mật khẩu có dễ nhớ và hay dùng nào rồi cũng sẽ có ngày quên thôi. Hãy dùng tool quản lý mật khẩu. Dĩ nhiên tool phải đủ an toàn tránh để trứng vào một giỏ. Giỏ rơi vỡ sạch.
+Học cách quản lý mật khẩu: Mật khẩu có dễ nhớ và hay dùng thế nào rồi cũng sẽ có ngày quên thôi. Hãy dùng tool quản lý mật khẩu. Dĩ nhiên tool phải đủ an toàn tránh để trứng vào một giỏ. Giỏ rơi vỡ sạch.
 
 Học cách ghi chú lại những việc đã làm. Có thể là những việc đã làm mình tìm/đọc mất thời gian, những việc hay ho hay là việc cần làm nhiều lần. Nghe tôi hãy ghi lại. Lần sau làm đỡ mất thời gian mò mẫm, đương nhiên là làm sẽ nhanh hơn, ít lỗi hơn. Rồi khi làm lại một việc gì đó hãy nghĩ làm sao để làm nhanh hơn (automation), hiệu quả hơn.
 
