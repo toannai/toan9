@@ -774,7 +774,8 @@ html {
 
 body {
   font-family:  'Questrial', sans-serif, 'Noto Sans', sans-serif, 'Open Sans', sans-serif , 'Lato', sans-serif;
-  color: #515151;
+  /* color: #515151; */
+  color: #121318fc;
   background-color: #fbfbfb;
   margin: 0;
   -webkit-font-smoothing: antialiased;
