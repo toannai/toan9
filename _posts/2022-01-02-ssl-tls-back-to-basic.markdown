@@ -142,7 +142,7 @@ Ngày nay các dữ liệu web truyền trên mạng chủ yếu là được m�
 
 Thực tế cho thấy IPS hiện tại đang sử dụng 2 cơ chế chính để đọc dữ liệu SSL/TLS - Dĩ nhiên là đã phải import TLS/SSL Private key server. Nhưng như vừa phân tích, không phải cứ có SSL/TLS Private key server là đọc được Encrypted traffic. 
 
-+ Forward proxy: Loại này nó đứng giữa coi mình như proxy server (fake server dịch vụ thật thật với client, fake client với server dịch vụ thật thật). Đại diện tiêu biểu là Paloalto:
++ Forward proxy: Loại này nó đứng giữa coi mình như proxy server (fake server dịch vụ thật thật với client, fake client với server dịch vụ thật thật). Chơi kiểu này thì dù là loại SSL/TLS handshark kiều gì cũng decrypt được traffic. Đại diện tiêu biểu là Paloalto:
 
 ![Forward proxy]( {{site.url}}/assets/img/2022/01/02/pl.PNG)
 
