@@ -10,7 +10,7 @@ tags: [Linh tinh]
 
 Nhanh thế chứ, nói sến "Tuổi trẻ như một cơn mưa rào ..." thì tuổi đi làm chắc nó chỉ làn gió thôi - khẽ thổi vù cái vào mặt vừa kịp cảm nhận tí nó đã đi chỗ khác rồi. Văn vậy chứ cũng sang năm thứ 8 đi làm rồi chứ ít. Có nhiều bạn inbox hỏi này hỏi nọ về chuyện đi làm, nhưng nói thật cũng không biết trả lời như nào cho hay, cho đúng. Hôm nay ngồi kể chuyện của mình vậy.
 
-Kể ngắn: Học cấp 3 lên ĐH như bao người - Đoạn này cơ bản ai cũng giống ai nên khỏi cần kể. Gần ra trường thì mới bắt đầu đi làm và cơn gió bắt đầu từ đó (V)(°,,°)(V). Đi code đươc tầm 1 tháng thì chuyển qua làm System. Hồi đó cũng không biết gì căn bản thích dùng ubuntu nên cái nghiệp nó bắt đầu từ đó. Cũng không đi học thêm ở đâu mà chỉ học những cái trong trường. Căn bản nghề này cũng đơn giản cứ thích thì tìm hiểu & vooc, làm dần va chạm thành quen. Làm được gần 3 năm thì nhảy việc lần đầu (Cuộc sống mà ai chả đôi lần nhảy việc). Làm tiếp 2 năm ở cty v - Con V lớn. Tiếp tục làm ở đó được gần 4 năm thì lại nhảy tiếp sang ngân hàng V. Hiện nhà ga đã đi được 3 trạm. 
+Kể ngắn: Học cấp 3 lên ĐH như bao người - Đoạn này cơ bản ai cũng giống ai nên khỏi cần kể. Gần ra trường thì mới bắt đầu đi làm và cơn gió bắt đầu từ đó (V)(°,,°)(V). Đi code đươc tầm 1 tháng thì chuyển qua làm System. Hồi đó cũng không biết gì căn bản thích dùng ubuntu nên cái nghiệp nó bắt đầu từ đó. Cũng không đi học thêm ở đâu mà chỉ học những cái trong trường. Căn bản nghề này cũng đơn giản cứ thích thì tìm hiểu & vooc, làm dần va chạm thành quen. Làm được gần 3 năm thì nhảy việc lần đầu (Cuộc sống mà ai chả đôi lần nhảy việc). Làm tiếp ở cty v - Con V lớn. Tiếp tục làm ở đó được gần 4 năm thì lại nhảy tiếp sang ngân hàng V. Hiện nhà ga đã đi được 3 trạm. 
 
 ### Kinh nghiệm: 
 
