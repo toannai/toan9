@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kinh nghiệm sau nhiều năm đi làm (System & các thứ) - Phần 2,
-date: 2022-02-10 00:32:20 +0700
+date: 2022-02-19 00:32:20 +0700
 description: Đi làm nhiều có những vấn đề gặp đi gặp phải ở khắp nơi, hôm nay note lại ra đây coi biết đâu có lúc dùng,
 img: 2022/02/10/job_intro.jpg
 fig-caption: # Add figcaption (optional)
@@ -68,6 +68,8 @@ Rõ ràng vấn đề ở đây là gặp khó trong việc collab giữa các t
 Nhiều bên xây dựng các quy trình để văn bản hóa nghĩa vụ của các bên. Mục tiêu là lấy "thượng thương bảo kiếm" để ép bên khác. Cách này nhìn thì hiệu quả nhưng mà thực tế cũng không ổn lắm. Đã muốn làm khó thì thiếu gì cách, đơn giản chỉ một dấu câu, một từ là đủ rồi.
 
 Và thế là người ta nghĩ ra cái văn hóa DevOps, SecOps để giải quyết vấn đề collab giữa các team. Tóm lại là làm sao dể shift các bên ngồi lại với nhau thành một team càng gần càng thân càng tốt để họ ngồi với nhau giải quyết vấn đề chung thay bằng thi nhau đá bóng trên sân. 
+
+
 
 
 
