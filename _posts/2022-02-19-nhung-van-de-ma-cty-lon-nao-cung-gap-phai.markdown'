@@ -1,0 +1,77 @@
+---
+layout: post
+title: Kinh nghiệm sau nhiều năm đi làm (System & các thứ) - Phần 2,
+date: 2022-02-10 00:32:20 +0700
+description: Đi làm nhiều có những vấn đề gặp đi gặp phải ở khắp nơi, hôm nay note lại ra đây coi biết đâu có lúc dùng,
+img: 2022/02/10/job_intro.jpg
+fig-caption: # Add figcaption (optional)
+tags: [Linh tinh]
+---
+
+Hôm nay là cuối tuần trời Hanoi combo mưa, lạnh, nồm. Chỗ nào cũng ướt nhèm, trưa ra ngoài đi PRC mà lạnh xun vòi. Giai đoạn này, Hanoi đang trải qua giai đoạn mà covid quét qua giữ dội. Khi mà người quen, bạn bè của mình cũng nhiều người mắc. Dĩ nhiên do tiêm vacxin rồi nên cũng bớt lo ngại. Hy vọng đây là cơn gió manh cuối cùng trong trận bão để mọi thứ trở lại bình thường. Cuối tuần - vẫn như mọi tuần mình chả đi đâu ngồi nhà mần cái này cái kia rồi viết blog. Nói rõ hay mà nghĩ mãi mà chưa thể ra cái gì để viết, thôi viết tiếp về trải nghiệm đi làm của mình vậy. Buổi hôm nay nói nhiều hơn về công việc, về những vấn đề tưởng đơn giản mà đi đâu cũng gặp mà cá nhân thấy hiếm nơi có câu trả lời thấu đảo - vẫn là dấu ? lớn. Không sao, thanh cảnh thì bảo "Đời là chuỗi những câu hỏi cần trả lời" Ha ha,
+
+
+## Góc cứng rắc,
+
+### Quản lý tài nguyên
+
+Nói thì ai cũng buồn cười nhưng đã kinh qua kha khá các enterprise, gov, bank nhưng mình thấy đây là vấn đề mà hầu như đâu cũng gặp phải. Chỉ lấy vài ví dụ nhỏ: Có nơi khá luống cuống khi hỏi vài câu đơn giản như: Giờ có bao nhiêu VM, IP này của máy chủ dịch vụ nào & do ai quản lý. Dải ip này ip nào đã dùng thế nào && cấp phát ra sao, ... mà "rất" nhiều khi không có câu trả lời chính xác.
+
+Trước khi trách con người cũng nên đổ tội cho hoàn cảnh (ai cũng thế thôi =))). Khi công ty con bé có vài anh em, vài dải mạng, vài con server, ... nghĩ nhiều làm gì. Dần theo năm tháng công ty nó phình to ra (vui quá), rồi người ở người đi. Dần già chả biết nào mà lần nữa. Tất cả chỉ là truyền miệng như truyện cổ dân gian (Nói gì đến cái mật khẩu đăng nhập máy tính nghỉ tết xong gõ lại còn phải suy nghĩ mà). Đến khi nhận ra muốn làm lại cho ngon thì là chuyện dường như không thể luôn. Làm lại thì không có thông tin và làm mới thì e là không đủ. Chả trách ai được.
+
+Vậy nên hệ thống dù to dù nhỏ cũng nên có kế hoạch cho việc quản lý tài nguyên. Từ hardware, software, ứng dụng, tài khoản, ...
+
+
+### Vấn đề tài liệu
+
+Tôi vẫn nhớ khi tôi làm việc ở tập đoàn V. Có những máy chủ dịch vụ cứ để thế cho nó chạy, không ai dám reboot vì reboot xong chắc chỉ nhờ "thánh" mới bật được ứng dụng trong nó. Lý do là ứng dụng đã phát triển quá lâu mà người phát triển/vận hành không biết đang ở ở phương trời nào. 
+
+Cuộc đời kiểu gặp gỡ rồi chia ly - Chân lý. Nhưng công ty thì không thể thế được vì là nơi sinh nhai và tâm huyết của nhiều người. Khách quan thì nên nghĩ nó là tài sản của tập thể mà ai cũng phải có nghĩa vụ bảo vệ và phát triển.
+
+Gì thì gì tài liệu cứ phải đầy đủ và được lưu trữ/update một cách chuyên nghiệp trong suốt quá trình xây dựng, vận hành, phát triển hệ thống. Không nên có một lỗ đen nào cả. 
+
+
+### Vấn đề quản lý truy cập
+
+Nhiều anh em nghe tôi nói tới vấn đề này có thể cười chê bảo thời này tôi dùng PIM/PAM, Firewall các thứ rồi ông nói xạo. Nhưng sự thật đôi khi nó không ngon như lý thuyết.
+
+Firewall như tấm áo, mặc nhiều năm rách tả tơi. Như một thống kê có thực của chúng tôi "Trung bình 1 ngày 30 cái request xin kết nối cái nào cũng critical" phải mở và không bao giờ đóng thì chả mấy mà Firewall cũng thủng lỗ trỗ mà thôi. 
+
+Chuyện cũ: Hệ thống cũ - phân tán, dùng mật khẩu xác thực. Mật khẩu hết, hạn người này đổi người kia không vào được. Rồi nhân viên cũ nghỉ mới vào nhưng mật khẩu lại là thứ truyền kiếp. 
+
+Chuyện mới: PIM/PAM hoạt động không như mong muốn. Mật khẩu mặc định không tự đổi cả làng biết. 
+
+Quản lý truy cập là vấn đề phức tạp mà ở đây chỉ dảm nêu ra mà thôi.
+
+### Vấn đề giảm sát hệ thống
+
+Nói về hệ thống giám sát thì ai cũng biết rồi. Một hệ thống giám sát tốt vừa giúp phát hiện lỗi, tìm lỗi xịn hơn là để dự đoán lỗi, xa hơn là cải thiện dịch vụ (như SRE book của google chém).
+
+Tôi nghe có người bạn nói công ty B có hệ thống ngon chả cần giám sát :v mà tôi không tin lắm, con người ai chả có lỗi - chả nhẽ code lại không có bug. Rồi có nơi có hệ thống giám sát nhưng chả hiểu quả. Dịch vụ chết từ đời nào mà không biết, mãi tới khi người dùng báo lại với cuống lên. À, thôi thì coi người dùng là công cụ giám sát vậy. Nhưng mà như vậy thì bực quá, thô lỗ quá người dùng chả mấy mà phát điên rời bỏ dịch vụ thôi.
+
+Hãy đầu tư một lực lượng nhất định cho việc giám sát liên tục - Lại tin tôi đi.
+(Tôi vãn thấy các tech chém về 3 pillar metric + logging + tracing :) bạn thử đọc xem có gì hay ho không?)
+
+
+## Góc mềm nhũn,
+
+## DevOps, SecOPS các thứ
+
+Có lần tôi nói với vợ rằng "Mọi người ít khi nhận lỗi về mình" - Thế là vợ giận tôi mấy ngày liền. Nói đùa thôi, nhưng mà nó là sự thật mà sự thật thì hay mất lòng.
+
+Quay lại với công việc, tôi tin trong thời gian làm việc chắc ai cũng đôi lần gặp mấy case kiểu:  Hệ thống lỗi mà chả bên nào chịu nhận lỗi về mình. Câu trả lời nhận được quen thuộc bảo ông check trước đi bên tôi vẫn ổn. Mấy câu quen quá: Dev bảo "App ngon", Ops bảo "Cấu hình đủ, tài nguyên đủ", Network bảo "Network rất ngon", ... Vậy lỗi rốt cuộc tại ai? Và rỗi cãi nhau om xòm mà bug mãi vẫn không fix được, nhiều khi to tiếng qua lại thành ra "hận" nhau ra ngoài cả công việc luôn. Nhìn thấy nhau muốn băm nhau rồi nói gì làm việc nữa (Vậy nên ở notes trước tôi mới bảo cần isolate cv với cs).
+
+Dạo này còn hot hack hủng nên nhiều khi mấy vụ cãi nhau có thêm ông security vào nữa. Ông security bảo mấy ông dev/ops/network phải làm cái a,b,c không nó hack vào đấy nhưng dev, sys, network bảo éo ! tôi đang bận để lúc khác thôi. Nhưng sự thật để lúc khác hacker nó hack vào nằm ngủ trong hệ thống luôn rồi, quá muộn.
+
+Rõ ràng vấn đề ở đây là gặp khó trong việc collab giữa các team? Giải quyết thế nào giờ?
+
+Nhiều bên xây dựng các quy trình để văn bản hóa nghĩa vụ của các bên. Mục tiêu là lấy "thượng thương bảo kiếm" để ép bên khác. Cách này nhìn thì hiệu quả nhưng mà thực tế cũng không ổn lắm. Đã muốn làm khó thì thiếu gì cách, đơn giản chỉ một dấu câu, một từ là đủ rồi.
+
+Và thế là người ta nghĩ ra cái văn hóa DevOps, SecOps để giải quyết vấn đề collab giữa các team. Tóm lại là làm sao dể shift các bên ngồi lại với nhau thành một team càng gần càng thân càng tốt để họ ngồi với nhau giải quyết vấn đề chung thay bằng thi nhau đá bóng trên sân. 
+
+
+
+
+
+
+
