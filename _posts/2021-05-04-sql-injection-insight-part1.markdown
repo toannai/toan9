@@ -5,7 +5,7 @@ date: 2021-05-04 00:32:20 +0700
 description: Bài viết đầu tiên trong loạt bài tìm hiểu về lỗi SQL Injection
 img: 2021/05/05/210505_intro_sqlinjection.png
 fig-caption: # Add figcaption (optional)
-tags: [Security, WebSecurity]
+tags: [Security]
 ---
 >Injection đặc biệt là SQL Injection phải nói là nổi tiếng thuộc hàng top trong nhóm những lỗ hổng ứng dụng Web. Nổi tiếng theo nghĩa là hầu hết ai làm việc liên quan tới ứng dụng Web, thậm trí rộng hơn là Công nghệ thông tin đều biết hoặc từng nghe về nó. Tuy nhiên nổi tiếng cỡ vậy nhưng theo thống kê của OSWAP thì nhiều năm liền nó vẫn nằm ở top 1 các lỗ hổng nguy hiểm nhất đối với ứng dụng web. Trong thời gian tới tôi sẽ viết một loạt bài chia sẻ về SQL Injection là những ghi chú của tôi khi tìm hiểu về Web security. Rất hy vọng rằng các thông tin mà tôi có được hữu ích cho mọi người.
 

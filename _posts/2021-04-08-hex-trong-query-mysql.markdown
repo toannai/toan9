@@ -5,7 +5,7 @@ date: 2021-05-08 00:32:20 +0700
 description: Sử dụng hex trong query MySQL
 img: 2021/05/08/210508_mysql.png
 fig-caption: # Add figcaption (optional)
-tags: [Security, WebSecurity]
+tags: [Security]
 ---
 
 Hôm nay  tôi vô tình đọc trên mạng được một query rất lạ. Thấy hay ho nên cũng đọc xem tại sao. Đại loại là
