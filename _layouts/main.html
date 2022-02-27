@@ -13,13 +13,7 @@ layout: default
       <p>{{site.about-author}}</p>
     </div>
   </header> <!-- End Header -->
-  <ul class="tags">
-    {% for tag in site.tags %}
-      <li>
-        <a href="/tags/#{{ tag[0] }}" class="post-tag">{{ tag[0] }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  
   <footer>
     <section class="contact">
       <h3 class="contact-title">Contact me</h3>
@@ -55,6 +49,14 @@ layout: default
       <p>{{site.time | date: '%Y'}} &copy; {{site.author}}</p>
     </div>
   </footer> <!-- End Footer -->
+
+  <ul class="tags">
+    {% for tag in site.tags %}
+      <li>
+        <a href="/tags/#{{ tag[0] }}" class="post-tag">{{ tag[0] }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 </aside> <!-- End Sidebar -->
 <div class="content-box clearfix">
   {{ content }}
