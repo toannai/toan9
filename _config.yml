@@ -10,8 +10,9 @@ site-twitter: #if your site has a twitter account, enter it here
 author: Toan9'notes # add your name
 author-img: copyleft.JPG # add your photo
 about-author: System Admin, System Security Engineer, Creative Writer # add description
+social-youtube: channel/UCcPDZmeERFgtlyZGB8Nirag
 social-twitter: # add your Twitter handle
-social-facebook: toanvnu # add your Facebook handle
+social-facebook: toan9notes # add your Facebook handle
 social-github: toannai # add your Github handle
 social-linkedin: # add your Linkedin handle
 social-email: # add your Email address
@@ -19,8 +20,6 @@ social-email: # add your Email address
 # Disqus
 #discus-identifier: toan9-com # add your discus identifier
 facebook-comment: true
-
-social-youtube: channel/UCcPDZmeERFgtlyZGB8Nirag
 
 # Tracker
 analytics: UA-197145153-1
