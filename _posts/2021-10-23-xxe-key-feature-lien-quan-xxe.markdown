@@ -5,7 +5,7 @@ date: 2021-10-23 00:32:20 +0700
 description: Key features của XML entities liên quan tới XXE
 img: 2021/10/23/xxe_keyfeatures.png
 fig-caption: # Add figcaption (optional)
-tags: [Security, WebSecurity]
+tags: [Security]
 ---
 
 Trong notes này, chúng ta sẽ đề cập tới một số key features của XML có liên quan đến lỗ hổng XXE.

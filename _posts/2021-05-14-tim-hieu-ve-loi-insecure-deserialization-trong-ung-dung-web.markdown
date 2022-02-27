@@ -5,7 +5,7 @@ date: 2021-05-14 00:32:20 +0700
 description: Bài viết cung cấp các thông tin lỗi Insecure deserialization trong ứng dụng web,
 img: 2021/05/14/210514_deserialization_infographic.jpg
 fig-caption: # Add figcaption (optional)
-tags: [Security, WebSecurity]
+tags: [Security]
 ---
 
 Ngày trước khi mới học lập trình tôi thường hay truyền dữ liệu qua mạng giữa app và server bằng việc trao đổi qua giữa các đoạn text .Client gửi một đoạn text, server đọc đoạn text và xử lý rồi trả lời theo yêu cầu của client (Khá là dễ hình dung). Sau này học lập trình hướng đối tượng. Trong một trương trình tôi có thể sử dụng object để lưu giữ thông tin, mỗi object có các thuộc tính chứa các loại dữ liệu cơ bản (int/float/string/...), các object tương tác với nhau qua method. Tôi vẫn băn khoan liệu có thể thể nào tương tác giữa 2 trương trình chạy trên 2 máy khác nhau bằng việc gửi/nhận các object (thay bằng text) mà 2 bên vẫn có thể hiểu và xử lý được dữ liệu trong object đó không (Kiểu 2 bên thống nhất 1 cú pháp chung để gửi/đọc object qua mạng)????

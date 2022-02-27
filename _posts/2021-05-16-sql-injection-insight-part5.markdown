@@ -5,7 +5,7 @@ date: 2021-05-16 00:32:20 +0700
 description: Phân loại SQL Injection và kinh nghiệm xử lý từng loại,
 img: 2021/05/16/210516_sql_injections.png
 fig-caption: # Add figcaption (optional)
-tags: [Security, WebSecurity]
+tags: [Security]
 ---
 Buổi hôm nay tối sẽ đi sâu vào phân tích SQL Injection UNION base. Theo tôi đây không hẳn là một loại SQL Injection mà thực sự nó là một kỹ thuật trong khai thác SQL Injection thì hợp lý hơn. Nhưng hãy quên cái đó đi, không quan trọng cho lắm. Chúng ta bắt đầu nào.
 

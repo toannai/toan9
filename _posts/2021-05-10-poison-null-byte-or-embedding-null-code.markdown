@@ -5,7 +5,7 @@ date: 2021-05-10 00:32:20 +0700
 description: Kỹ thuật tấn công Poison Null Byte/Embedding Null Code
 img: 2021/05/10/210510-poison-null-byte.jpg
 fig-caption: # Add figcaption (optional)
-tags: [Security, WebSecurity]
+tags: [Security]
 ---
 Nhân tiện làm một challenge trên tryhackme liên quan tới Poison NULL byte tôi cũng tìm hiểu và ghi chép chút ít về kỹ thuật này.
 

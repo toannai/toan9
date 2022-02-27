@@ -5,7 +5,7 @@ date: 2021-05-08 00:32:20 +0700
 description: Khai thác lỗi sql injection và những template tư duy
 img: 2021/05/08/210508_intro_sqlinjection.png
 fig-caption: # Add figcaption (optional)
-tags: [Security, WebSecurity]
+tags: [Security]
 ---
 
 Quay trở lại với các notes về SQL Injection. Quá trình tiến hành khai thác SQL Injection theo tôi thấy không phải là luôn luôn phải nghĩ ra những payload(1) mới toanh mà đôi khi chỉ cần áp dụng các template hoặc kinh nghiệm đã gặp trước đây là cũng có thể thành công rồi. Buổi hôm nay là chia sẻ về một số tư duy **có sẵn** đó.

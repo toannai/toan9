@@ -5,7 +5,7 @@ date: 2021-05-08 00:32:20 +0700
 description: Phân loại SQL Injection và kinh nghiệm xử lý từng loại
 img: 2021/05/09/210509_intro_sqlinjection.png
 fig-caption: # Add figcaption (optional)
-tags: [Security, WebSecurity]
+tags: [Security]
 ---
 
 >Bài trước do nội dung quá dài nên tôi xin cắt nhỏ ra để mọi người tiện theo dõi.

@@ -5,7 +5,7 @@ date: 2021-05-08 00:32:20 +0700
 description: Phân loại SQL Injection và kinh nghiệm xử lý từng loại
 img: 2021/05/09/210509_intro_sqlinjection.png
 fig-caption: # Add figcaption (optional)
-tags: [Security, WebSecurity]
+tags: [Security]
 ---
 
 Bài tiếp theo trong loạt SQL Injection Insight tôi sẽ đi vào phân loại lỗi SQL Injection. Việc phân loại đương nhiên chỉ là tương đối nghĩa là có thể không rõ ràng/chồng lấn nhau. Tuy nhiên điều này sẽ giúp cho ta dễ dàng hơn trong việc áp dụng payload phù hợp với từng loại đó - các lỗi cùng loại có thể có các cách ứng xử giống nhau. Let's start.

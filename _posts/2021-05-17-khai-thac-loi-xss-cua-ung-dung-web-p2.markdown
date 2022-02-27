@@ -5,7 +5,7 @@ date: 2021-05-17 00:32:20 +0700
 description: Tìm hiểu về lỗi Cross Site Scripting trên ứng dụng web - P2,
 img: 2021/05/17/210517_intro_xss.png
 fig-caption: # Add figcaption (optional)
-tags: [Security, WebSecurity]
+tags: [Security]
 ---
 Các bài viết của tôi thường được cắt ngắn với thời lượng nhỏ để tránh gây sự mệt mỏi cho người theo dõi. Và buổi hôm  nay tối sẽ tiếp tục đi phân tích những nội dung liên quan tới lỗi XSS.
 

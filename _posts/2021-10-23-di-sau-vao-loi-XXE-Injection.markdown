@@ -5,7 +5,7 @@ date: 2021-10-23 00:32:20 +0700
 description: Đi sâu vào phân tích lỗi XXE - Một bài viết hay
 img: 2021/10/23/xxe_keyfeatures.png
 fig-caption: # Add figcaption (optional)
-tags: [Security, WebSecurity]
+tags: [Security]
 ---
 
 
