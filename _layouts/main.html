@@ -14,14 +14,6 @@ layout: default
     </div>
   </header> <!-- End Header -->
 
-  <ul class="tags">
-    {% for tag in site.tags %}
-      <li>
-        <a href="/tags/#{{ tag[0] }}" class="post-tag">{{ tag[0] }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
   <section class="contact">
     <h3 class="contact-title">Contact me</h3>
     <ul>
@@ -52,7 +44,15 @@ layout: default
       {% endif %}
     </ul>
   </section> <!-- End Section Contact -->
-  
+
+  <ul class="tags">
+    {% for tag in site.tags %}
+      <li>
+        <a href="/tags/#{{ tag[0] }}" class="post-tag">{{ tag[0] }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
   <footer>
     <div class="copyright">
       <p>{{site.time | date: '%Y'}} &copy; {{site.author}}</p>
